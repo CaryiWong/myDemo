@@ -1,0 +1,285 @@
+<html class="no-js ng-scope" ng-app="app" ng-controller="AppController"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style>
+  <meta charset="utf-8">
+  <title>PageEditor</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="styles/app.css">
+</head>
+<body prevent-link="">
+<nav class="editor-nav clearfix">
+  <div class="editor-nav-title pull-left ng-binding" ng-bind="navTitle">编辑活动</div>
+  <ul class="editor-nav-buttonList list-unstyled pull-right" ng-show="showNav">
+    <li class="nav-button">
+      <i class="nav-button-icon"></i>
+      <a href="#export" class="nav-button-text">导出</a></li>
+  </ul>
+</nav>
+
+<!-- ngView:  --><div ng-view="" class="clearfix contentView ng-scope"><section class="flex-area ng-scope">
+
+  <div class="editorCustom">
+    <form class="editorMain detailForm hide1 ng-pristine ng-valid">
+
+      <div class="form-group">
+        <label>标题</label>
+        <input type="text" class="form-control ng-pristine ng-untouched ng-valid" ng-model="basic.title">
+      </div>
+
+      <div class="form-image clearfix">
+        <div class="editorMain-cover page-image pull-left ng-isolate-scope" data-tip="选择封面" editable-image="basic.cover"><div class="page-image-tip ng-binding">选择封面</div><div class="progress hide"><div class="progress-bar progress-bar-striped active" role="progressbar" style="width: 100%"></div></div><input value="" name="pageImage" type="file"><img></div>
+
+        <!--<div class="editorMain-webImg page-image pull-right"-->
+        <!--data-tip="选择网页小图片"-->
+        <!--editable-image="basic.webImg"></div>-->
+      </div>
+
+      <div class="form-group">
+        <label>日期/时间</label>
+
+        <div class="detailForm-dateArea">
+          <input type="text" class="form-control dateStart ng-pristine ng-untouched ng-valid picker__input" placeholder="开始时间" ng-model="basic.startTime" date-picker="" readonly="" id="P420302933" aria-haspopup="true" aria-expanded="false" aria-readonly="false" aria-owns="P420302933_root P420302933_submit"><div class="picker" id="P420302933_root" aria-hidden="true"><div class="picker__holder"><div class="picker__frame"><div class="picker__wrap"><div class="picker__box"><div class="picker__header"><div class="picker__nav--prev" data-nav="-1"> </div><div class="picker__nav--next" data-nav="1"> </div><div class="picker__month">十月</div><div class="picker__year">2015</div></div><table class="picker__table"><thead><tr><th class="picker__weekday">一</th><th class="picker__weekday">二</th><th class="picker__weekday">三</th><th class="picker__weekday">四</th><th class="picker__weekday">五</th><th class="picker__weekday">六</th><th class="picker__weekday">日</th></tr></thead><tbody><tr><td><div class="picker__day picker__day--outfocus" data-pick="1443369600000" role="button" aria-controls="P420302933">28</div></td><td><div class="picker__day picker__day--outfocus" data-pick="1443456000000" role="button" aria-controls="P420302933">29</div></td><td><div class="picker__day picker__day--outfocus" data-pick="1443542400000" role="button" aria-controls="P420302933">30</div></td><td><div class="picker__day picker__day--infocus" data-pick="1443628800000" role="button" aria-controls="P420302933">1</div></td><td><div class="picker__day picker__day--infocus" data-pick="1443715200000" role="button" aria-controls="P420302933">2</div></td><td><div class="picker__day picker__day--infocus" data-pick="1443801600000" role="button" aria-controls="P420302933">3</div></td><td><div class="picker__day picker__day--infocus" data-pick="1443888000000" role="button" aria-controls="P420302933">4</div></td></tr><tr><td><div class="picker__day picker__day--infocus" data-pick="1443974400000" role="button" aria-controls="P420302933">5</div></td><td><div class="picker__day picker__day--infocus" data-pick="1444060800000" role="button" aria-controls="P420302933">6</div></td><td><div class="picker__day picker__day--infocus" data-pick="1444147200000" role="button" aria-controls="P420302933">7</div></td><td><div class="picker__day picker__day--infocus" data-pick="1444233600000" role="button" aria-controls="P420302933">8</div></td><td><div class="picker__day picker__day--infocus" data-pick="1444320000000" role="button" aria-controls="P420302933">9</div></td><td><div class="picker__day picker__day--infocus" data-pick="1444406400000" role="button" aria-controls="P420302933">10</div></td><td><div class="picker__day picker__day--infocus" data-pick="1444492800000" role="button" aria-controls="P420302933">11</div></td></tr><tr><td><div class="picker__day picker__day--infocus" data-pick="1444579200000" role="button" aria-controls="P420302933">12</div></td><td><div class="picker__day picker__day--infocus" data-pick="1444665600000" role="button" aria-controls="P420302933">13</div></td><td><div class="picker__day picker__day--infocus" data-pick="1444752000000" role="button" aria-controls="P420302933">14</div></td><td><div class="picker__day picker__day--infocus" data-pick="1444838400000" role="button" aria-controls="P420302933">15</div></td><td><div class="picker__day picker__day--infocus" data-pick="1444924800000" role="button" aria-controls="P420302933">16</div></td><td><div class="picker__day picker__day--infocus" data-pick="1445011200000" role="button" aria-controls="P420302933">17</div></td><td><div class="picker__day picker__day--infocus" data-pick="1445097600000" role="button" aria-controls="P420302933">18</div></td></tr><tr><td><div class="picker__day picker__day--infocus" data-pick="1445184000000" role="button" aria-controls="P420302933">19</div></td><td><div class="picker__day picker__day--infocus picker__day--today picker__day--highlighted" data-pick="1445270400000" role="button" aria-controls="P420302933" aria-activedescendant="true">20</div></td><td><div class="picker__day picker__day--infocus" data-pick="1445356800000" role="button" aria-controls="P420302933">21</div></td><td><div class="picker__day picker__day--infocus" data-pick="1445443200000" role="button" aria-controls="P420302933">22</div></td><td><div class="picker__day picker__day--infocus" data-pick="1445529600000" role="button" aria-controls="P420302933">23</div></td><td><div class="picker__day picker__day--infocus" data-pick="1445616000000" role="button" aria-controls="P420302933">24</div></td><td><div class="picker__day picker__day--infocus" data-pick="1445702400000" role="button" aria-controls="P420302933">25</div></td></tr><tr><td><div class="picker__day picker__day--infocus" data-pick="1445788800000" role="button" aria-controls="P420302933">26</div></td><td><div class="picker__day picker__day--infocus" data-pick="1445875200000" role="button" aria-controls="P420302933">27</div></td><td><div class="picker__day picker__day--infocus" data-pick="1445961600000" role="button" aria-controls="P420302933">28</div></td><td><div class="picker__day picker__day--infocus" data-pick="1446048000000" role="button" aria-controls="P420302933">29</div></td><td><div class="picker__day picker__day--infocus" data-pick="1446134400000" role="button" aria-controls="P420302933">30</div></td><td><div class="picker__day picker__day--infocus" data-pick="1446220800000" role="button" aria-controls="P420302933">31</div></td><td><div class="picker__day picker__day--outfocus" data-pick="1446307200000" role="button" aria-controls="P420302933">1</div></td></tr><tr><td><div class="picker__day picker__day--outfocus" data-pick="1446393600000" role="button" aria-controls="P420302933">2</div></td><td><div class="picker__day picker__day--outfocus" data-pick="1446480000000" role="button" aria-controls="P420302933">3</div></td><td><div class="picker__day picker__day--outfocus" data-pick="1446566400000" role="button" aria-controls="P420302933">4</div></td><td><div class="picker__day picker__day--outfocus" data-pick="1446652800000" role="button" aria-controls="P420302933">5</div></td><td><div class="picker__day picker__day--outfocus" data-pick="1446739200000" role="button" aria-controls="P420302933">6</div></td><td><div class="picker__day picker__day--outfocus" data-pick="1446825600000" role="button" aria-controls="P420302933">7</div></td><td><div class="picker__day picker__day--outfocus" data-pick="1446912000000" role="button" aria-controls="P420302933">8</div></td></tr></tbody></table></div></div></div></div></div><input type="hidden" name="_submit" id="P420302933_submit">
+          <input type="text" class="timePicker picker__input" time-picker="" readonly="" id="P886866651" aria-haspopup="true" aria-expanded="false" aria-readonly="false" aria-owns="P886866651_root P886866651_submit"><div class="picker picker--time" id="P886866651_root" aria-hidden="true"><div class="picker__holder"><div class="picker__frame"><div class="picker__wrap"><div class="picker__box"><ul class="picker__list"><li class="picker__list-item" data-pick="0" role="button" aria-controls="P886866651">00:00</li><li class="picker__list-item" data-pick="30" role="button" aria-controls="P886866651">00:30</li><li class="picker__list-item" data-pick="60" role="button" aria-controls="P886866651">01:00</li><li class="picker__list-item" data-pick="90" role="button" aria-controls="P886866651">01:30</li><li class="picker__list-item" data-pick="120" role="button" aria-controls="P886866651">02:00</li><li class="picker__list-item" data-pick="150" role="button" aria-controls="P886866651">02:30</li><li class="picker__list-item" data-pick="180" role="button" aria-controls="P886866651">03:00</li><li class="picker__list-item" data-pick="210" role="button" aria-controls="P886866651">03:30</li><li class="picker__list-item" data-pick="240" role="button" aria-controls="P886866651">04:00</li><li class="picker__list-item" data-pick="270" role="button" aria-controls="P886866651">04:30</li><li class="picker__list-item" data-pick="300" role="button" aria-controls="P886866651">05:00</li><li class="picker__list-item" data-pick="330" role="button" aria-controls="P886866651">05:30</li><li class="picker__list-item" data-pick="360" role="button" aria-controls="P886866651">06:00</li><li class="picker__list-item" data-pick="390" role="button" aria-controls="P886866651">06:30</li><li class="picker__list-item" data-pick="420" role="button" aria-controls="P886866651">07:00</li><li class="picker__list-item" data-pick="450" role="button" aria-controls="P886866651">07:30</li><li class="picker__list-item" data-pick="480" role="button" aria-controls="P886866651">08:00</li><li class="picker__list-item" data-pick="510" role="button" aria-controls="P886866651">08:30</li><li class="picker__list-item" data-pick="540" role="button" aria-controls="P886866651">09:00</li><li class="picker__list-item" data-pick="570" role="button" aria-controls="P886866651">09:30</li><li class="picker__list-item" data-pick="600" role="button" aria-controls="P886866651">10:00</li><li class="picker__list-item" data-pick="630" role="button" aria-controls="P886866651">10:30</li><li class="picker__list-item picker__list-item--highlighted picker__list-item--viewset" data-pick="660" role="button" aria-controls="P886866651" aria-activedescendant="true">11:00</li><li class="picker__list-item" data-pick="690" role="button" aria-controls="P886866651">11:30</li><li class="picker__list-item" data-pick="720" role="button" aria-controls="P886866651">12:00</li><li class="picker__list-item" data-pick="750" role="button" aria-controls="P886866651">12:30</li><li class="picker__list-item" data-pick="780" role="button" aria-controls="P886866651">13:00</li><li class="picker__list-item" data-pick="810" role="button" aria-controls="P886866651">13:30</li><li class="picker__list-item" data-pick="840" role="button" aria-controls="P886866651">14:00</li><li class="picker__list-item" data-pick="870" role="button" aria-controls="P886866651">14:30</li><li class="picker__list-item" data-pick="900" role="button" aria-controls="P886866651">15:00</li><li class="picker__list-item" data-pick="930" role="button" aria-controls="P886866651">15:30</li><li class="picker__list-item" data-pick="960" role="button" aria-controls="P886866651">16:00</li><li class="picker__list-item" data-pick="990" role="button" aria-controls="P886866651">16:30</li><li class="picker__list-item" data-pick="1020" role="button" aria-controls="P886866651">17:00</li><li class="picker__list-item" data-pick="1050" role="button" aria-controls="P886866651">17:30</li><li class="picker__list-item" data-pick="1080" role="button" aria-controls="P886866651">18:00</li><li class="picker__list-item" data-pick="1110" role="button" aria-controls="P886866651">18:30</li><li class="picker__list-item" data-pick="1140" role="button" aria-controls="P886866651">19:00</li><li class="picker__list-item" data-pick="1170" role="button" aria-controls="P886866651">19:30</li><li class="picker__list-item" data-pick="1200" role="button" aria-controls="P886866651">20:00</li><li class="picker__list-item" data-pick="1230" role="button" aria-controls="P886866651">20:30</li><li class="picker__list-item" data-pick="1260" role="button" aria-controls="P886866651">21:00</li><li class="picker__list-item" data-pick="1290" role="button" aria-controls="P886866651">21:30</li><li class="picker__list-item" data-pick="1320" role="button" aria-controls="P886866651">22:00</li><li class="picker__list-item" data-pick="1350" role="button" aria-controls="P886866651">22:30</li><li class="picker__list-item" data-pick="1380" role="button" aria-controls="P886866651">23:00</li><li class="picker__list-item" data-pick="1410" role="button" aria-controls="P886866651">23:30</li><li><button class="picker__button--clear" type="button" data-clear="1" disable="">Clear</button></li></ul></div></div></div></div></div><input type="hidden" name="_submit" id="P886866651_submit">
+        </div>
+        <div class="detailForm-dateArea">
+          <input type="text" class="form-control dateEnd ng-pristine ng-untouched ng-valid picker__input" placeholder="结束时间" ng-model="basic.endTime" date-picker="" readonly="" id="P798599162" aria-haspopup="true" aria-expanded="false" aria-readonly="false" aria-owns="P798599162_root P798599162_submit"><div class="picker" id="P798599162_root" aria-hidden="true"><div class="picker__holder"><div class="picker__frame"><div class="picker__wrap"><div class="picker__box"><div class="picker__header"><div class="picker__nav--prev" data-nav="-1"> </div><div class="picker__nav--next" data-nav="1"> </div><div class="picker__month">十月</div><div class="picker__year">2015</div></div><table class="picker__table"><thead><tr><th class="picker__weekday">一</th><th class="picker__weekday">二</th><th class="picker__weekday">三</th><th class="picker__weekday">四</th><th class="picker__weekday">五</th><th class="picker__weekday">六</th><th class="picker__weekday">日</th></tr></thead><tbody><tr><td><div class="picker__day picker__day--outfocus" data-pick="1443369600000" role="button" aria-controls="P798599162">28</div></td><td><div class="picker__day picker__day--outfocus" data-pick="1443456000000" role="button" aria-controls="P798599162">29</div></td><td><div class="picker__day picker__day--outfocus" data-pick="1443542400000" role="button" aria-controls="P798599162">30</div></td><td><div class="picker__day picker__day--infocus" data-pick="1443628800000" role="button" aria-controls="P798599162">1</div></td><td><div class="picker__day picker__day--infocus" data-pick="1443715200000" role="button" aria-controls="P798599162">2</div></td><td><div class="picker__day picker__day--infocus" data-pick="1443801600000" role="button" aria-controls="P798599162">3</div></td><td><div class="picker__day picker__day--infocus" data-pick="1443888000000" role="button" aria-controls="P798599162">4</div></td></tr><tr><td><div class="picker__day picker__day--infocus" data-pick="1443974400000" role="button" aria-controls="P798599162">5</div></td><td><div class="picker__day picker__day--infocus" data-pick="1444060800000" role="button" aria-controls="P798599162">6</div></td><td><div class="picker__day picker__day--infocus" data-pick="1444147200000" role="button" aria-controls="P798599162">7</div></td><td><div class="picker__day picker__day--infocus" data-pick="1444233600000" role="button" aria-controls="P798599162">8</div></td><td><div class="picker__day picker__day--infocus" data-pick="1444320000000" role="button" aria-controls="P798599162">9</div></td><td><div class="picker__day picker__day--infocus" data-pick="1444406400000" role="button" aria-controls="P798599162">10</div></td><td><div class="picker__day picker__day--infocus" data-pick="1444492800000" role="button" aria-controls="P798599162">11</div></td></tr><tr><td><div class="picker__day picker__day--infocus" data-pick="1444579200000" role="button" aria-controls="P798599162">12</div></td><td><div class="picker__day picker__day--infocus" data-pick="1444665600000" role="button" aria-controls="P798599162">13</div></td><td><div class="picker__day picker__day--infocus" data-pick="1444752000000" role="button" aria-controls="P798599162">14</div></td><td><div class="picker__day picker__day--infocus" data-pick="1444838400000" role="button" aria-controls="P798599162">15</div></td><td><div class="picker__day picker__day--infocus" data-pick="1444924800000" role="button" aria-controls="P798599162">16</div></td><td><div class="picker__day picker__day--infocus" data-pick="1445011200000" role="button" aria-controls="P798599162">17</div></td><td><div class="picker__day picker__day--infocus" data-pick="1445097600000" role="button" aria-controls="P798599162">18</div></td></tr><tr><td><div class="picker__day picker__day--infocus" data-pick="1445184000000" role="button" aria-controls="P798599162">19</div></td><td><div class="picker__day picker__day--infocus picker__day--today picker__day--highlighted" data-pick="1445270400000" role="button" aria-controls="P798599162" aria-activedescendant="true">20</div></td><td><div class="picker__day picker__day--infocus" data-pick="1445356800000" role="button" aria-controls="P798599162">21</div></td><td><div class="picker__day picker__day--infocus" data-pick="1445443200000" role="button" aria-controls="P798599162">22</div></td><td><div class="picker__day picker__day--infocus" data-pick="1445529600000" role="button" aria-controls="P798599162">23</div></td><td><div class="picker__day picker__day--infocus" data-pick="1445616000000" role="button" aria-controls="P798599162">24</div></td><td><div class="picker__day picker__day--infocus" data-pick="1445702400000" role="button" aria-controls="P798599162">25</div></td></tr><tr><td><div class="picker__day picker__day--infocus" data-pick="1445788800000" role="button" aria-controls="P798599162">26</div></td><td><div class="picker__day picker__day--infocus" data-pick="1445875200000" role="button" aria-controls="P798599162">27</div></td><td><div class="picker__day picker__day--infocus" data-pick="1445961600000" role="button" aria-controls="P798599162">28</div></td><td><div class="picker__day picker__day--infocus" data-pick="1446048000000" role="button" aria-controls="P798599162">29</div></td><td><div class="picker__day picker__day--infocus" data-pick="1446134400000" role="button" aria-controls="P798599162">30</div></td><td><div class="picker__day picker__day--infocus" data-pick="1446220800000" role="button" aria-controls="P798599162">31</div></td><td><div class="picker__day picker__day--outfocus" data-pick="1446307200000" role="button" aria-controls="P798599162">1</div></td></tr><tr><td><div class="picker__day picker__day--outfocus" data-pick="1446393600000" role="button" aria-controls="P798599162">2</div></td><td><div class="picker__day picker__day--outfocus" data-pick="1446480000000" role="button" aria-controls="P798599162">3</div></td><td><div class="picker__day picker__day--outfocus" data-pick="1446566400000" role="button" aria-controls="P798599162">4</div></td><td><div class="picker__day picker__day--outfocus" data-pick="1446652800000" role="button" aria-controls="P798599162">5</div></td><td><div class="picker__day picker__day--outfocus" data-pick="1446739200000" role="button" aria-controls="P798599162">6</div></td><td><div class="picker__day picker__day--outfocus" data-pick="1446825600000" role="button" aria-controls="P798599162">7</div></td><td><div class="picker__day picker__day--outfocus" data-pick="1446912000000" role="button" aria-controls="P798599162">8</div></td></tr></tbody></table></div></div></div></div></div><input type="hidden" name="_submit" id="P798599162_submit">
+          <input type="text" class="timePicker picker__input" time-picker="" readonly="" id="P1764926334" aria-haspopup="true" aria-expanded="false" aria-readonly="false" aria-owns="P1764926334_root P1764926334_submit"><div class="picker picker--time" id="P1764926334_root" aria-hidden="true"><div class="picker__holder"><div class="picker__frame"><div class="picker__wrap"><div class="picker__box"><ul class="picker__list"><li class="picker__list-item" data-pick="0" role="button" aria-controls="P1764926334">00:00</li><li class="picker__list-item" data-pick="30" role="button" aria-controls="P1764926334">00:30</li><li class="picker__list-item" data-pick="60" role="button" aria-controls="P1764926334">01:00</li><li class="picker__list-item" data-pick="90" role="button" aria-controls="P1764926334">01:30</li><li class="picker__list-item" data-pick="120" role="button" aria-controls="P1764926334">02:00</li><li class="picker__list-item" data-pick="150" role="button" aria-controls="P1764926334">02:30</li><li class="picker__list-item" data-pick="180" role="button" aria-controls="P1764926334">03:00</li><li class="picker__list-item" data-pick="210" role="button" aria-controls="P1764926334">03:30</li><li class="picker__list-item" data-pick="240" role="button" aria-controls="P1764926334">04:00</li><li class="picker__list-item" data-pick="270" role="button" aria-controls="P1764926334">04:30</li><li class="picker__list-item" data-pick="300" role="button" aria-controls="P1764926334">05:00</li><li class="picker__list-item" data-pick="330" role="button" aria-controls="P1764926334">05:30</li><li class="picker__list-item" data-pick="360" role="button" aria-controls="P1764926334">06:00</li><li class="picker__list-item" data-pick="390" role="button" aria-controls="P1764926334">06:30</li><li class="picker__list-item" data-pick="420" role="button" aria-controls="P1764926334">07:00</li><li class="picker__list-item" data-pick="450" role="button" aria-controls="P1764926334">07:30</li><li class="picker__list-item" data-pick="480" role="button" aria-controls="P1764926334">08:00</li><li class="picker__list-item" data-pick="510" role="button" aria-controls="P1764926334">08:30</li><li class="picker__list-item" data-pick="540" role="button" aria-controls="P1764926334">09:00</li><li class="picker__list-item" data-pick="570" role="button" aria-controls="P1764926334">09:30</li><li class="picker__list-item" data-pick="600" role="button" aria-controls="P1764926334">10:00</li><li class="picker__list-item" data-pick="630" role="button" aria-controls="P1764926334">10:30</li><li class="picker__list-item picker__list-item--highlighted picker__list-item--viewset" data-pick="660" role="button" aria-controls="P1764926334" aria-activedescendant="true">11:00</li><li class="picker__list-item" data-pick="690" role="button" aria-controls="P1764926334">11:30</li><li class="picker__list-item" data-pick="720" role="button" aria-controls="P1764926334">12:00</li><li class="picker__list-item" data-pick="750" role="button" aria-controls="P1764926334">12:30</li><li class="picker__list-item" data-pick="780" role="button" aria-controls="P1764926334">13:00</li><li class="picker__list-item" data-pick="810" role="button" aria-controls="P1764926334">13:30</li><li class="picker__list-item" data-pick="840" role="button" aria-controls="P1764926334">14:00</li><li class="picker__list-item" data-pick="870" role="button" aria-controls="P1764926334">14:30</li><li class="picker__list-item" data-pick="900" role="button" aria-controls="P1764926334">15:00</li><li class="picker__list-item" data-pick="930" role="button" aria-controls="P1764926334">15:30</li><li class="picker__list-item" data-pick="960" role="button" aria-controls="P1764926334">16:00</li><li class="picker__list-item" data-pick="990" role="button" aria-controls="P1764926334">16:30</li><li class="picker__list-item" data-pick="1020" role="button" aria-controls="P1764926334">17:00</li><li class="picker__list-item" data-pick="1050" role="button" aria-controls="P1764926334">17:30</li><li class="picker__list-item" data-pick="1080" role="button" aria-controls="P1764926334">18:00</li><li class="picker__list-item" data-pick="1110" role="button" aria-controls="P1764926334">18:30</li><li class="picker__list-item" data-pick="1140" role="button" aria-controls="P1764926334">19:00</li><li class="picker__list-item" data-pick="1170" role="button" aria-controls="P1764926334">19:30</li><li class="picker__list-item" data-pick="1200" role="button" aria-controls="P1764926334">20:00</li><li class="picker__list-item" data-pick="1230" role="button" aria-controls="P1764926334">20:30</li><li class="picker__list-item" data-pick="1260" role="button" aria-controls="P1764926334">21:00</li><li class="picker__list-item" data-pick="1290" role="button" aria-controls="P1764926334">21:30</li><li class="picker__list-item" data-pick="1320" role="button" aria-controls="P1764926334">22:00</li><li class="picker__list-item" data-pick="1350" role="button" aria-controls="P1764926334">22:30</li><li class="picker__list-item" data-pick="1380" role="button" aria-controls="P1764926334">23:00</li><li class="picker__list-item" data-pick="1410" role="button" aria-controls="P1764926334">23:30</li><li><button class="picker__button--clear" type="button" data-clear="1" disable="">Clear</button></li></ul></div></div></div></div></div><input type="hidden" name="_submit" id="P1764926334_submit">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>地点</label>
+        <select class="form-control ng-pristine ng-untouched ng-valid" ng-model="basic.address" ng-options="address.name for address in selectData.address"><option value="?" selected="selected"></option><option value="0">柴火</option><option value="1">wedo</option><option value="2">一起</option></select>
+      </div>
+      <!-- todo 只用临时领域 -->
+      <div class="form-group hide">
+        <label>领域</label>
+        <select class="form-control ng-pristine ng-untouched ng-valid" ng-model="basic.domain" ng-options="domain.name for domain in selectData.domain"><option value="?" selected="selected"></option><option value="0">创业</option><option value="1">互联网</option><option value="2">艺术</option><option value="3">社会创新</option><option value="4">设计</option><option value="5">旅行</option><option value="6">生活</option><option value="7">运动</option><option value="8">营销</option><option value="9">文化</option><option value="10">科技</option><option value="11">商业</option><option value="12">影视</option><option value="13">公益</option><option value="14">摄影</option><option value="15">创意</option><option value="16">手工艺</option><option value="17">音乐</option><option value="18">新媒体</option><option value="19">新思维</option><option value="20">投资</option><option value="21">传播</option><option value="22">健康</option><option value="23">环保</option><option value="24">创客</option><option value="25">教育</option><option value="26">舞蹈</option><option value="27">其他</option><option value="28">游戏</option><option value="29">医疗健康</option><option value="30">文化与公益</option><option value="31">行政_运营_销售_客服</option><option value="32">咨询_法律_教育_科研_环保</option><option value="33">农业_环境保护_动物保护</option><option value="34">公务员_社会工作者_翻译_学生</option><option value="35">制造_采购_物流</option><option value="36">会计_金融_银行_保险</option><option value="37">科学研究</option><option value="38">媒体_艺术_设计</option><option value="39">其他</option><option value="40">建筑_房地产</option><option value="41">科技_互联网</option></select>
+      </div>
+      <div class="form-group">
+        <label>参加人数</label>
+        <input type="text" class="form-control ng-pristine ng-untouched ng-valid" ng-model="basic.people">
+      </div>
+      <div class="form-group">
+        <label>联系电话</label>
+        <input type="text" class="form-control ng-pristine ng-untouched ng-valid" ng-model="basic.phone">
+      </div>
+      <div class="form-group">
+        <label>活动收费</label>
+
+        <div class="formDetail-payArea">
+          <label class="radio-inline">
+            <input type="radio" name="pay" ng-model="basic.pay" value="0" class="ng-pristine ng-untouched ng-valid"> 免费
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="pay" ng-model="basic.pay" value="1" class="ng-pristine ng-untouched ng-valid"> 收费
+          </label>
+        </div>
+      </div>
+      <div class="form-group" ng-show="basic.pay === '1'">
+        <div class="formDetail-moneyType formDetail-moneyType-single" ng-show="basic.activityType === 'single'">
+          <label class="btn-link" ng-click="basic.activityType = 'set'; basic.isVip = '0'">
+            切换到摊位收费
+          </label>
+
+          <!-- ngRepeat: money in basic.moneyPair --><div class="formDetail-moneyType-area ng-scope" ng-repeat="money in basic.moneyPair">
+          <label ng-bind="money.name" class="formDetail-moneyType-label ng-binding">非会员价</label> :
+          <input type="text" ng-model="money.value" class="form-control formDetail-moneyType-value ng-pristine ng-untouched ng-valid">
+        </div><!-- end ngRepeat: money in basic.moneyPair --><div class="formDetail-moneyType-area ng-scope" ng-repeat="money in basic.moneyPair">
+          <label ng-bind="money.name" class="formDetail-moneyType-label ng-binding">会员价</label> :
+          <input type="text" ng-model="money.value" class="form-control formDetail-moneyType-value ng-pristine ng-untouched ng-valid">
+        </div><!-- end ngRepeat: money in basic.moneyPair -->
+          <div class="formDetail-moneyType-area">
+
+            <label class="formDetail-moneyType-label">会员独占</label> :
+            <label class="radio-inline">
+              <input type="radio" name="pay" ng-model="basic.isVip" value="0" class="ng-pristine ng-untouched ng-valid"> 否
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="pay" ng-model="basic.isVip" value="1" class="ng-pristine ng-untouched ng-valid"> 是
+            </label>
+          </div>
+        </div>
+        <div class="formDetail-moneyType formDetail-moneyType-multiple ng-hide" ng-show="basic.activityType === 'set'">
+          <label class="btn-link" ng-click="basic.activityType = 'single'">
+            切换到统一收费
+          </label>
+
+          <!-- ngRepeat: child in basic.childActivity --><div class="formDetail-moneyType-child ng-scope" ng-repeat="child in basic.childActivity">
+          <div class="formDetail-moneyType-area">
+            <label class="formDetail-moneyType-label">摊位名</label> :
+            <input type="text" ng-model="child.name" class="form-control formDetail-moneyType-value ng-pristine ng-untouched ng-valid">
+          </div>
+          <div class="formDetail-moneyType-area">
+            <label class="formDetail-moneyType-label">人数</label> :
+            <input type="text" ng-model="child.people" class="form-control formDetail-moneyType-value ng-pristine ng-untouched ng-valid">
+          </div>
+          <!-- ngRepeat: money in child.moneyPair --><div class="formDetail-moneyType-area ng-scope" ng-repeat="money in child.moneyPair">
+          <label ng-bind="money.name" class="formDetail-moneyType-label ng-binding">非会员价</label> :
+          <input type="text" ng-model="money.value" class="form-control formDetail-moneyType-value ng-pristine ng-untouched ng-valid">
+          <button class="btn btn-link ng-isolate-scope ng-hide" remove-child-activity="" data-activity="basic.childActivity" data-index="0" ng-show="!$first">
+            <i class="iconfont-remove"></i>
+          </button>
+        </div><!-- end ngRepeat: money in child.moneyPair --><div class="formDetail-moneyType-area ng-scope" ng-repeat="money in child.moneyPair">
+          <label ng-bind="money.name" class="formDetail-moneyType-label ng-binding">会员价</label> :
+          <input type="text" ng-model="money.value" class="form-control formDetail-moneyType-value ng-pristine ng-untouched ng-valid">
+          <button class="btn btn-link ng-isolate-scope" remove-child-activity="" data-activity="basic.childActivity" data-index="1" ng-show="!$first">
+            <i class="iconfont-remove"></i>
+          </button>
+        </div><!-- end ngRepeat: money in child.moneyPair -->
+          <hr ng-show="!$last" class="ng-hide">
+        </div><!-- end ngRepeat: child in basic.childActivity -->
+          <button add-child-activity="" data-activity="basic.childActivity" class="btn btn-block btn-default ng-isolate-scope">
+            <i class="iconfont-add"></i>
+          </button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>详情页面链接</label>
+        <input type="text" class="form-control ng-pristine ng-untouched ng-valid" ng-model="basic.imgtexturl">
+      </div>
+      <div class="form-group">
+        <label>回顾页面链接</label>
+        <input type="text" class="form-control ng-pristine ng-untouched ng-valid" ng-model="basic.huiguurl">
+      </div>
+    </form>
+    <!--<div class="editorCustom-detail">-->
+    <!--<label>编辑详情</label>-->
+    <!--<div class="form-detail summernote" summernote>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <div class="editorForm container ng-scope" ng-controller="InteractController">
+      <div class="row">
+        <div class="template-itemGroup col-xs-3" roll-static="">
+          <div class="template-itemGroup-list">
+            <!-- ngRepeat: t in formTemplates --><div ng-repeat="t in formTemplates" drag-template="" data-template-name="label" data-drag-action="createFormElement" class="template-item thumbs-article-label" draggable="true">
+            <img src="images/template/label.png" class="img-thumbnail">
+          </div><!-- end ngRepeat: t in formTemplates --><div ng-repeat="t in formTemplates" drag-template="" data-template-name="text" data-drag-action="createFormElement" class="template-item thumbs-article-text" draggable="true">
+            <img src="images/template/text.png" class="img-thumbnail">
+          </div><!-- end ngRepeat: t in formTemplates --><div ng-repeat="t in formTemplates" drag-template="" data-template-name="checkbox" data-drag-action="createFormElement" class="template-item thumbs-article-checkbox" draggable="true">
+            <img src="images/template/checkbox.png" class="img-thumbnail">
+          </div><!-- end ngRepeat: t in formTemplates --><div ng-repeat="t in formTemplates" drag-template="" data-template-name="radio" data-drag-action="createFormElement" class="template-item thumbs-article-radio" draggable="true">
+            <img src="images/template/radio.png" class="img-thumbnail">
+          </div><!-- end ngRepeat: t in formTemplates -->
+          </div>
+        </div>
+
+        <div class="editorArea editorArea-interact">
+          <div class="pageArea">
+            <div class="pageArea-title">编辑报名表</div>
+            <form class="page h5apply activityInfo ng-pristine ng-valid">
+              <div class="dragArea ng-isolate-scope" data-index="0" data-pages="applyForm.elements" drag-area=""></div>
+              <!-- ngRepeat: element in applyForm.elements -->
+              <div class="page-form-default">
+                <!-- todo 价格选择 -->
+                <!-- ngIf: basic.activityType === 'set' -->
+                <div class="form-group interact-form interact-form-text interact-form-name" static-name="">
+                  <label>姓名 Name</label>
+                  <input class="form-control" type="text" name="name">
+                </div>
+                <div class="form-group interact-form interact-form-text interact-form-phone" static-phone="">
+                  <label>手机 Phone Number
+                    <small>（会员手机可使用会员价）</small>
+                  </label>
+                  <input class="form-control" type="text" name="phone">
+                </div>
+                <div class="form-group interact-form interact-form-text interact-form-email" static-email="">
+                  <label>邮箱 E-mail</label>
+                  <input class="form-control" type="text" name="email">
+                </div>
+                <div class="form-group page-button interact-form interact-form-button" static-button="">
+                  <button class="custom-button custom-button-black submit-button">提交</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="pageArea">
+            <div class="pageArea-title">编辑活动反馈表</div>
+            <form class="page h5feedback ng-pristine ng-valid">
+              <div class="dragArea ng-isolate-scope" data-index="0" data-pages="feedbackForm.elements" drag-area=""></div>
+              <!-- ngRepeat: element in feedbackForm.elements -->
+              <div class="page-form-default">
+                <div class="page-radios form-group interact-form interact-form-radio">
+                  <label>满意度</label>
+
+                  <div class="form-radio ng-isolate-scope" data-name="满意度" editable-radios="[{text: '超不满意'},{text: '不满意'},{text: '还好'},{text: '满意'}, {text: '超满意'}]"><!-- ngRepeat: option in options track by $index --><div class="page-radio-area clearfix ng-scope" ng-repeat="option in options track by $index"><div class="page-radio pull-left ng-isolate-scope" editable-radio="option.text" data-name="满意度"><input type="radio" name="满意度" value="超不满意"><span class="inline-text ng-isolate-scope" editable-text="text"><div ng-hide="editing" ng-dblclick="editChange()" class="ng-binding">超不满意</div><input ng-show="editing" ng-blur="editChange()" type="text" ng-model="text" class="ng-pristine ng-untouched ng-valid ng-hide"></span></div><button ng-show="!$first" ng-click="remove($index)" class="page-radio-remove btn btn-link btn-sm pull-left ng-hide"><i class="iconfont-remove"></i></button></div><!-- end ngRepeat: option in options track by $index --><div class="page-radio-area clearfix ng-scope" ng-repeat="option in options track by $index"><div class="page-radio pull-left ng-isolate-scope" editable-radio="option.text" data-name="满意度"><input type="radio" name="满意度" value="不满意"><span class="inline-text ng-isolate-scope" editable-text="text"><div ng-hide="editing" ng-dblclick="editChange()" class="ng-binding">不满意</div><input ng-show="editing" ng-blur="editChange()" type="text" ng-model="text" class="ng-pristine ng-untouched ng-valid ng-hide"></span></div><button ng-show="!$first" ng-click="remove($index)" class="page-radio-remove btn btn-link btn-sm pull-left"><i class="iconfont-remove"></i></button></div><!-- end ngRepeat: option in options track by $index --><div class="page-radio-area clearfix ng-scope" ng-repeat="option in options track by $index"><div class="page-radio pull-left ng-isolate-scope" editable-radio="option.text" data-name="满意度"><input type="radio" name="满意度" value="还好"><span class="inline-text ng-isolate-scope" editable-text="text"><div ng-hide="editing" ng-dblclick="editChange()" class="ng-binding">还好</div><input ng-show="editing" ng-blur="editChange()" type="text" ng-model="text" class="ng-pristine ng-untouched ng-valid ng-hide"></span></div><button ng-show="!$first" ng-click="remove($index)" class="page-radio-remove btn btn-link btn-sm pull-left"><i class="iconfont-remove"></i></button></div><!-- end ngRepeat: option in options track by $index --><div class="page-radio-area clearfix ng-scope" ng-repeat="option in options track by $index"><div class="page-radio pull-left ng-isolate-scope" editable-radio="option.text" data-name="满意度"><input type="radio" name="满意度" value="满意"><span class="inline-text ng-isolate-scope" editable-text="text"><div ng-hide="editing" ng-dblclick="editChange()" class="ng-binding">满意</div><input ng-show="editing" ng-blur="editChange()" type="text" ng-model="text" class="ng-pristine ng-untouched ng-valid ng-hide"></span></div><button ng-show="!$first" ng-click="remove($index)" class="page-radio-remove btn btn-link btn-sm pull-left"><i class="iconfont-remove"></i></button></div><!-- end ngRepeat: option in options track by $index --><div class="page-radio-area clearfix ng-scope" ng-repeat="option in options track by $index"><div class="page-radio pull-left ng-isolate-scope" editable-radio="option.text" data-name="满意度"><input type="radio" name="满意度" value="超满意"><span class="inline-text ng-isolate-scope" editable-text="text"><div ng-hide="editing" ng-dblclick="editChange()" class="ng-binding">超满意</div><input ng-show="editing" ng-blur="editChange()" type="text" ng-model="text" class="ng-pristine ng-untouched ng-valid ng-hide"></span></div><button ng-show="!$first" ng-click="remove($index)" class="page-radio-remove btn btn-link btn-sm pull-left"><i class="iconfont-remove"></i></button></div><!-- end ngRepeat: option in options track by $index --><button ng-click="add()" class="page-radio-add custom-button custom-button-black"><i class="iconfont-add"></i> 点击添加更多选项栏</button> </div>
+                </div>
+                <div class="page-text form-group interact-form interact-form-text">
+                  <label>请提意见</label>
+                  <textarea class="form-control" name="idea"></textarea>
+                </div>
+                <div class="form-group page-button interact-form interact-form-button" static-button="">
+                  <button class="custom-button custom-button-black submit-button">提交</button>
+                </div>
+
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+</div>
+
+<div class="preview">
+  <div class="preview-utils clearfix">
+    <button class="custom-button preview-exit" preview-hide="">
+      <i class="iconfont-remove"></i></button>
+  </div>
+  <div class="preview-pageArea animateArea"></div>
+  <div class="preview-scroll clearfix">
+    <button preview-switch="up" class="custom-button custom-button-red preview-scroll-up pull-left">
+      上一页
+    </button>
+    <button preview-switch="down" class="custom-button custom-button-red preview-scroll-down pull-right">
+      下一页
+    </button>
+  </div>
+</div>
+
+<div class="loadDom"></div>
+<div class="editorCopy">
+
+</div>
+
+<script type="text/javascript" src="scripts/components/jquery.js"></script>
+<script type="text/javascript" src="scripts/components/underscore.js"></script>
+<script type="text/javascript" src="scripts/components/bootstrap.js"></script>
+<script type="text/javascript" src="scripts/components/html2canvas.js"></script>
+<script type="text/javascript" src="scripts/components/async.js"></script>
+<script type="text/javascript" src="scripts/components/summernote.js"></script>
+<script type="text/javascript" src="scripts/components/summernote-zh-CN.js"></script>
+<!--  tool -->
+<script type="text/javascript" src="scripts/modules/tool.js"></script>
+<!--  tool -->
+<!--  dialog  -->
+<script type="text/javascript" src="scripts/dialog/mask.js"></script>
+<script type="text/javascript" src="scripts/dialog/dialog.js"></script>
+<script type="text/javascript" src="scripts/dialog/loading.js"></script>
+<!--  dialog  -->
+<!--  picker  -->
+<script type="text/javascript" src="scripts/components/picker.js"></script>
+<!--  picker  -->
+<script type="text/javascript" src="scripts/components/angular.js"></script>
+<script type="text/javascript" src="scripts/components/angular-route.js"></script>
+<script type="text/javascript" src="scripts/components/angular-sanitize.js"></script>
+<script type="text/javascript" src="scripts/components/angular-animate.js"></script>
+<script type="text/javascript" src="scripts/components/ngHtmlCompile.js"></script>
+<script type="text/javascript" src="scripts/modules/utils/app.static.js"></script>
+<script type="text/javascript" src="scripts/modules/utils/app.form.js"></script>
+<script type="text/javascript" src="scripts/modules/utils/app.tool.js"></script>
+<script type="text/javascript" src="scripts/modules/utils/app.preview.js"></script>
+<script type="text/javascript" src="scripts/modules/utils/app.drag.js"></script>
+<script type="text/javascript" src="scripts/modules/utils/app.server.js"></script>
+<script type="text/javascript" src="scripts/modules/app.start.js"></script>
+<script type="text/javascript" src="scripts/modules/app.home.js"></script>
+<script type="text/javascript" src="scripts/modules/app.interact.js"></script>
+<script type="text/javascript" src="scripts/modules/app.article.js"></script>
+<script type="text/javascript" src="scripts/app.js"></script>
+
+
+
+</body></html>

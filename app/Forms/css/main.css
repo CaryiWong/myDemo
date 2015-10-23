@@ -1,0 +1,15 @@
+.page-header{
+  padding-left: 10px;
+}
+.teamBtn{
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.on{
+  border-color:#337ab7;
+  color:#337ab7;
+}
+.teams{
+  max-height: 160px;
+  overflow-y: scroll;
+}

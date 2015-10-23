@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery.js"></script>
+    <script src="jquery.cookie.js"></script>
+    <script src="plugin.js"></script>
+  <script>
+    $(function(){
+      $("#article-content").userCp(
+        {
+          name:'123',
+          url:'http://www.baidu.com',
+          size:'20px',
+          align:'right'
+        }
+      );
+    })
+  </script>
+</head>
+<body>
+<div id="article-content"></div>
+</body>
+</html>
