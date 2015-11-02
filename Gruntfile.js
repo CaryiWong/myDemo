@@ -33,10 +33,10 @@ module.exports = function (grunt) {
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
-      bower: {
-        files: ['bower.json'],
-        tasks: ['wiredep']
-      },
+      //bower: {
+      //  files: ['bower.json'],
+      //  tasks: ['wiredep']
+      //},
       babel: {
         files: ['<%= config.app %>/Forms/js/*.js','<%= config.app %>/Forms/**/*.html'],
         tasks: ['webpack:build']
@@ -45,10 +45,10 @@ module.exports = function (grunt) {
         files: ['Gruntfile.js'],
         //tasks: ['webpack:build']
       },
-      sass: {
-        files: ['<%= config.app %>/**/*.{scss,sass}'],
-        tasks: ['compass']
-      }
+      //sass: {
+      //  files: ['<%= config.app %>/**/*.{scss,sass}'],
+      //  tasks: ['compass']
+      //}
       //styles: {
       //  files: ['<%= config.app %>/styles/**/*.css'],
       //  tasks: ['newer:autoprefixer']
@@ -71,7 +71,7 @@ module.exports = function (grunt) {
           port: 9000,
           hostname: '192.168.1.146',
           server: {
-            baseDir: ['<%= config.app %>/Forms'],
+            baseDir: ['<%= config.app %>/Form1'],
             routes: {
               '/bower_components': './bower_components'
             }

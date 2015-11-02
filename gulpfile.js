@@ -5,7 +5,7 @@ var plugins = require('gulp-load-plugins')();
 //使用connect启动一个Web服务器
 gulp.task('connect', function () {
   plugins.connect.server({
-    root: 'gulpDemo',
+    root: 'app',
     livereload: true
   });
 });

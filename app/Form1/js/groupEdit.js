@@ -12,8 +12,8 @@ $(function(){
 function submitForm (){
       if($('#groupname').val() !== '' ){
         $.ajax(
-          'http://test.yi-gather.com:1717/v20/group/creategroupinfo', {
-          //root + 'v20/group/creategroupinfo', {
+          //'http://test.yi-gather.com:1717/v20/group/creategroupinfo', {
+          root + 'v20/group/creategroupinfo', {
             dataType: 'json',
             type: 'POST',
             data: {
@@ -28,8 +28,8 @@ function submitForm (){
           }).success(function (data) {
             if (data.cord === 0) {
               alert('修改小组信息成功！');
-              //location.href = root + "editor/app/Forms/groupList.html";
-              location.href = "/groupList.html";
+              location.href = root + "editor/app/Forms/groupList.html";
+              //location.href = "/groupList.html";
             } else {
               alert('提交失败！ ' + data.msg);
             }
@@ -42,8 +42,8 @@ function submitForm (){
 }
 
   $.ajax(
-     'http://test.yi-gather.com:1717/v20/group/findgroupinfo', {
-    //root + 'v20/group/findgroupinfo', {
+     //'http://test.yi-gather.com:1717/v20/group/findgroupinfo', {
+    root + 'v20/group/findgroupinfo', {
       dataType: 'json',
       type: 'POST',
       data: {
