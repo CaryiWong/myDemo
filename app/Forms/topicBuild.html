@@ -7,9 +7,9 @@
   <link rel="stylesheet" href="css/main.css"/>
 </head>
 <body>
-<div class="">
+<div class="container">
   <div class="page-header">
-    <h3>创建话题</h3>
+    <h3>创建话题 <a class="pull-right btn btn-default" onclick="javascript:history.go(-1);location.reload()">< 返回话题列表</a></h3>
     <span class="divider"></span>
   </div>
 
@@ -23,20 +23,20 @@
     <div class="form-group hidden">
       <label class="col-sm-2 control-label">一起用户ID</label>
       <div class="col-sm-8">
-        <input type="text" class="form-control" id="user_id" value="ed64b09475e84d07a1221397644401654">
+        <input type="text" class="form-control" id="user_id">
       </div>
     </div>
     <div class="form-group">
       <label class="col-sm-2 control-label">所属小组</label>
-      <div class="col-sm-8 teams">
+      <div class="col-sm-8 groups">
         <!--<input type="text" class="form-control" id="groupinfo_id">-->
-        <div class="btn-group-sm team-list"></div>
+        <div class="btn-group-sm group-list"></div>
       </div>
     </div>
     <div class="form-group">
       <label class="col-sm-2 control-label">封面图</label>
       <div class="col-sm-8 ">
-        <input type="text" class="form-control" id="banners" placeholder="请输入封面图链接以逗号','分隔">
+        <input type="text" class="form-control" id="banners" placeholder="请输入封面图链接，以逗号','分隔">
       </div>
     </div>
     <div class="form-group">
@@ -53,7 +53,8 @@
   </form>
 </div>
 
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/buildTopic.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/js/buildTopic.js"></script>
 </body>
 </html>

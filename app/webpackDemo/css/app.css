@@ -1,10 +1,68 @@
-body {
-  background-color: blue;
+body{margin:0px;min-height: 100%;color:#fff}
+.image-editor{
+  height: 100%;
+  width: 100%;
+  background: #222;
 }
-.h1{
-  color:red;
+.cropit-image-preview {
+  background-color: #f8f8f8;
+  background-size: cover;
+  border: 1px solid #fff;
+  margin:0 auto;
+  margin-top: 1px;
+  width: 100%;
+  height: 177px;
+  cursor: move;
+}
+.cropit-image-preview-container{
+  height: 100%;
+}
+.cropit-image-background {
+  cursor: auto;
 }
 
-:global(.h2) {
-  color: blue;
+.image-size-label {
+  margin-top: 10px;
+}
+
+input {
+  /* Use relative position to prevent from being covered by image background */
+  position: relative;
+  z-index: 10;
+  display: block;
+}
+.cropit-image-background-container{
+  text-align: center;
+  width: 100%;
+}
+
+.btn-botton{
+  position: fixed;
+  botton:0px;
+  height:50px;
+  line-height: 50px;
+  color:#fff;
+  background: #333;
+  width: 100%;
+}
+#box {
+  width:100px;
+  height:100px;
+  position:absolute;
+  top:100px;
+  left:100px;
+  text-indent: 90px;
+  background-color:red;
+  animation:mymove 5s infinite;
+  -webkit-animation:mymove 1s infinite; /*Safari and Chrome*/
+}
+@keyframes mymove
+{
+  from {-webkit-transform:rotate(0deg)}
+  to {-webkit-transform:rotate(360deg)}
+}
+@-webkit-keyframes mymove /*Safari and Chrome*/
+{
+  from {-webkit-transform:rotate(0deg)}
+  to {-webkit-transform:rotate(360deg)}
 }

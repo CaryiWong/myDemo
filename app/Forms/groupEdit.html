@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>编辑小组</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+<div class="container">
+  <div class="page-header">
+    <h3>编辑小组 <a class="pull-right btn btn-default" onclick="javascript:history.go(-1);location.reload()">< 返回小组列表</a></h3>
+    <span class="divider"></span>
+  </div>
+
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label class="col-sm-2 control-label">小组名称</label>
+      <div class="col-sm-8 ">
+        <input type="text" class="form-control" id="groupname" placeholder="小组名称">
+      </div>
+    </div>
+    <div class="form-group cover">
+      <label class="col-sm-2 control-label">封面图</label>
+      <div class="col-sm-8 coverBox">
+        <input type="text" class="form-control" id="groupcover" placeholder="请输入封面图链接">
+        <img class="coverImg" />
+      </div>
+
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">小组说明</label>
+      <div class="col-sm-8">
+        <textarea class="form-control" id="groupexplain" rows="3" placeholder="请输入小组说明"></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">小组标签</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" id="grouplabel" placeholder="请输入一个小组标签">
+      </div>
+    </div>
+    <div class="form-group hidden">
+      <label class="col-sm-2 control-label">发起者</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" id="user" >
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-8">
+    <button class="btn btn-primary submit">提交修改</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/js/groupEdit.js"></script>
+
+</body>
+</html>

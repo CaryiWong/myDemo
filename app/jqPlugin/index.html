@@ -2,24 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
-    <script src="jquery.js"></script>
-    <script src="jquery.cookie.js"></script>
-    <script src="plugin.js"></script>
-  <script>
-    $(function(){
-      $("#article-content").userCp(
-        {
-          name:'123',
-          url:'http://www.baidu.com',
-          size:'20px',
-          align:'right'
-        }
-      );
-    })
-  </script>
+    <title>通用图片上传页面</title>
+  <link rel="stylesheet" href="bootstrap.min.css"/>
 </head>
 <body>
-<div id="article-content"></div>
+<div class="container">
+  <div class="page-header">
+    <h3>上传图片</h3>
+    <span class="divider"></span>
+  </div>
+  <form>
+    <input type="file" class="uploadImg"/>
+    <a class="upload btn btn-primary" style="margin-top: 10px">提交</a>
+  </form>
+</div>
+<script src="jquery.js"></script>
+<script src="main.js"></script>
 </body>
 </html>

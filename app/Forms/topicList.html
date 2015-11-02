@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>小组话题列表</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+<div class="container">
+  <div class="page-header">
+    <h3> <a class="pull-right btn btn-default"  onclick="javascript:history.go(-1);location.reload()">< 返回小组列表</a><a class="pull-right btn btn-primary" style="margin-right:10px">+ 创建话题</a> </h3>
+    <span class="divider"></span>
+  </div>
+  <table class="teamTable table">
+    <tr><th>话题名称</th><th>选项</th></tr>
+    <tbody class="tableBody"></tbody>
+  </table>
+</div>
+
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/js/topicList.js"></script>
+
+</body>
+</html>
