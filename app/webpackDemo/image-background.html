@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>cropit</title>
+    <link rel="stylesheet" href="css/app.css"/>
+    <script src="bundle1.js"></script>
+
+  </head>
+  <body>
+    <div class="image-editor">
+      <input type="file" class="cropit-image-input">
+      <!-- .cropit-image-preview-container is needed for background image to work -->
+      <div class="cropit-image-preview-container">
+        <div class="cropit-image-preview"></div>
+      </div>
+      <div class="image-size-label">
+        Resize image
+      </div>
+      <input type="range" class="cropit-image-zoom-input">
+      <button class="export">Export</button>
+    </div>
+    <div class="btn-botton">
+      <span>取消</span>
+      <span>选取</span>
+    </div>
+    <div id="box"></div>
+  </body>
+</html>

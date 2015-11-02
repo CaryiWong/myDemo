@@ -33,22 +33,22 @@ module.exports = function (grunt) {
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
-      bower: {
-        files: ['bower.json'],
-        tasks: ['wiredep']
-      },
+      //bower: {
+      //  files: ['bower.json'],
+      //  tasks: ['wiredep']
+      //},
       babel: {
-        files: ['<%= config.app %>/Forms/js/*.js','<%= config.app %>/Forms/**/*.html']
-        //tasks: ['webpack:build']
+        files: ['<%= config.app %>/Forms/js/*.js','<%= config.app %>/Forms/**/*.html'],
+        tasks: ['webpack:build']
       },
       gruntfile: {
         files: ['Gruntfile.js'],
         //tasks: ['webpack:build']
       },
-      sass: {
-        files: ['<%= config.app %>/**/*.{scss,sass}'],
-        tasks: ['compass']
-      }
+      //sass: {
+      //  files: ['<%= config.app %>/**/*.{scss,sass}'],
+      //  tasks: ['compass']
+      //}
       //styles: {
       //  files: ['<%= config.app %>/styles/**/*.css'],
       //  tasks: ['newer:autoprefixer']
@@ -71,7 +71,7 @@ module.exports = function (grunt) {
           port: 9000,
           hostname: '192.168.1.146',
           server: {
-            baseDir: ['<%= config.app %>/Forms'],
+            baseDir: ['<%= config.app %>/Form1'],
             routes: {
               '/bower_components': './bower_components'
             }
@@ -124,40 +124,41 @@ module.exports = function (grunt) {
         }]
       }
     },
-    webpack: {
-      build: {
-        entry:{
-          bundle1:'D:\\demo2\\app\\Forms\\js\\main.js'
-        },
-        output: {
-          path: "<%= config.app %>/Forms",
-          filename: "[name].js"
-        },
-        module: {
-          loaders:[
-            { test: /\.js[x]?$/, exclude: /node_modules/, loader: 'babel-loader' },
-            { test: /\.css$/, loader: 'style-loader!css-loader' },
-            { test: /\.(jpg|png)$/, loader: 'url-loader?limit=8192' }  //inline base64 URLs for <=8k images, direct URLs for the rest
-          ]
-        },
-        externals: {
-          // require('data') is external and available
-          //  on the global var data
-          'data': 'data2'
-        },
-        plugins:[
-          new webpack.ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery",
-            "window.jQuery": "jquery"
-          })
-        ]
-
-      }
-    }
+    //webpack: {
+    //  build: {
+    //    entry:{
+    //      bundle1:'D:\\demo2\\app\\webpackDemo\\js\\main.js'
+    //    },
+    //    output: {
+    //      path: "<%= config.app %>/webpackDemo",
+    //      filename: "[name].js"
+    //    },
+    //    module: {
+    //      loaders:[
+    //        //{ test: /\.js[x]?$/, exclude: /node_modules/, loader: 'babel-loader' },
+    //        {test: /\.css$/, loader: "style!css"},
+    //        {test: /\.(jpg|png)$/, loader: "url?limit=8192"},//inline base64 URLs for <=8k images, direct URLs for the rest
+    //        {test: /\.scss$/, loader: "style!css!sass"}   //对于scss文件，先用sass-loader,再用css-loader,再用style-loader，使用时 -loader可省略
+    //      ]
+    //    },
+    //    externals: {
+    //      // require('data') is external and available
+    //      //  on the global var data
+    //      'data': 'data2'
+    //    },
+    //    plugins:[
+    //      new webpack.ProvidePlugin({
+    //        $: "jquery",
+    //        jQuery: "jquery",
+    //        "window.jQuery": "jquery"
+    //      })
+    //    ]
+    //
+    //  }
+    //}
 
   });
-  grunt.registerTask('grunt-webpack',['webpack:build']);
+  //grunt.registerTask('grunt-webpack',['webpack:build']);
 
 
   grunt.registerTask('serve', 'start the server and preview your app', function (target) {

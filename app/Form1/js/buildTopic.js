@@ -14,8 +14,8 @@ $(function(){
 function submitForm (){
       if($('#topicname').val() !== '' && groupinfoId !== ''){
         $.ajax(
-          'http://test.yi-gather.com:1717/v20/topic/createtopic', {
-          //root + 'v20/topic/createtopic', {
+          //'http://test.yi-gather.com:1717/v20/topic/createtopic', {
+          root + 'v20/topic/createtopic', {
             dataType: 'json',
             type: 'POST',
             data: {
@@ -32,6 +32,7 @@ function submitForm (){
               $('form')[0].reset();
               location.href = root + "editor/app/Forms/topicList.html";
               //location.href = "/topicList.html" ;
+              groupinfoId = oStorage.getItem('groupinfoId');
             } else {
               alert('创建失败！ ' + data.msg);
             }
@@ -44,8 +45,8 @@ function submitForm (){
 }
 
   $.ajax(
-    'http://test.yi-gather.com:1717/v20/group/findgroups', {
-    //root + 'v20/group/findgroups', {
+    //'http://test.yi-gather.com:1717/v20/group/findgroups', {
+    root + 'v20/group/findgroups', {
       dataType: 'json',
       type: 'POST',
       data: {
@@ -55,8 +56,12 @@ function submitForm (){
       }
     }).success(function (data) {
       if (data.cord === 0) {
+        if(data.data.length != 0){
         for(var i=0; i < data.data.length; i++){
           $groupList.prepend("<span class='groupBtn btn btn-default' id=" + data.data[i]['id'] + ">" + data.data[i]['groupname']  + "</span>");
+        }
+        }else{
+          $('.groups').prepend('没有小组，请先创建小组！')
         }
         var  $groupBtn = $('.groupBtn');
         $groupList.find('#' + groupinfoId).addClass('on');
