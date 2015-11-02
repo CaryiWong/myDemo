@@ -21,7 +21,7 @@ module.exports = function (grunt) {
 
   // Configurable paths
   var config = {
-    app: 'app',
+    app: 'jqPlugin',
     dist: 'dist'
   };
   //Dynamically create list of files in a folder to bundle for webpack
@@ -38,7 +38,7 @@ module.exports = function (grunt) {
       //  tasks: ['wiredep']
       //},
       babel: {
-        files: ['<%= config.app %>/Forms/js/*.js','<%= config.app %>/Forms/**/*.html'],
+        files: ['<%= config.app %>/js/*.js','<%= config.app %>/**/*.html'],
         tasks: ['webpack:build']
       },
       gruntfile: {
@@ -71,7 +71,7 @@ module.exports = function (grunt) {
           port: 9000,
           hostname: '192.168.1.146',
           server: {
-            baseDir: ['<%= config.app %>/Form1'],
+            baseDir: ['<%= config.app %>/'],
             routes: {
               '/bower_components': './bower_components'
             }

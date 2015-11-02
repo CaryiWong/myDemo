@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <title>通用图片上传页面</title>
   <link rel="stylesheet" href="bootstrap.min.css"/>
+  <style>
+    .showPic{ margin:10px 0;}
+    .showPic img{max-width: 300px;}
+  </style>
 </head>
 <body>
 <div class="container">
@@ -15,6 +19,9 @@
     <input type="file" class="uploadImg"/>
     <a class="upload btn btn-primary" style="margin-top: 10px">提交</a>
   </form>
+  <div class="showPic">
+    <h4> 图片预览： </h4>
+  </div>
 </div>
 <script src="jquery.js"></script>
 <script src="main.js"></script>
