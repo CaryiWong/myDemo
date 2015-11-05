@@ -1,11 +1,11 @@
 var gulp = require('gulp');
 //加载gulp-load-plugins插件，并马上运行它
 var plugins = require('gulp-load-plugins')();
-
+var app = 'wanke';
 //使用connect启动一个Web服务器
 gulp.task('connect', function () {
   plugins.connect.server({
-    root: 'app',
+    root: app,
     livereload: true
   });
 });
@@ -13,7 +13,6 @@ gulp.task('connect', function () {
 gulp.task('default', function() {
   gulp.start('connect', 'watch');
 });
-
 
 gulp.task('build', ['clean'], function() {
   gulp.start('styles', 'scripts','images');
@@ -61,16 +60,23 @@ gulp.task('clean', function() {
     .pipe(plugins.clean());
 });
 gulp.task('html', function () {
-  gulp.src('gulpDemo/**/*.html')
+  gulp.src(app + '/**/*.html')
+    .pipe(plugins.livereload());
+});
+gulp.task('css', function () {
+  gulp.src(app + '/**/*.css')
     .pipe(plugins.livereload());
 });
 gulp.task('watch', function() {
   plugins.livereload.listen();
   gulp.watch(['gulpfile.js']);
-  gulp.watch(['gulpDemo/**/*.html'], ['html']);
-  gulp.watch('gulpDemo/src/styles/**/*.scss', ['styles']);
-  gulp.watch('gulpDemo/src/scripts/**/*.js', ['scripts']);
-  gulp.watch('gulpDemo/src/images/**/*', ['images']);
+  gulp.watch([app + '/**/*.html'], ['html']);
+  gulp.watch(app + '/**/*.css',['css']);
+  gulp.watch(app + '/**/*.scss', ['styles']);
+  gulp.watch(app + '/**/*.js', ['scripts']);
+  gulp.watch(app + '/**/*.{jpg,jpeg,gif,png}', ['images']);
   });
+
   //依然使用 [ task dependencies ]
+
 

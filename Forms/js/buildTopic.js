@@ -14,8 +14,8 @@ $(function(){
 function submitForm (){
       if($('#topicname').val() !== '' && groupinfoId !== ''){
         $.ajax(
-          'http://test.yi-gather.com:1717/v20/topic/createtopic', {
-          //root + 'v20/topic/createtopic', {
+          //'http://test.yi-gather.com:1717/v20/topic/createtopic', {
+          root + 'v20/topic/createtopic', {
             dataType: 'json',
             type: 'POST',
             data: {
@@ -30,8 +30,8 @@ function submitForm (){
             if (data.cord === 0) {
               alert('创建成功！');
               $('form')[0].reset();
-              //location.href = root + "editor/app/Forms/topicList.html";
-              location.href = "/topicList.html" ;
+              location.href = root + "editor/app/Forms/topicList.html";
+              //location.href = "/topicList.html" ;
               groupinfoId = oStorage.getItem('groupinfoId');
             } else {
               alert('创建失败！ ' + data.msg);
@@ -45,8 +45,8 @@ function submitForm (){
 }
 
   $.ajax(
-    'http://test.yi-gather.com:1717/v20/group/findgroups', {
-    //root + 'v20/group/findgroups', {
+    //'http://test.yi-gather.com:1717/v20/group/findgroups', {
+    root + 'v20/group/findgroups', {
       dataType: 'json',
       type: 'POST',
       data: {
