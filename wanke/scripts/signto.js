@@ -28,7 +28,8 @@ $(function(){
     $form.valid(function (pass) {
       if (pass) {
         $.ajax({
-          url: root + "api/activity/sign_in",
+          //url: root + "api/activity/sign_in",
+          url: "api/activity/sign_in",
           method:"post",
           dataType:"json",
           data: {

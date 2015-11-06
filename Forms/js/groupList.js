@@ -95,3 +95,25 @@ $(function(){
 });
 
 
+
+
+device.call = function (method, params) {
+  if (device.weixin || !device.yiqi) {
+    return false;
+  }
+  var action = {
+    ios: function () {
+      window.iosWebParams = function () {
+        return params;
+      }
+      window.location.href = method;
+    },
+    android: function () {
+      if (window.yiqi && window.yiqi[method]) {
+        window.yiqi[method](params);
+        //yi.xxx(params)
+      }
+    }
+  };
+  action[device.name] && action[device.name]();
+}
