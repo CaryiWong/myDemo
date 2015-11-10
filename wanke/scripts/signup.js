@@ -30,8 +30,14 @@ $(function(){
 
   function submitForm() {
     var phoneNum = $("input[name='phone_number']").val();
+    var age = $("input[name='age']").val();
+    var agePass = false;
     $form.valid(function (pass) {
+      if(age >= 3 && age <=18){
+        agePass = true;
+      }
       if (pass) {
+        if(agePass){
         $.ajax({
           //url: root + "api/activity/sign_up",
           url: "api/activity/sign_up",
@@ -47,8 +53,10 @@ $(function(){
           },
           success:function(data){
             if (data.errcode==0) {
-              alert('恭喜您，报名成功！把活动分享给朋友，可以获得更多积分哦~');
-              location.href="activity.html?activity_id=" + activityId + "&phoneNum=" + phoneNum ;
+              $('.container').append('<div class="signUpSuccess"><h3>恭喜您，报名成功！</h3><p>把活动分享给朋友，可以获得更多积分哦~</p><button class="formBtn sure">确定</button></div>')
+              $('.sure').on('touchstart',function(){
+                location.href="activity.html?activity_id=" + activityId + "&phoneNum=" + phoneNum ;
+              });
             } else {
               alert('报名失败，' + data.errcode + ', ' + data.errmsg);
             }
@@ -57,7 +65,9 @@ $(function(){
             alert('报名失败！');
           }
         });
-
+        }else{
+          alert("只有年龄介于3-18岁之间才能报名");
+        }
       }else{
         alert($form.find('.valid-error').first().html())
       }
@@ -93,6 +103,7 @@ $(function(){
      return time;
      }
    }
+
 
 });
 
