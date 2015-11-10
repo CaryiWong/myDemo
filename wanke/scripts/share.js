@@ -1,55 +1,82 @@
-var dataForWeixin = {
-  appId: "",
-  MsgImg: "http://chivashi.gotoip1.com/cover.jpg",
-  TLImg: "http://chivashi.gotoip1.com/cover.jpg",
-  url: "http://mp.weixin.qq.com/s?__biz=MzA3OTQ2NjkwMA==&mid=200600448&idx=1&sn=459125c55439aef94e6eb1df8ab179f3#rd",
-  title: '标题',
-  desc: '123',
-  fakeid: "",
-  callback: function () {
+function shareInit(image_url, title, content, showOptionMenu,link) {
+  $.ajax({
+    url:"/api/util/jssdk/get_config_data",
+    method:"GET",
+    data: { "url": location.href},
+    dataType:"json",
+    success:function(recv_data){
+      if (recv_data.errcode==0) {
+        result=recv_data.result;
+        doShareInit(result.appid, result.timestamp, result.noncestr, result.signature, location.href, image_url, title, content, showOptionMenu);
+      } else {
+      }
+    },
+    error:function() {
+    }
+  });
 }
-};
-  (function () {
-  var onBridgeReady = function () {
-// 发送给好友;
-  WeixinJSBridge.on('menu:share:appmessage', function (argv) {
-  WeixinJSBridge.invoke('sendAppMessage', {
-  "appid": dataForWeixin.appId,
-  "img_url": dataForWeixin.MsgImg,
-  "img_width": "120",
-  "img_height": "120",
-  "link": dataForWeixin.url,
-  "desc": dataForWeixin.title,
-  "title": dataForWeixin.desc
-}, function (res) {
-});
-});
-// 分享到朋友圈;
-  WeixinJSBridge.on('menu:share:timeline', function (argv) {
-  (dataForWeixin.callback)();
-  WeixinJSBridge.invoke('shareTimeline', {
-  "img_url": dataForWeixin.TLImg,
-  "img_width": "120",
-  "img_height": "120",
-  "link": dataForWeixin.url,
-  "desc": dataForWeixin.desc,
-  "title": dataForWeixin.title
-}, function (res) {
-});
-});
-// 分享到微博;
-  WeixinJSBridge.on('menu:share:weibo', function (argv) {
-  WeixinJSBridge.invoke('shareWeibo', {
-  "content": dataForWeixin.title,
-  "url": dataForWeixin.url
-}, function (res) {
-});
-});
-};
-  if (document.addEventListener) {
-  document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
-} else if (document.attachEvent) {
-  document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
-  document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+
+function doShareInit(appid, timestamp, nonceStr, signature, url, image_url, title, content, showOptionMenu) {
+  wx.config({
+    debug: false,
+    appId: appid,
+    timestamp: timestamp,
+    nonceStr: nonceStr,
+    signature: signature,
+    jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage', 'onMenuShareQQ', 'hideOptionMenu', 'showOptionMenu']
+  });
+
+
+  wx.ready(function(){
+    // 分享到朋友圈
+    wx.onMenuShareTimeline({
+      title: title, // 分享标题
+      link: url, // 分享链接
+      imgUrl: image_url, // 分享图标
+      success: function () {
+        // 用户确认分享后执行的回调函数
+      },
+      cancel: function () {
+        // 用户取消分享后执行的回调函数
+      }
+    });
+
+    // 分享给微信好友
+    wx.onMenuShareAppMessage({
+      title: title, // 分享标题
+      desc: content, // 分享描述
+      link: url, // 分享链接
+      imgUrl: image_url, // 分享图标
+      type: 'link', // 分享类型,music、video或link，不填默认为link
+      dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+      success: function () {
+        // 用户确认分享后执行的回调函数
+      },
+      cancel: function () {
+        // 用户取消分享后执行的回调函数
+      }
+    });
+
+    // 分享给QQ好友
+    wx.onMenuShareQQ({
+      title: title, // 分享标题
+      desc: content, // 分享描述
+      link: url, // 分享链接
+      imgUrl: image_url, // 分享图标
+      success: function () {
+        // 用户确认分享后执行的回调函数
+      },
+      cancel: function () {
+        // 用户取消分享后执行的回调函数
+      }
+    });
+
+    if (showOptionMenu) {
+      // 显示右上角按钮
+      wx.showOptionMenu();
+    } else {
+      // 隐藏右上角按钮
+      wx.hideOptionMenu();
+    }
+  });
 }
-})();

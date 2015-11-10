@@ -21,7 +21,7 @@ module.exports = function (grunt) {
 
   // Configurable paths
   var config = {
-    app: 'wanke',
+    app: 'sy_doctor',
     dist: 'dist'
   };
   //Dynamically create list of files in a folder to bundle for webpack
@@ -47,7 +47,7 @@ module.exports = function (grunt) {
       },
       sass: {
         files: ['<%= config.app %>/**/*.{scss,sass}'],
-        tasks: ['sass']
+        tasks: ['sass:server']
       }
       //styles: {
       //  files: ['<%= config.app %>/styles/**/*.css'],
@@ -132,7 +132,8 @@ module.exports = function (grunt) {
             '<%= config.app %>/scripts/signto.js']
         },{
           'dist/scripts/app_activity.js': ['<%= config.app %>/scripts/jquery.js',
-            '<%= config.app %>/scripts/signto.js']
+            '<%= config.app %>/scripts/share.js',
+            '<%= config.app %>/scripts/activity.js']
         }]
       }
     },
@@ -147,7 +148,10 @@ module.exports = function (grunt) {
       },
       server: {
         files: {
-          '<%= config.app %>/styles/main.css': '<%= config.app %>/sass/main.scss'
+          '<%= config.app %>/caryi/css/index.css': '<%= config.app %>/caryi/sass/index.scss',
+          //'<%= config.app %>/caryi/css/common.css': '<%= config.app %>/caryi/sass/common.scss'
+          //'<%= config.app %>/styles/main.css': '<%= config.app %>/sass/main.scss'
+
         }
       }
     },

@@ -17,14 +17,19 @@ $(function(){
   var root = 'http://121.201.15.197:8000/',
       $formBtn = $('.formBtn'),
       $form = $('.signUpForm'),
-      activityId = args['activity_id'];
+      activityId = args['activity_id'],
+      referrer = args['referrer'];
 
   $formBtn.on('touchstart',function(){
     submitForm();
   });
 
+  if(referrer !='' && referrer != undefined){
+  $("input[name='referrer']").val(referrer);
+  }
 
   function submitForm() {
+    var phoneNum = $("input[name='phone_number']").val();
     $form.valid(function (pass) {
       if (pass) {
         $.ajax({
@@ -35,15 +40,15 @@ $(function(){
           data: {
             'name': $("input[name='name']").val(),
             'age': $("input[name='age']").val(),
-            'gender': $("input[name='gender']").val(),
-            'phone_number': $("input[name='phone_number']").val(),
+            'gender': $("input[name='gender']:checked").val(),
+            'phone_number': phoneNum,
             'activity_id': activityId,
             'referrer': $("input[name='referrer']").val()
           },
           success:function(data){
             if (data.errcode==0) {
-              alert('报名成功');
-              location.href="activity.html?activity_id=" + activityId;
+              alert('恭喜您，报名成功！把活动分享给朋友，可以获得更多积分哦~');
+              location.href="activity.html?activity_id=" + activityId + "&phoneNum=" + phoneNum ;
             } else {
               alert('报名失败，' + data.errcode + ', ' + data.errmsg);
             }
@@ -59,7 +64,6 @@ $(function(){
     })
   }
   var $news = $('.news');
-  var $activity = $('.activity');
   $.ajax({
     //url: root + 'api/activity/get_activity_info',
     url: 'api/activity/get_activity_info',
@@ -74,12 +78,6 @@ $(function(){
       $news.find('h4').html(data['name']);
       $news.find('.time').html(getTime(data['start_time']));
       $news.find('.location').html(data['location']);
-
-      $activity.find('h3').html(data['name']);
-      $activity.find('.introduction').html(data['introduction']);
-      $activity.find('.start_time').html(getTime(data['start_time']));
-      $activity.find('.end_time').html(data['end_time']?getTime(data['end_time']):'未知');
-      $activity.find('.location').html(data['location']);
     } else {
       alert('获取活动信息失败，' + data.errcode + ', ' + data.errmsg);
     }

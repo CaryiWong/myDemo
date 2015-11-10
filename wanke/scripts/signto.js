@@ -40,8 +40,8 @@ $(function(){
             if (data.errcode==0) {
              $('.signToBox').hide();
              $('.succeed').show();
-             var data = data.result;
-              $('.hostName').html(data['name']);
+             var data = data.result.user_info;
+              $('.hostName').html(data['nickname']);
             } else {
               alert('签到失败，' + data.errcode + ', ' + data.errmsg);
             }
