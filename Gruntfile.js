@@ -21,7 +21,7 @@ module.exports = function (grunt) {
 
   // Configurable paths
   var config = {
-    app: 'app',
+    app: 'new_sydoctor',
     dist: 'dist'
   };
   //Dynamically create list of files in a folder to bundle for webpack
@@ -37,18 +37,18 @@ module.exports = function (grunt) {
       //  files: ['bower.json'],
       //  tasks: ['wiredep']
       //},
-      babel: {
-        files: ['<%= config.app %>/Forms/js/*.js','<%= config.app %>/Forms/**/*.html'],
-        tasks: ['webpack:build']
-      },
+      //babel: {
+      //  files: ['<%= config.app %>/js/*.js','<%= config.app %>/**/*.html'],
+        //tasks: ['webpack:build']
+      //},
       gruntfile: {
         files: ['Gruntfile.js'],
         //tasks: ['webpack:build']
       },
-      //sass: {
-      //  files: ['<%= config.app %>/**/*.{scss,sass}'],
-      //  tasks: ['compass']
-      //}
+      sass: {
+        files: ['<%= config.app %>/**/*.{scss,sass}'],
+        tasks: ['sass:server']
+      }
       //styles: {
       //  files: ['<%= config.app %>/styles/**/*.css'],
       //  tasks: ['newer:autoprefixer']
@@ -71,7 +71,7 @@ module.exports = function (grunt) {
           port: 9000,
           hostname: '192.168.1.146',
           server: {
-            baseDir: ['<%= config.app %>/Form1'],
+            baseDir: ['<%= config.app %>/'],
             routes: {
               '/bower_components': './bower_components'
             }
@@ -92,7 +92,7 @@ module.exports = function (grunt) {
         files: [{
           dot: true,
           src: [
-            '.tmp',
+            '[.tmp,dest,dist]',
             '<%= config.dist %>/*',
             '!<%= config.dist %>/.git*'
           ]
@@ -100,13 +100,58 @@ module.exports = function (grunt) {
       },
       server: '.tmp'
     },
-    compass: {                  // Task
-      dist: {                   // Target
-        options: {              // Target options
-          sassDir: '<%= config.app %>/',
-          cssDir: '.tmp',
-          imagesDir: '<%= config.app %>/',
-          environment: 'production'
+
+    useminPrepare: {
+      options: {
+        dest: 'dist/'   //最终需修改引用路径的html文件所在的目录,预先通过 copy:dist 把html复制到此目录下
+      },
+      html: '<%= config.app %>/**/*.html'  //原始html路径 文件引用部分使用 <!--build:{type} <path> --> <!--end build-->来创建block
+    },
+
+    // Performs rewrites based on rev and the useminPrepare configuration
+    usemin: {
+      options: {
+        assetsDirs: [  //检测此目录下的被引用文件是否被修改
+          'dist/styles',
+          'dist/',
+          'dist/scripts'
+        ]
+      },
+      html:['dist/**/*.html']  // 需修改引用路径的html文件
+    },
+
+    uglify: {
+      "my_target": {
+        "files": [{
+          'dist/scripts/app_signup.js': ['<%= config.app %>/scripts/jquery.js',
+            '<%= config.app %>/scripts/validation.js',
+            '<%= config.app %>/scripts/signup.js']
+        },{
+          'dist/scripts/app_signto.js': ['<%= config.app %>/scripts/jquery.js',
+            '<%= config.app %>/scripts/validation.js',
+            '<%= config.app %>/scripts/signto.js']
+        },{
+          'dist/scripts/app_activity.js': ['<%= config.app %>/scripts/jquery.js',
+            '<%= config.app %>/scripts/share.js',
+            '<%= config.app %>/scripts/activity.js']
+        }]
+      }
+    },
+    sass: {
+      //options: {
+      //  sourceMap: true
+      //},
+      dist: {
+        files: {
+          '.tmp/styles/main.css': '<%= config.app %>/sass/main.scss'
+        }
+      },
+      server: {
+        files: {
+          //'<%= config.app %>/caryi/css/addTime.css': '<%= config.app %>/caryi/sass/addTime.scss',
+          //'<%= config.app %>/caryi/css/confApmt2.css': '<%= config.app %>/caryi/sass/confApmt2.scss'
+          //'<%= config.app %>/styles/main.css': '<%= config.app %>/sass/main.scss'
+
         }
       }
     },
@@ -118,9 +163,48 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '.tmp/',
+          cwd: '.tmp/styles/',
           src: '**/*.css',
-          dest: '<%= config.app %>/styles/'
+          dest: 'dest/styles/'
+        }]
+      }
+    },
+    cssmin: {
+      /*压缩 CSS 文件为 .min.css */
+      options: {
+        keepSpecialComments: 0 /* 移除 CSS 文件中的所有注释 */
+      },
+      minify: {
+        expand: true,
+        cwd: 'dest/styles/',
+        src: '**/*.css',
+        dest: 'dist/styles/',
+        ext: '.min.css'
+      }
+    },
+    concurrent: {
+      dist: [
+        'uglify',
+        'cssmin'
+      ]
+    },
+    copy: {
+      dist: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: '<%= config.app %>/',
+          src: '**/*.html',
+          dest: 'dist/'
+        }]
+      },
+      server: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: 'dist/',
+          src: ['**'],
+          dest: 'D:\\mywork\\server\\web\\activity'
         }]
       }
     },
@@ -171,7 +255,7 @@ module.exports = function (grunt) {
       //'clean:server',
       //'wiredep',
       //'concurrent:server',
-      //'compass',
+      //'sass:server',
       //'autoprefixer',
       //'webpack:build',
       'browserSync:livereload',
@@ -186,18 +270,14 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    'wiredep',
+    //'wiredep',
+     'copy:dist',
     'useminPrepare',
+    'sass:dist',
+    'autoprefixer',
     'concurrent:dist',
-    //'postcss',
-    'concat',
-    //'sass',
-    'cssmin',
-    'uglify',
-    'copy:dist',
-    'filerev',
     'usemin',
-    'htmlmin'
+    'copy:server'
   ]);
 
   grunt.registerTask('default', [
