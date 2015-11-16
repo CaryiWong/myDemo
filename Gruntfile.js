@@ -21,7 +21,7 @@ module.exports = function (grunt) {
 
   // Configurable paths
   var config = {
-    app: 'sy_doctor',
+    app: 'wanke',
     dist: 'dist'
   };
   //Dynamically create list of files in a folder to bundle for webpack
@@ -148,9 +148,9 @@ module.exports = function (grunt) {
       },
       server: {
         files: {
-          '<%= config.app %>/caryi/css/doctorList.css': '<%= config.app %>/caryi/sass/doctorList.scss',
-          '<%= config.app %>/caryi/css/confApmt.css': '<%= config.app %>/caryi/sass/confApmt.scss'
-          //'<%= config.app %>/styles/main.css': '<%= config.app %>/sass/main.scss'
+          //'<%= config.app %>/caryi/css/doctorList.css': '<%= config.app %>/caryi/sass/doctorList.scss',
+          //'<%= config.app %>/caryi/css/confApmt.css': '<%= config.app %>/caryi/sass/confApmt.scss'
+          '<%= config.app %>/styles/main.css': '<%= config.app %>/sass/main.scss'
 
         }
       }

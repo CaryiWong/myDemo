@@ -13,11 +13,13 @@ function getArgs() {
   return args;
 }
 $(function(){
+  var oStorage = window.localStorage;
   var args = getArgs();
   var root = 'http://121.201.15.197:8000/',
       $formBtn = $('.formBtn'),
       $form = $('.signUpForm'),
       activityId = args['activity_id'],
+      activityIds = oStorage.getItem('activityId')?oStorage.getItem('activityId').split(','):[],
       referrer = args['referrer'];
 
   $formBtn.on('touchstart',function(){
@@ -27,7 +29,6 @@ $(function(){
   if(referrer !='' && referrer != undefined){
   $("input[name='referrer']").val(referrer);
   }
-
   function submitForm() {
     var phoneNum = $("input[name='phone_number']").val();
     var age = $("input[name='age']").val();
@@ -53,10 +54,10 @@ $(function(){
           },
           success:function(data){
             if (data.errcode==0) {
-              $('.container').append('<div class="signUpSuccess"><h3>恭喜您，报名成功！</h3><p>把活动分享给朋友，可以获得更多积分哦~</p><button class="formBtn sure">确定</button></div>')
-              $('.sure').on('touchstart',function(){
-                location.href="activity.html?activity_id=" + activityId + "&phoneNum=" + phoneNum ;
-              });
+              activityIds.push(activityId);
+              oStorage.setItem('phoneNum',phoneNum);
+              oStorage.setItem('activityId',activityIds.join(','));
+              location.href="activity.html?activity_id=" + activityId + "&phoneNum=" + phoneNum ;
             } else {
               alert('报名失败，' + data.errcode + ', ' + data.errmsg);
             }

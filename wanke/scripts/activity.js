@@ -14,10 +14,23 @@ function getArgs() {
 }
 $(function(){
   var args = getArgs();
+  var oStorage = window.localStorage;
   var root = 'http://121.201.15.197:8000/',
       activityId = args['activity_id'],
-      referrer = args['phoneNum'];
+      activityIds = oStorage.getItem('activityId')?oStorage.getItem('activityId').split(','):[],
+      referrer = args['phoneNum'],
+      phoneNum = oStorage.getItem('phoneNum');
   var $activity = $('.activity');
+  for(var i = 0;i < activityIds.length; i++){
+    if(activityIds[i] === activityId){
+      $('.container').prepend('<div class="signUpSuccess"><p>恭喜您，报名成功！</p><p>点击右上角的按钮把活动分享给朋友，可以获得更多积分哦~</p></div>');
+      if(phoneNum && !referrer){
+        location.href="activity.html?activity_id=" + activityId + "&phoneNum=" + phoneNum ;
+      }
+      $('.wtSignUp').hide();
+      break;
+    }
+  }
   $('.wtSignUp').on('touchstart',function(){
     if(referrer !='' && referrer != undefined){
       location.href = "signUp.html?activity_id=" + activityId + "&referrer=" + referrer ;

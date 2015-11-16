@@ -1471,19 +1471,10 @@ html, body {
     color: #fff;
     height: 40px;
     line-height: 40px; }
-  .container .signUpSuccess {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background: #fff;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    padding-top: 90px; }
-    .container .signUpSuccess p {
-      text-align: center;
-      color: #de6d00;
-      font-weight: bold; }
+  .container .signUpSuccess p {
+    text-align: center;
+    color: #de6d00;
+    font-weight: bold; }
 
 /*娲诲姩浠嬬粛*/
 .activity .mainText span {
