@@ -4,15 +4,15 @@ $(function(){
     root = oStorage.getItem('root'),
     userid = oStorage.getItem('userid'),
     vipuserid = oStorage.getItem('vipuserid');
-  $submit.on('click',function(event){
+    $submit.on('click',function(event){
     event.preventDefault();
     submitForm();
   });
 function submitForm (){
       if($('#groupname').val() !== ''){
         $.ajax(
-           'http://test.yi-gather.com:1717/v20/group/creategroupinfo', {
-          //root + 'v20/group/creategroupinfo', {
+           //'http://test.yi-gather.com:1717/v20/group/creategroupinfo', {
+          root + 'v20/group/creategroupinfo', {
             dataType: 'json',
             type: 'POST',
             data: {

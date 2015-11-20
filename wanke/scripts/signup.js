@@ -15,30 +15,54 @@ function getArgs() {
 $(function(){
   var oStorage = window.localStorage;
   var args = getArgs();
-  var root = 'http://121.201.15.197:8000/',
-      $formBtn = $('.formBtn'),
+  var root = 'http://test.vcher.yi-gather.com/',
+      $formBtn = $('.signUpBtn'),
       $form = $('.signUpForm'),
       activityId = args['activity_id'],
       activityIds = oStorage.getItem('activityId')?oStorage.getItem('activityId').split(','):[],
       referrer = args['referrer'];
+  var gender = 1,$radio = $('.radio');
+  var oldMember = false;
+  var phoneNum = '';
+  var agePass = false;
+  $radio.on('touchstart',function(){
+    $radio.removeClass('on');
+    $(this).addClass('on');
+    gender = $(this).attr('data-gender');
+  });
+  $('.signUpCheckBtn').on('touchstart',function(){
+    phoneNum =  $("input[name='phone_number']").val();
+    //检测该手机号是否已有报名信息
+    $.ajax({
+      //url: 'http://test.vcher.yi-gather.com/api/user/get_user_info',
+      url: 'api/user/get_user_info',
+      method:"post",
+      dataType:"json",
+      data:{
+        phone_number : phoneNum
+      }
+    }).success(function(data){
+      if (data.errcode === 2004 || data.errcode === 1001) {
+        var $optionsInput = $('.options-input');
+        $optionsInput.show();
+        $optionsInput.find('input').addClass('valid-input');
+        $('.signUpCheckBtn').hide();
+        $formBtn.show();
+      }else{
+        submitForm();
+      }
+    });
+
+  });
 
   $formBtn.on('touchstart',function(){
     submitForm();
   });
 
-  if(referrer !='' && referrer != undefined){
-  $("input[name='referrer']").val(referrer);
-  }
   function submitForm() {
-    var phoneNum = $("input[name='phone_number']").val();
-    var age = $("input[name='age']").val();
-    var agePass = false;
+    phoneNum =  $("input[name='phone_number']").val();
     $form.valid(function (pass) {
-      if(age >= 3 && age <=18){
-        agePass = true;
-      }
       if (pass) {
-        if(agePass){
         $.ajax({
           //url: root + "api/activity/sign_up",
           url: "api/activity/sign_up",
@@ -47,34 +71,31 @@ $(function(){
           data: {
             'name': $("input[name='name']").val(),
             'age': $("input[name='age']").val(),
-            'gender': $("input[name='gender']:checked").val(),
-            'phone_number': phoneNum,
+            'gender': gender,
+            'phone_number': $("input[name='phone_number']").val(),
             'activity_id': activityId,
-            'referrer': $("input[name='referrer']").val()
+            'referrer': referrer
           },
           success:function(data){
             if (data.errcode==0) {
               activityIds.push(activityId);
+
               oStorage.setItem('phoneNum',phoneNum);
               oStorage.setItem('activityId',activityIds.join(','));
-              location.href="activity.html?activity_id=" + activityId + "&phoneNum=" + phoneNum ;
+                location.href="activity.html?activity_id=" + activityId + "&phoneNum=" + phoneNum ;
             } else {
-              alert('报名失败，' + data.errcode + ', ' + data.errmsg);
+              alert('报名失败, ' + data.errmsg);
             }
           },
           error:function(){
             alert('报名失败！');
           }
         });
-        }else{
-          alert("只有年龄介于3-18岁之间才能报名");
-        }
       }else{
         alert($form.find('.valid-error').first().html())
       }
     })
   }
-  var $news = $('.news');
   $.ajax({
     //url: root + 'api/activity/get_activity_info',
     url: 'api/activity/get_activity_info',
@@ -86,15 +107,31 @@ $(function(){
   }).success(function(data){
     if (data.errcode==0) {
       var data = data.result;
-      $news.find('h4').html(data['name']);
-      $news.find('.time').html(getTime(data['start_time']));
-      $news.find('.location').html(data['location']);
+      $('.activityName').html(data['name']);
     } else {
       alert('获取活动信息失败，' + data.errcode + ', ' + data.errmsg);
     }
   }).fail(function(){
     alert('获取活动信息失败！')
   });
+
+  //利用手机号码获取推荐者姓名
+  $.ajax({
+    //url: root + 'api/user/get_user_info',
+    url: 'api/user/get_user_info',
+    method:"post",
+    dataType:"json",
+    data:{
+      phone_number : referrer
+    }
+  }).success(function(data){
+    if (data.errcode==0) {
+      var data = data.result;
+      $('.invitation').html(data['nickname'] + "与我");
+      oldMember = true;
+    }
+  });
+
 
    function getTime(timestamp){
      if(timestamp){

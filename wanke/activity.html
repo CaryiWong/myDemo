@@ -8,18 +8,39 @@
   <!-- build:css styles/main.min.css -->
   <link rel="stylesheet" href="styles/main.css"/>
   <!-- endbuild -->
+  <style>
+    body{background: url(images/background.jpg) no-repeat left top;
+      background-size: 100% auto;}
+  </style>
 </head>
 <body>
-<div class="container activity">
-   <h3 class="name"></h3>
-  <hr/>
-  <div class="mainText">
-    <span>活动介绍 :</span><p class="introduction"></p>
-    <span>开始时间 :</span><p class="start_time"></p>
-    <span>结束时间 :</span><p class="end_time"></p>
-    <span>举办地点 :</span><p class="location"></p>
+<div class="afterSignUp displayN">
+  <div class="bar">
+    <p class="p1">恭喜您报名成功！</p>
+    <p>点击右上角把活动分享给朋友，可以获得更多小万币哦！</p>
   </div>
-  <button class="formBtn wtSignUp" >我要报名</button>
+</div>
+
+<div class="container activity">
+  <div class="btn-group afterSignUp-btn-group displayN">
+    <button class="formBtn wtKnow pull-left">我要了解</button>
+    <button class="formBtn wtHelpSignUp pull-right" >帮别人报名</button>
+  </div>
+  <div class="btn-group beforeSignUp-btn-group">
+    <button class="formBtn wtKnow pull-left">我要了解</button>
+    <button class="formBtn wtSignUp pull-right" >我要报名</button>
+  </div>
+  <div class="info-box">
+    <div class="head"><span></span><span class="text">活动简介</span><span></span></div>
+   <!--<h3 class="name"></h3>-->
+  <div class="mainText">
+    <p class="introduction"></p>
+    <span>开始时间 </span><p class="start_time"></p>
+    <span>结束时间 </span><p class="end_time"></p>
+    <span>举办地点 </span><p class="location"></p>
+  </div>
+  </div>
+  <!--<button class="formBtn wtSignUp" >我要报名</button>-->
 </div>
 
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
@@ -27,7 +48,16 @@
 <script src="scripts/jquery.js"></script>
 <script src="scripts/share.js"></script>
 <script src="scripts/activity.js"></script>
-
 <!-- endbuild -->
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?6e91ca84521d45c35c14789de8b43cfa";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
 </body>
 </html>

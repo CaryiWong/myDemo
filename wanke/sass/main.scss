@@ -1,6 +1,6 @@
 @import '_bootstrap_base.scss';
 html,body{
-  height: 100%;
+  background: #f1f1f1;
 }
 .displayN{
   display: none;
@@ -10,100 +10,260 @@ html,body{
   h3{
     text-align: center;
     margin-top: 5px;
+    font-size: 18px;
+    line-height: 32px;
   }
   .news{
-    span{
-      margin-right: 8px;
-      color:#999;
-    }
+    border-bottom: 1px solid #ccc;
   }
   .signInBox{
     text-align: center;
+    margin-top: 18px;
+    h4{
+      font-size: 12px;
+    }
   }
   .form-group{
     margin:0 auto;
-    margin-top: 20px;
+    margin-top: 14px;
     input[type=text],{
       &:focus{
         outline: none;
       }
       border: none;
       box-shadow: none;
-      font-size: 16px;
+      font-size: 14px;
+      background: #f1f1f1;
     }
     .inputs{
-      border-bottom: 1px solid #333;
+      border-bottom: 1px solid #ccc;
       height: 40px;
+      //padding-top: 12px;
     }
     td{
-      padding-right: 8px;
+      padding-right: 14px;
+      color:#333;
+      font-size: 14px;
+      padding-top: 12px;
+    }
+    .radioInput{
+      border-bottom: none;
+      span{
+        display: inline-block;
+        float: left;
+        height: 40px;
+        width: 40px;
+        line-height: 40px;
+        margin: 0;
+        &.radio {
+          background: url(../images/select_1.png) no-repeat left center;
+          background-size: 24px 24px ;
+          &.on{
+            background: url(../images/select_2.png) no-repeat left center;
+            background-size: 24px 24px ;
+          }
+        }
+      }
     }
   }
-  .formBtn {
-    width: 40%;
-    margin-left: 30%;
-    margin-top: 40px;
-    background:#de6d00;
-    border:none;
-    border-radius: 4px;
-    color:#fff;
-    height: 40px;
-    line-height: 40px;
+.info{
+  margin-top: 26px;
+  div{
+    display: inline-block;
+    vertical-align: middle;
+    &.head-pic{
+      width: 20%;
+      img{
+        width: 100%;
+      }
+    }
+    &.message{
+      border-radius: 4px;
+      background: #fff;
+      width: 65%;
+      box-shadow: 2px 2px 5px #ccc;
+      margin-left: 12px;
+      padding: 10px;
+      text-align: left;
+      font-size: 12px;
+      .name{
+        font-size: 14px;
+      }
+      .activityName{
+        color:#dd6c02;
+      }
+    }
   }
-.signUpSuccess{
-  p{
+}
+}
+.afterSignUp{
+  position: absolute;
+  width: 100%;
+  padding: 12px;
+  color: #fff;
+  background: #dd6c02;
+  .bar{
+    height: 50px;
     text-align: center;
-    color: #de6d00;
-    font-weight: bold;
-  }
-}
-}
-
-/*活动介绍*/
-.activity{
-  .mainText{
-    span{
-      color:#999;
-      line-height: 24px;
-      font-weight: bold;
-      padding-left: 12px;
-      border-left: 4px solid #de6d00;
+    background: url(../images/xiaowan-Share.png)no-repeat right top ;
+    background-size: auto 50px ;
+    .p1{
+      font-size: 18px;
+      margin: 0;
     }
     p{
-      margin-bottom: 20px;
-      margin-top: 10px;
+      font-size: 10px;
+      margin: 5px;
+    }
+  }
+
+}
+/*活动介绍*/
+.activity{
+  //background: url(../images/background.jpg) no-repeat left top;
+  //background-size: 101% auto;
+  //height: 100%;
+  .mainText{
+    padding: 0 8px;
+    span{
+      color:#fff;
+      line-height: 24px;
+      padding-left: 12px;
+      border-left: 4px solid #dd6c02;
+    }
+    p{
+      margin: 0;
+      line-height: 38px;
+      color: #fff;
+      &.introduction{
+        line-height: 22px;
+        margin-top: 16px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+  .btn-group{
+    margin-top: 30px;
+    height: 40px;
+    button{
+      width: 47%;
+      margin: 0;
+    }
+  }
+  .afterSignUp-btn-group{
+    margin-top: 94px;
+  }
+  .info-box{
+    border-radius: 4px;
+    background: rgba(0, 0, 0, .7);
+    color: #fff;
+    padding: 14px;
+    margin-top: 30px;
+    //min-height: 426px;
+
+    .head{
+     text-align: center;
+      span{
+        display: inline-block;
+        width: 30%;
+        border-bottom: 1px solid #fff;
+        line-height: 20px;
+        vertical-align: middle;
+        &.text{
+          width: 40%;
+          border-bottom:  none;
+          line-height: 40px;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  @media screen and (min-width: 360px){
+    .info-box{
+      min-height: 450px;
     }
   }
 }
 
 /*签到*/
-.signToBox{
+.signToForm{
+  margin-top: 60px;
+}
+.succ-head-info{
+  margin-top: 90px;
   text-align: center;
-  margin-top: 150px;
-  .form-group{
-    p{
-      font-size: 16px;
-    }
-    .inputs {
-      height: 30px;
-    }
-    input{
-      text-align: center;
-    }
+  img {
+    width: 60px;
   }
-  .formBtn{
-    margin-left: 0;
+  p{
+    color:#000;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
   }
 }
-.succeed{
-  margin-top: 150px;
-  text-align: center;
-  h3{
-    span{
-      font-weight: bold;
+
+.signUpSuccess{
+  margin-top: 30px;
+  padding: 12px;
+  .succ-head-info{
+    margin-top: 0;
+  }
+  .succ-message{
+    background: #fff;
+    margin-top: 30px;
+    padding: 12px;
+    border-radius: 4px;
+    div{
+      display: inline-block;
+      vertical-align: middle;
+      &.head-pic{
+        width: 20%;
+        img{
+          width: 100%;
+        }
+      }
+      &.message{
+        width: 65%;
+        margin-left: 12px;
+        height: 66px;
+        padding: 10px;
+        text-align: left;
+        font-size: 12px;
+        color: #666;
+        .name{
+          font-size: 14px;
+          color: #333;
+        }
+      }
     }
   }
-  h2{
-    color:#de6d00;
+  .declare{
+    color:#666;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 12px;
+    h5{
+      margin-bottom: 12px;
+      font-size: 12px;
+    }
   }
+  .formBtn {
+    margin: 0;
+    margin-top: 20px;
+    width: 100%;
+
+  }
+}
+.formBtn {
+  //position: absolute;
+  width: 94%;
+  margin-left: 3%;
+  margin-top: 20px;
+  background:#dd6c02;
+  border:none;
+  border-radius: 4px;
+  color:#fff;
+  height: 40px;
+  line-height: 40px;
 }

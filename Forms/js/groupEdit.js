@@ -12,8 +12,8 @@ $(function(){
 function submitForm (){
       if($('#groupname').val() !== '' ){
         $.ajax(
-          'http://test.yi-gather.com:1717/v20/group/creategroupinfo', {
-          //root + 'v20/group/creategroupinfo', {
+          //'http://test.yi-gather.com:1717/v20/group/creategroupinfo', {
+          root + 'v20/group/creategroupinfo', {
             dataType: 'json',
             type: 'POST',
             data: {

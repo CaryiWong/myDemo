@@ -21,6 +21,8 @@
 
   <div class="container">
     <h1 class="page-header">Customize Preview for Cropper</h1>
+    <input type="file" class="file"/>
+    <img src="" class="showImg" alt=""/>
     <div class="row">
       <div class="col-sm-6">
         <h3 class="page-header">Cropper</h3>
@@ -50,10 +52,25 @@
   <script src="../dist/cropper.js"></script>
   <script>
     $(function () {
+      function readURL(input) {
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            $('.showImg').attr('src', e.target.result);
+//            $('#image').attr('src', e.target.result);
+            $('#image').cropper('replace',e.target.result)
+          };
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+      $('.file').on('change',function(){
+        readURL(this);
+      });
+
       var $previews = $('.preview');
 
       $('#image').cropper({
-          build: function (e) {
+          build: function (e) {  //build.cropper()
             var $clone = $(this).clone();
 
             $clone.css({
@@ -71,7 +88,7 @@
             }).html($clone);
           },
 
-          crop: function (e) {
+          crop: function (e) {  //crop.cropper()
             var imageData = $(this).cropper('getImageData');
             var previewAspectRatio = e.width / e.height;
 
@@ -92,5 +109,6 @@
         });
     });
   </script>
+</div>
 </body>
 </html>

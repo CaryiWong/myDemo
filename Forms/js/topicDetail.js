@@ -6,8 +6,8 @@ $(function(){
       topicName = oStorage.getItem('topicName');
   $('h3').prepend('<span>' + topicName + '的详细信息</span>');
   $.ajax(
-    'http://test.yi-gather.com:1717/v20/topic/findtopicdetail', {
-    //root + 'v20/topic/findtopicdetail', {
+    //'http://test.yi-gather.com:1717/v20/topic/findtopicdetail', {
+    root + 'v20/topic/findtopicdetail', {
       dataType: 'json',
       type: 'POST',
       data: {

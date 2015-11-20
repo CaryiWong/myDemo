@@ -10,61 +10,76 @@
   <!-- endbuild -->
 </head>
 <body>
-<div class="container">
-  <h3>活动预告</h3>
+<div class="container signUp">
   <div class="news">
-    <h4></h4>
-    <span class="location"></span> <span class="time"></span>
+    <h3 class="activityName"></h3>
   </div>
-  <hr/>
   <div class="signInBox">
-    <h4>请输入您的报名信息:</h4>
-
     <form action="" class="signUpForm">
       <table class="form-group">
         <tr>
+          <td>手机</td>
+          <td class="inputs">
+            <input type="text" name="phone_number" class="form-control valid-input" placeholder="必填" data-valid-rule="required,phone"/>
+          </td>
+        </tr>
+      </table>
+      <div class="info">
+        <div class="head-pic"><img src="images/image.png" alt=""/></div>
+        <div class="message"><p class="name">我是小万老师</p><p><span class="invitation"></span>邀请您一起参加<span class="activityName"></span></p></div>
+      </div>
+      <table class="form-group options-input displayN">
+        <tr><td></td><td><h4>请输入您孩子的报名信息</h4></td></tr>
+        <tr>
           <td>姓名</td>
           <td class="inputs">
-            <input type="text" name="name" class="form-control valid-input" placeholder="必填" data-valid-rule="required"/>
+            <input type="text" name="name" class="form-control" placeholder="必填"
+                   data-valid-rule="required"/>
           </td>
         </tr>
         <tr>
           <td>年龄</td>
           <td class="inputs">
-            <input type="text" name="age" class="form-control valid-input" placeholder="必填" data-valid-rule="required"/>
+            <input type="text" name="age" class="form-control" placeholder="必填"
+                    data-valid-rule="required,isInt1,maxNum,minNum" data-valid-maxNum="18" data-valid-minNum="3"/>
           </td>
         </tr>
         <tr>
           <td class="sexSpan">性别</td>
           <td class="inputs radioInput">
             <!--<input type="text" name=""  />-->
-            <input type="radio" name="gender" value="1" checked="checked" />男
-            <input type="radio" name="gender" value="2" />女
-          </td>
-        </tr>
-        <tr>
-
-          <td>手机</td>
-          <td class="inputs">
-            <input type="text" name="phone_number" class="form-control valid-input" placeholder="必填" data-valid-rule="required,phone"/>
-          </td>
-        </tr>
-        <tr>
-          <td>推荐人<br/>手机号</td>
-          <td class="inputs">
-            <input type="text" name="referrer" class="form-control" placeholder="选填"/>
+            <span>男</span>
+            <span class="radio on" data-gender="1"></span>
+            <span>女</span>
+            <span class="radio" data-gender="2"></span>
+            <!--<input type="radio" name="gender" value="1" checked="checked" />男-->
+            <!--<input type="radio" name="gender" value="2" />女-->
           </td>
         </tr>
       </table>
     </form>
+
   </div>
-  <button class="formBtn">报名</button>
+  <button class="formBtn signUpCheckBtn">报名</button>
+  <button class="formBtn signUpBtn displayN">报名</button>
 </div>
+
+
 <!-- build:js scripts/app_signup.js -->
 <script src="scripts/jquery.js"></script>
 <script src="scripts/validation.js"></script>
 <script src="scripts/signup.js"></script>
 <!-- endbuild -->
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?6e91ca84521d45c35c14789de8b43cfa";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
 </body>
 </html>
 

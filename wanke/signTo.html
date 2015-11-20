@@ -11,19 +11,29 @@
 </head>
 <body>
 <div class="container">
-  <div class="signToBox">
-    <form action="" class="signToForm">
-      <div class="form-group">
-        <p>手机号码</p>
-        <div class="inputs"><input type="text" name="phone"  class="valid-input" data-valid-rule="required,phone"/></div>
-      </div>
-    </form>
-    <button class="formBtn">签到</button>
+  <div class="news">
+    <h3 class="activityName"></h3>
   </div>
+  <div class="signInBox">
+    <h4>现场签到</h4>
+    <form action="" class="signToForm">
+      <table class="form-group">
+        <tr>
+          <td>手机</td>
+          <td class="inputs">
+            <input type="text" name="phone"  class="valid-input"  placeholder="必填" data-valid-rule="required,phone"/>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  <button class="formBtn">签到</button>
   <div class="succeed displayN">
-    <h3>亲爱的 <span class="hostName"></span> </h3>
-    <h2>签到成功</h2>
-    <p>可以到14号站台领取礼品哦~</p>
+    <div class="succ-head-info">
+      <p>签到成功!</p>
+      <img src="images/done.png" alt=""/>
+    </div>
+
   </div>
 </div>
 <!-- build:js scripts/app_signto.js -->
@@ -31,5 +41,15 @@
 <script src="scripts/validation.js"></script>
 <script src="scripts/signto.js"></script>
 <!-- endbuild -->
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?6e91ca84521d45c35c14789de8b43cfa";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
 </body>
 </html>

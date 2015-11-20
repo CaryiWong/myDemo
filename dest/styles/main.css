@@ -1409,7 +1409,7 @@ select[multiple].input-lg {
   .hidden-print {
     display: none !important; } }
 html, body {
-  height: 100%; }
+  background: #f1f1f1; }
 
 .displayN {
   display: none; }
@@ -1418,71 +1418,202 @@ html, body {
   padding: 12px; }
   .container h3 {
     text-align: center;
-    margin-top: 5px; }
-  .container .news span {
-    margin-right: 8px;
-    color: #999; }
+    margin-top: 5px;
+    font-size: 18px;
+    line-height: 32px; }
+  .container .news {
+    border-bottom: 1px solid #ccc; }
   .container .signInBox {
-    text-align: center; }
+    text-align: center;
+    margin-top: 18px; }
+    .container .signInBox h4 {
+      font-size: 12px; }
   .container .form-group {
     margin: 0 auto;
-    margin-top: 20px; }
+    margin-top: 14px; }
     .container .form-group input[type=text] {
       border: none;
       box-shadow: none;
-      font-size: 16px; }
+      font-size: 14px;
+      background: #f1f1f1; }
       .container .form-group input[type=text]:focus {
         outline: none; }
     .container .form-group .inputs {
-      border-bottom: 1px solid #333;
+      border-bottom: 1px solid #ccc;
       height: 40px; }
     .container .form-group td {
-      padding-right: 8px; }
-  .container .formBtn {
-    width: 40%;
-    margin-left: 30%;
-    margin-top: 40px;
-    background: #de6d00;
-    border: none;
-    border-radius: 4px;
-    color: #fff;
-    height: 40px;
-    line-height: 40px; }
-  .container .signUpSuccess p {
+      padding-right: 14px;
+      color: #333;
+      font-size: 14px;
+      padding-top: 12px; }
+    .container .form-group .radioInput {
+      border-bottom: none; }
+      .container .form-group .radioInput span {
+        display: inline-block;
+        float: left;
+        height: 40px;
+        width: 40px;
+        line-height: 40px;
+        margin: 0; }
+        .container .form-group .radioInput span.radio {
+          background: url(../images/select_1.png) no-repeat left center;
+          background-size: 24px 24px; }
+          .container .form-group .radioInput span.radio.on {
+            background: url(../images/select_2.png) no-repeat left center;
+            background-size: 24px 24px; }
+  .container .info {
+    margin-top: 26px; }
+    .container .info div {
+      display: inline-block;
+      vertical-align: middle; }
+      .container .info div.head-pic {
+        width: 20%; }
+        .container .info div.head-pic img {
+          width: 100%; }
+      .container .info div.message {
+        border-radius: 4px;
+        background: #fff;
+        width: 65%;
+        box-shadow: 2px 2px 5px #ccc;
+        margin-left: 12px;
+        padding: 10px;
+        text-align: left;
+        font-size: 12px; }
+        .container .info div.message .name {
+          font-size: 14px; }
+        .container .info div.message .activityName {
+          color: #dd6c02; }
+
+.afterSignUp {
+  position: absolute;
+  width: 100%;
+  padding: 12px;
+  color: #fff;
+  background: #dd6c02; }
+  .afterSignUp .bar {
+    height: 50px;
     text-align: center;
-    color: #de6d00;
-    font-weight: bold; }
+    background: url(../images/xiaowan-Share.png) no-repeat right top;
+    background-size: auto 50px; }
+    .afterSignUp .bar .p1 {
+      font-size: 18px;
+      margin: 0; }
+    .afterSignUp .bar p {
+      font-size: 10px;
+      margin: 5px; }
 
 /*娲诲姩浠嬬粛*/
-.activity .mainText span {
-  color: #999;
-  line-height: 24px;
-  font-weight: bold;
-  padding-left: 12px;
-  border-left: 4px solid #de6d00; }
-.activity .mainText p {
-  margin-bottom: 20px;
-  margin-top: 10px; }
+.activity .mainText {
+  padding: 0 8px; }
+  .activity .mainText span {
+    color: #fff;
+    line-height: 24px;
+    padding-left: 12px;
+    border-left: 4px solid #dd6c02; }
+  .activity .mainText p {
+    margin: 0;
+    line-height: 38px;
+    color: #fff; }
+    .activity .mainText p.introduction {
+      line-height: 22px;
+      margin-top: 16px;
+      margin-bottom: 30px; }
+.activity .btn-group {
+  margin-top: 30px;
+  height: 40px; }
+  .activity .btn-group button {
+    width: 47%;
+    margin: 0; }
+.activity .afterSignUp-btn-group {
+  margin-top: 94px; }
+.activity .info-box {
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 14px;
+  margin-top: 30px; }
+  .activity .info-box .head {
+    text-align: center; }
+    .activity .info-box .head span {
+      display: inline-block;
+      width: 30%;
+      border-bottom: 1px solid #fff;
+      line-height: 20px;
+      vertical-align: middle; }
+      .activity .info-box .head span.text {
+        width: 40%;
+        border-bottom: none;
+        line-height: 40px;
+        font-size: 18px; }
+@media screen and (min-width: 360px) {
+  .activity .info-box {
+    min-height: 450px; } }
 
 /*绛惧埌*/
-.signToBox {
-  text-align: center;
-  margin-top: 150px; }
-  .signToBox .form-group p {
-    font-size: 16px; }
-  .signToBox .form-group .inputs {
-    height: 30px; }
-  .signToBox .form-group input {
-    text-align: center; }
-  .signToBox .formBtn {
-    margin-left: 0; }
+.signToForm {
+  margin-top: 60px; }
 
-.succeed {
-  margin-top: 150px;
+.succ-head-info {
+  margin-top: 90px;
   text-align: center; }
-  .succeed h3 span {
-    font-weight: bold; }
-  .succeed h2 {
-    color: #de6d00; }
+  .succ-head-info img {
+    width: 60px; }
+  .succ-head-info p {
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px; }
+
+.signUpSuccess {
+  margin-top: 30px;
+  padding: 12px; }
+  .signUpSuccess .succ-head-info {
+    margin-top: 0; }
+  .signUpSuccess .succ-message {
+    background: #fff;
+    margin-top: 30px;
+    padding: 12px;
+    border-radius: 4px; }
+    .signUpSuccess .succ-message div {
+      display: inline-block;
+      vertical-align: middle; }
+      .signUpSuccess .succ-message div.head-pic {
+        width: 20%; }
+        .signUpSuccess .succ-message div.head-pic img {
+          width: 100%; }
+      .signUpSuccess .succ-message div.message {
+        width: 65%;
+        margin-left: 12px;
+        height: 66px;
+        padding: 10px;
+        text-align: left;
+        font-size: 12px;
+        color: #666; }
+        .signUpSuccess .succ-message div.message .name {
+          font-size: 14px;
+          color: #333; }
+  .signUpSuccess .declare {
+    color: #666;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 12px; }
+    .signUpSuccess .declare h5 {
+      margin-bottom: 12px;
+      font-size: 12px; }
+  .signUpSuccess .formBtn {
+    margin: 0;
+    margin-top: 20px;
+    width: 100%; }
+
+.formBtn {
+  width: 94%;
+  margin-left: 3%;
+  margin-top: 20px;
+  background: #dd6c02;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  height: 40px;
+  line-height: 40px; }
 
 /*# sourceMappingURL=main.css.map */

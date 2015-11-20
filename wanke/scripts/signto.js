@@ -14,7 +14,7 @@ function getArgs() {
 }
 $(function(){
   var args = getArgs();
-  var root = 'http://121.201.15.197:8000/',
+  var root = 'http://test.vcher.yi-gather.com/',
       $formBtn = $('.formBtn'),
       $form = $('.signToForm'),
       activityId = args['activity_id'];
@@ -38,7 +38,8 @@ $(function(){
           },
           success:function(data){
             if (data.errcode==0) {
-             $('.signToBox').hide();
+             $('.signInBox').hide();
+             $('.formBtn').hide();
              $('.succeed').show();
              var data = data.result.user_info;
               $('.hostName').html(data['nickname']);
@@ -56,5 +57,24 @@ $(function(){
       }
     })
   }
+
+  $.ajax({
+    //url: root + 'api/activity/get_activity_info',
+    url: 'api/activity/get_activity_info',
+    method:"post",
+    dataType:"json",
+    data:{
+      activity_id : activityId
+    }
+  }).success(function(data){
+    if (data.errcode==0) {
+      var data = data.result;
+      $('.activityName').html(data['name']);
+    } else {
+      //alert('获取活动信息失败，' + data.errcode + ', ' + data.errmsg);
+    }
+  }).fail(function(){
+    //alert('获取活动信息失败！')
+  });
 });
 

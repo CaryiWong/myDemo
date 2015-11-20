@@ -14,6 +14,12 @@ $(function () {
             number: function (value) {
                 return /\d/g.test(value);
             },
+            isInt1: function (value) {  //是否为正整数
+              return /^[1-9]\d*$/g.test(value);
+            },
+            Hanzi: function (value) {  //是否汉字
+              return /^[\u4e00-\u9fa5]+$/g.test(value);
+            },
             version: function (value) {
                 return /\d\.\d/g.test(value);
             },
@@ -30,6 +36,16 @@ $(function () {
                     }
                 }
                 return true;
+            },
+            maxNum: function (value, $dom) {
+              var maxNum = $dom.attr('data-valid-maxNum');
+              value = parseInt(value.trim());
+              return value <= maxNum;
+            },
+            minNum: function (value, $dom) {
+              var minNum = $dom.attr('data-valid-minNum');
+              value = parseInt(value.trim());
+              return value >= minNum;
             },
             max: function (value, $dom, type) {
                 var max = $dom.attr('data-valid-max');
@@ -143,6 +159,12 @@ $(function () {
                         case 'number':
                             text = '请填写数字';
                             break;
+                        case 'Hanzi':
+                          text = "\"" + label + "\"" + '请填写汉字';
+                          break;
+                        case 'isInt1':
+                          text = "\"" + label + "\"" + '请填写正整数';
+                          break;
                         case 'version':
                             text = '请输入合适的浮点型版本号';
                             break;
@@ -154,6 +176,12 @@ $(function () {
                             break;
                         case 'min':
                             text = '选择的内容不得少于' + $dom.attr('data-valid-min') + '项';
+                            break;
+                        case 'maxNum':
+                            text = "\"" + label + "\"" + '不能大于' + $dom.attr('data-valid-maxNum');
+                            break;
+                        case 'minNum':
+                            text = "\"" + label + "\"" + '不能小于' + $dom.attr('data-valid-minNum');
                             break;
                         case 'same':
                             text = '该项内容并不相符';
@@ -229,7 +257,7 @@ $(function () {
     });
 
     $.fn.valid = function (callback) {
-        var $validDOM = $(this).find($doms).not('[disabled]'),
+        var $validDOM = $(this).find('.valid-input').not('[disabled]'),
             validPass = true;
         $validDOM.each(function () {
             var $this = $(this);
