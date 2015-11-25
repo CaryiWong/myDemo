@@ -1,34 +1,32 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%; }
-
-body {
-  position: relative;
-  min-height: 200px;
-  border: 1px solid #ccc; }
-
-.box {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  height: 100px;
-  width: 100px;
-  background: red; }
-
-.floater {
-  float: left;
-  height: 50%;
-  margin-bottom: -120px; }
-
-.content {
-  clear: both;
-  height: 240px;
-  width: 100px;
-  background: #000;
-  position: relative; }
-
-/*# sourceMappingURL=main.css.map */
+#center{
+  margin:50px auto;
+  width:400px;
+}
+#loading{
+  width:397px;
+  height:49px;
+  background:url(../images/bak.png) no-repeat;
+}
+#loading div{
+  width:0px;
+  height:48px;
+  background:url(../images/pro.png) no-repeat;
+  color:#fff;
+  text-align:center;
+  font-family:Tahoma;
+  font-size:18px;
+  line-height:48px;
+}
+#message {
+  width: 200px;
+  height: 35px;
+  font-family: Tahoma;
+  font-size: 12px;
+  background-color: #d8e7f0;
+  border: 1px solid #187CBE;
+  display: none;
+  line-height: 35px;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-left: 50px;
+}

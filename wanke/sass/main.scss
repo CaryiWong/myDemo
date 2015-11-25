@@ -55,6 +55,12 @@ html,body{
         width: 40px;
         line-height: 40px;
         margin: 0;
+        &.real-radio-box{
+          margin-left: -40px;
+          z-index: 100;
+          position: relative;
+          text-align: left;
+        }
         &.radio {
           background: url(../images/select_1.png) no-repeat left center;
           background-size: 24px 24px ;
@@ -63,6 +69,13 @@ html,body{
             background-size: 24px 24px ;
           }
         }
+      }
+
+      .real-radios{
+        height: 24px;
+        width: 24px;
+        margin-top: 8px;
+        opacity: 0;
       }
     }
   }
@@ -104,12 +117,19 @@ html,body{
   background: #dd6c02;
   .bar{
     height: 50px;
-    text-align: center;
+    text-align: left;
     background: url(../images/xiaowan-Share.png)no-repeat right top ;
     background-size: auto 50px ;
     .p1{
-      font-size: 18px;
-      margin: 0;
+      font-size: 14px;
+      margin-bottom: 10px;
+      .rule-link{
+        font-size: 10px;
+        border-radius: 4px;
+        border: 1px solid #fff;
+        padding: 3px 6px;
+        margin-left: 10px;
+      }
     }
     p{
       font-size: 10px;
@@ -125,6 +145,7 @@ html,body{
   //height: 100%;
   .mainText{
     padding: 0 8px;
+    color: #fff;
     span{
       color:#fff;
       line-height: 24px;
@@ -132,13 +153,14 @@ html,body{
       border-left: 4px solid #dd6c02;
     }
     p{
-      margin: 0;
-      line-height: 38px;
-      color: #fff;
-      &.introduction{
-        line-height: 22px;
-        margin-top: 16px;
-        margin-bottom: 30px;
+      line-height: 24px;
+    }
+    .introduction{
+      line-height: 22px;
+      margin-top: 14px;
+      margin-bottom: 24px;
+      p{
+        margin: 0;
       }
     }
   }
@@ -187,7 +209,7 @@ html,body{
 
 /*签到*/
 .signToForm{
-  margin-top: 60px;
+  margin-top: 30px;
 }
 .succ-head-info{
   margin-top: 90px;
@@ -200,6 +222,16 @@ html,body{
     font-size: 16px;
     font-weight: bold;
     margin-bottom: 20px;
+  }
+  .rule-link2{
+    display: block;
+    margin: 0 auto;
+    width: 80px;
+    line-height: 30px;
+    border: 1px solid #dd6c02;
+    color: #dd6c02;
+    border-radius: 4px;
+    margin-top: 16px;
   }
 }
 
@@ -266,4 +298,25 @@ html,body{
   color:#fff;
   height: 40px;
   line-height: 40px;
+}
+
+.rules-head{
+  .text{
+    line-height: 40px;
+    font-size: 18px;
+    width: 70%;
+    text-align: center;
+    display: inline-block;
+  }
+  &:before,&:after{
+    content: '';
+    display: inline-block;
+    width: 15%;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 4px;
+
+  }
+}
+.scoreText{
+  margin-top: 16px;
 }

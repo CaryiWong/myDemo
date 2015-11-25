@@ -12,7 +12,7 @@ $(function(){
             var data = JSON.parse(request.responseText);
             if (data.cord === 0) {
               alert('上传成功！');
-         $('.container').append('<p>图片链接：<strong>'+  locationOriginalURL + '/v20/download/img?path=' + data.data + '&type=web' +'</strong></p>');
+         $('.container').append('<p>图片链接：<strong>'+  locationOriginalURL + '/v20/download/img?type=web&path=' + data.data + '</strong></p>');
          $('.showPic').append('<img src='+  locationOriginalURL + '/v20/download/img?path=' + data.data + '&type=web' +'>').show();
             } else {
               alert('图片上传失败,请重新上传' + data.msg);

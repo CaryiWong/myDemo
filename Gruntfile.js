@@ -21,7 +21,7 @@ module.exports = function (grunt) {
 
   // Configurable paths
   var config = {
-    app: 'uploadImg',
+    app: 'wanke',
     dist: 'dist'
   };
   //Dynamically create list of files in a folder to bundle for webpack

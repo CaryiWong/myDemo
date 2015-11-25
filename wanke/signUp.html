@@ -33,7 +33,7 @@
         <tr>
           <td>姓名</td>
           <td class="inputs">
-            <input type="text" name="name" class="form-control" placeholder="必填"
+            <input type="text" name="name" class="form-control" placeholder="请输入孩子的真实姓名"
                    data-valid-rule="required"/>
           </td>
         </tr>
@@ -47,13 +47,12 @@
         <tr>
           <td class="sexSpan">性别</td>
           <td class="inputs radioInput">
-            <!--<input type="text" name=""  />-->
             <span>男</span>
-            <span class="radio on" data-gender="1"></span>
+            <span class="radio on"></span>
+            <span class="real-radio-box"><input type="radio" class="real-radios" name="gender" value="1" checked="checked"/></span>
             <span>女</span>
-            <span class="radio" data-gender="2"></span>
-            <!--<input type="radio" name="gender" value="1" checked="checked" />男-->
-            <!--<input type="radio" name="gender" value="2" />女-->
+            <span class="radio"></span>
+            <span class="real-radio-box"><input type="radio" class="real-radios" name="gender" value="2"/></span>
           </td>
         </tr>
       </table>

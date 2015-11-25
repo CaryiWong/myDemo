@@ -21,19 +21,51 @@
         <tr>
           <td>手机</td>
           <td class="inputs">
-            <input type="text" name="phone"  class="valid-input"  placeholder="必填" data-valid-rule="required,phone"/>
+            <input type="text" name="phone"  class="form-control valid-input"  placeholder="必填" data-valid-rule="required,phone"/>
+          </td>
+        </tr>
+      </table>
+      <table class="form-group options-input displayN">
+        <tr><td></td><td><h4>请输入您孩子的信息</h4></td></tr>
+        <tr>
+          <td>姓名</td>
+          <td class="inputs">
+            <input type="text" name="name" class="form-control" placeholder="请输入孩子的真实姓名"
+                   data-valid-rule="required"/>
+          </td>
+        </tr>
+        <tr>
+          <td>年龄</td>
+          <td class="inputs">
+            <input type="text" name="age" class="form-control" placeholder="必填"
+                   data-valid-rule="required,isInt1,maxNum,minNum" data-valid-maxNum="18" data-valid-minNum="3"/>
+          </td>
+        </tr>
+        <tr>
+          <td class="sexSpan">性别</td>
+          <td class="inputs radioInput">
+            <span>男</span>
+            <span class="radio on"></span>
+            <span class="real-radio-box"><input type="radio" class="real-radios" name="gender" value="1" checked="checked"/></span>
+            <span>女</span>
+            <span class="radio"></span>
+            <span class="real-radio-box"><input type="radio" class="real-radios" name="gender" value="2"/></span>
           </td>
         </tr>
       </table>
     </form>
   </div>
-  <button class="formBtn">签到</button>
+  <button class="formBtn checkSignToBtn">签到</button>
+  <button class="formBtn displayN signToBtn">签到</button>
+
+
   <div class="succeed displayN">
     <div class="succ-head-info">
+      <!--<p>签到成功! 获得 <strong class="score"></strong> 积分</p>-->
       <p>签到成功!</p>
       <img src="images/done.png" alt=""/>
+      <!--<span class="rule-link2">积分规则</span>-->
     </div>
-
   </div>
 </div>
 <!-- build:js scripts/app_signto.js -->
