@@ -40,12 +40,31 @@
     <span>举办地点 </span><p class="location"></p>
   </div>
   </div>
-  <!--<button class="formBtn wtSignUp" >我要报名</button>-->
-</div>
 
+<div class="activityEnd displayN">
+  <div class="news">
+    <h3 class="name"></h3>
+  </div>
+  <div class="signInBox">
+    <h4>请填写您报名的手机号码</h4>
+    <form class="checkSignUpFrom">
+      <table class="form-group">
+        <tr>
+          <td>手机</td>
+          <td class="inputs">
+            <input type="text" name="checkPhone"  class="form-control valid-input"  placeholder="必填" data-valid-rule="required,phone"/>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  <button class="formBtn checkSignUp">提交</button>
+</div>
+</div>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <!--build:js scripts/app_activity.js -->
 <script src="scripts/jquery.js"></script>
+<script src="scripts/validation.js"></script>
 <script src="scripts/share.js"></script>
 <script src="scripts/activity.js"></script>
 <!-- endbuild -->

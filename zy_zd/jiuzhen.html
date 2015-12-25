@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+  <title>就诊</title>
+  <link rel="stylesheet" href="styles/swiper.3.1.7.min.css"/>
+  <link rel="stylesheet" href="styles/bootstrap_base.css"/>
+  <!-- build:css styles/main.min.css -->
+  <link rel="stylesheet" href="styles/main.css"/>
+  <!-- endbuild -->
+</head>
+<body>
+<header>
+  <div class="main_head">
+    <img src="images/zy_logo.png" alt=""/>
+    <div class="nav pull-right">
+      <a href="#">预约</a>
+      <a href="#" class="on">就诊</a>
+      <a href="#">个人中心</a>
+    </div>
+  </div>
+</header>
+<div class="zy_container">
+  <div class="main_left pull-left">
+     <div class="main_left_top">
+       <div class="head_pic">
+         <img src="images/head_pic.jpg" alt=""/>
+       </div>
+       <div class="info">
+         <h3>陈小强<span class="sub_head">(父/陈大东)</span></h3>
+         <p>预约时间：<span>2015-06-12   12:00-12:30</span></p>
+         <p>预约类型：<span>面诊</span></p>
+         <p>问卷完成度：<span>9/20</span></p>
+       </div>
+       <div class="face_diagnosed">
+         <span class="checkbox_class on"><input type="checkbox" name="" class="checkbox"/></span>
+         <span class="checkbox_label">已面诊</span>
+       </div>
+       <div class="btn_group">
+         <a href="" class="btn pull-left switch_patient">切换患者</a>
+         <a href="" class="btn pull-right btn-normal">历史记录</a>
+         <a href="" class="btn pull-right btn-normal">查看用药</a>
+       </div>
+
+     </div>
+    <div class="middle_head_nav">
+      <div class="add pull-right" data-toggle="modal" data-target="#add_modal"></div>
+      <!-- Nav tabs -->
+      <div class="swiper-container">
+        <span class="swiper-button-prev swiper-button"><i class="glyphicon glyphicon-menu-left"></i></span>
+        <ul class="nav nav-tabs swiper-wrapper" role="tablist">
+          <li role="presentation" class="active swiper-slide"><a href="#base_templete" aria-controls="base_templete" role="tab" data-toggle="tab">基础模板</a></li>
+          <li role="presentation" class="swiper-slide"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">抑郁模板</a></li>
+          <li role="presentation" class="swiper-slide"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">抑郁模板</a></li>
+          <li role="presentation" class="swiper-slide"><a href="#messages2" aria-controls="messages2" role="tab" data-toggle="tab">抑郁模板</a></li>
+        </ul>
+        <span class="swiper-button-next swiper-button" ><i class="glyphicon glyphicon-menu-right"></i></span>
+      </div>
+    </div>
+      <!-- Tab panes -->
+    <div class="tab-content jz_left_content hidden">
+        <div role="tabpanel" class="tab-pane active" id="base_templete">
+          <ul class="questionnaire_list">
+            <li>
+              <p class="question">1.请问这是患者第一次找心理或精神科医生就诊吗？</p>
+              <p class="chose_answer"><span>A. 是</span></p>
+              <span class="reset_answer">重填</span>
+            </li>
+            <li>
+              <p class="question">2.请问这是患者第一次找心理或精神科医生就诊吗？</p>
+              <p class="chose_answer"><span>A. 是</span></p>
+            </li>
+            <li>
+              <p class="question">3.请问这是患者第一次找心理或精神科医生就诊吗？</p>
+              <p class="chose_answer"><span>A. 是</span></p>
+            </li>
+            <li>
+              <p class="question">4.请问这是患者第一次找心理或精神科医生就诊吗？</p>
+              <p class="chose_answer"><span>A. 是</span></p>
+            </li>
+          </ul>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="profile">2</div>
+        <div role="tabpanel" class="tab-pane" id="messages">3</div>
+        <div role="tabpanel" class="tab-pane" id="messages2">4</div>
+      </div>
+
+    <!---修改用药开始---->
+    <div class="reset_medicine">
+      <div class="rm_top">
+        <p class="warn">1、您最近一周的服药情况</p>
+        <table class="text_input">
+          <tr><td class="input_label">药名/成品名：</td><td><input type="text" name="" class="input_box"/></td></tr>
+          <tr><td class="input_label">商品名：</td><td><input type="text" name="" class="input_box" placeholder="选填"/></td></tr>
+          <tr><td class="input_label">单位：</td>
+            <td class="checkdot_wrap">
+              <div class="checkdot_box">
+                <span class="checkdot_class on"><input type="checkbox" name="" class="checkdot"/></span>
+                <span class="checkdot_label">粒</span>
+              </div>
+              <div class="checkdot_box">
+                <span class="checkdot_class"><input type="checkbox" name="" class="checkdot"/></span>
+                <span class="checkdot_label">毫升</span>
+              </div>
+              <div class="checkdot_box">
+                <span class="checkdot_class"><input type="checkbox" name="" class="checkdot"/></span>
+                <span class="checkdot_label">支</span>
+              </div>
+            </td>
+          </tr>
+          <tr><td class="input_label">间隔：</td>
+            <td class="checkdot_wrap">
+              <div class="checkdot_box">
+                <span class="checkdot_class on"><input type="checkbox" name="" class="checkdot"/></span>
+                <span class="checkdot_label">每天</span>
+              </div>
+              <div class="checkdot_box">
+                <span class="checkdot_class"><input type="checkbox" name="" class="checkdot"/></span>
+                <span class="checkdot_label">每周</span>
+              </div>
+              <div class="checkdot_box">
+                <span class="checkdot_class"><input type="checkbox" name="" class="checkdot"/></span>
+                <span class="checkdot_label">每月</span>
+              </div>
+            </td>
+          </tr>
+          <tr><td class="input_label">数量：</td>
+            <td>
+              <table class="medicine_number">
+                <tr><th>早</th><th>午</th><th>晚</th><th>睡前</th></tr>
+                <tr>
+                  <td><input type="text" name="" class="mn_input_box" value="0"/></td>
+                  <td><input type="text" name="" class="mn_input_box" value="0"/></td>
+                  <td><input type="text" name="" class="mn_input_box" value="0"/></td>
+                  <td><input type="text" name="" class="mn_input_box" value="0"/></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr><td class="input_label">备注信息：</td><td><input type="text" name="" class="input_box"/></td></tr>
+        </table>
+        <botton class="submit_btn add_medicine">添加到用药</botton>
+      </div>
+      <div class="rm_title">已添加到用药</div>
+      <ul class="rm_added">
+        <li>利培酮(维思通) / 每天 / 早2mg / 午2mg / 晚2mg / 勿空腹</li>
+        <li>利培酮(维思通) / 每天 / 早2mg / 午2mg / 晚2mg / 此药很重要，记
+          得要准时吃吃吃！</li>
+      </ul>
+      <botton class="submit_btn">保存</botton>
+    </div>
+    <!---修改用药结束---->
+
+  </div>
+  <div class="main_right">
+    <div class="right_head">
+      <ul class="nav nav-tabs " role="tablist">
+        <li role="presentation" class=""><a href="#diagnose" aria-controls="diagnose" role="tab" data-toggle="tab">诊状</a></li>
+        <li role="presentation" class="active"><a href="#judge" aria-controls="judge" role="tab" data-toggle="tab">判断</a></li>
+      </ul>
+    </div>
+    <div class="tab-content right_content">
+      <div role="tabpanel" class="tab-pane" id="diagnose">
+
+        <div class="classify">
+         <p class="type_title">知觉</p>
+          <div class="checkboxs">
+            <div class="selections">
+              <span class="checkbox_class on"><input type="checkbox" name="" class="checkbox"/></span>
+              <span class="checkbox_label">幻听</span>
+            </div>
+            <div class="selections">
+              <span class="checkbox_class"><input type="checkbox" name="" class="checkbox"/></span>
+              <span class="checkbox_label">幻嗅</span>
+            </div>
+            <div class="selections">
+              <span class="checkbox_class"><input type="checkbox" name="" class="checkbox"/></span>
+              <span class="checkbox_label">幻触</span>
+            </div>
+          </div>
+          <div class="text_input">
+            <span class="input_label">其他</span>
+            <input type="text" name="" class="input_box"/>
+          </div>
+        </div>
+
+        <div class="classify">
+          <p class="type_title">知觉</p>
+          <div class="checkboxs">
+            <div class="selections">
+              <span class="checkbox_class on"><input type="checkbox" name="" class="checkbox"/></span>
+              <span class="checkbox_label">幻听</span>
+            </div>
+            <div class="selections">
+              <span class="checkbox_class"><input type="checkbox" name="" class="checkbox"/></span>
+              <span class="checkbox_label">幻嗅</span>
+            </div>
+            <div class="selections">
+              <span class="checkbox_class"><input type="checkbox" name="" class="checkbox"/></span>
+              <span class="checkbox_label">幻触</span>
+            </div>
+          </div>
+          <div class="text_input">
+            <span class="input_label">其他</span>
+            <input type="text" name="" class="input_box"/>
+          </div>
+        </div>
+
+        <div class="classify">
+          <p class="type_title">知觉</p>
+          <div class="checkboxs">
+            <div class="selections">
+              <span class="checkbox_class on"><input type="checkbox" name="" class="checkbox"/></span>
+              <span class="checkbox_label">幻听</span>
+            </div>
+            <div class="selections">
+              <span class="checkbox_class"><input type="checkbox" name="" class="checkbox"/></span>
+              <span class="checkbox_label">幻嗅</span>
+            </div>
+            <div class="selections">
+              <span class="checkbox_class"><input type="checkbox" name="" class="checkbox"/></span>
+              <span class="checkbox_label">幻触</span>
+            </div>
+          </div>
+          <div class="text_input">
+            <span class="input_label">其他</span>
+            <input type="text" name="" class="input_box"/>
+          </div>
+        </div>
+
+        <div class="classify">
+          <p class="type_title">知觉</p>
+          <div class="checkboxs">
+            <div class="selections">
+              <span class="checkbox_class on"><input type="checkbox" name="" class="checkbox"/></span>
+              <span class="checkbox_label">幻听</span>
+            </div>
+            <div class="selections">
+              <span class="checkbox_class"><input type="checkbox" name="" class="checkbox"/></span>
+              <span class="checkbox_label">幻嗅</span>
+            </div>
+            <div class="selections">
+              <span class="checkbox_class"><input type="checkbox" name="" class="checkbox"/></span>
+              <span class="checkbox_label">幻触</span>
+            </div>
+          </div>
+          <div class="text_input">
+            <span class="input_label">其他</span>
+            <input type="text" name="" class="input_box"/>
+          </div>
+        </div>
+
+        <div class="description_box">
+          <p>简单描述</p>
+          <textarea name="content" id="" cols="68" rows="10" class="description"></textarea>
+        </div>
+        <botton class="submit_btn">提交</botton>
+      </div>
+      <div role="tabpanel" class="tab-pane active" id="judge">
+        <div class="judge_content">
+          <div class="select_box">
+            <p class="select_label">病人目前的状况（病的严重程度）</p>
+            <select class="jz_select" >
+              <option value = "volvo">正常，完全没症状1</option>
+              <option value = "saab">正常，完全没症状2</option>
+              <option value = "opel">正常，完全没症状3</option>
+              <option value = "audi">正常，完全没症状4</option>
+            </select>
+          </div>
+          <div class="select_box">
+            <p class="select_label">病人目前的状况（病的严重程度）</p>
+            <select class="jz_select" >
+              <option value = "volvo">正常，完全没症状1</option>
+              <option value = "saab">正常，完全没症状2</option>
+              <option value = "opel">正常，完全没症状3</option>
+              <option value = "audi">正常，完全没症状4</option>
+            </select>
+          </div>
+          <div class="select_box">
+            <p class="select_label">病人目前的状况（病的严重程度）</p>
+            <select class="jz_select" >
+              <option value = "volvo">正常，完全没症状1</option>
+              <option value = "saab">正常，完全没症状2</option>
+              <option value = "opel">正常，完全没症状3</option>
+              <option value = "audi">正常，完全没症状4</option>
+            </select>
+          </div>
+          <div class="select_box">
+            <p class="select_label">病人目前的状况（病的严重程度）</p>
+            <select class="jz_select" >
+              <option value = "volvo">正常，完全没症状1</option>
+              <option value = "saab">正常，完全没症状2</option>
+              <option value = "opel">正常，完全没症状3</option>
+              <option value = "audi">正常，完全没症状4</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="patient_detail">
+          <div class="detail_head">以下部分为病人可见</div>
+          <botton class="submit_btn change_medicine">修改用药</botton>
+          <p class="warn">*“修改用药”请到患者问卷直接修改</p>
+        </div>
+
+        <!--复诊-->
+        <div class="fill_in_box bt_dashed">
+          <div class="selections">
+            <span class="checkbox_class"><input type="checkbox" name="" class="checkbox"/></span>
+            <span class="checkbox_label">复诊</span>
+          </div>
+          <div class="text_input">
+            <span class="input_label">复诊日期：</span>
+            <input type="text" name="" class="input_box date_box"/>
+          </div>
+          <div class="text_input">
+            <span class="input_label">复诊时间：</span>
+            <input type="text" name="" class="input_box date_box"/>
+          </div>
+          <div class="text_input">
+            <span class="input_label">复诊诊金：</span>
+            <input type="text" name="" class="input_box"/>
+            <span class="input_label">元/次/半小时</span>
+          </div>
+        </div>
+
+        <!--面诊-->
+        <div class="fill_in_box bt_dashed">
+          <div class="selections">
+            <span class="checkbox_class"><input type="checkbox" name="" class="checkbox"/></span>
+            <span class="checkbox_label">面诊</span>
+          </div>
+          <div class="text_input">
+            <span class="input_label">复诊日期：</span>
+            <input type="text" name="" disabled="disabled" class="input_box date_box box_disable"/>
+          </div>
+          <div class="text_input">
+            <span class="input_label">复诊时间：</span>
+            <input type="text" name="" disabled="disabled" class="input_box date_box box_disable"/>
+          </div>
+          <div class="text_input">
+            <span class="input_label">复诊诊金：</span>
+            <input type="text" name="" disabled="disabled" class="input_box box_disable"/>
+            <span class="input_label">元/次/半小时</span>
+          </div>
+          <div class="description_box">
+            <p>面诊前完成的任务:</p>
+            <textarea name="content" id="" cols="52"  disabled="disabled"  rows="5" class="description box_disable"></textarea>
+          </div>
+        </div>
+
+        <!--转诊-->
+        <div class="fill_in_box bt_dashed">
+          <div class="selections">
+            <span class="checkbox_class"><input type="checkbox" name="" class="checkbox"/></span>
+            <span class="checkbox_label">转诊</span>
+          </div>
+          <div class="description_box">
+            <p>转诊到:</p>
+            <div class="choose_doctor" data-toggle="modal" data-target="#selectDoctor">点击选择/修改医生</div>
+          </div>
+          <div class="text_input">
+            <span class="input_label">留言：</span>
+            <input type="text" name=""   disabled="disabled"  class="input_box box_disable"/>
+          </div>
+        </div>
+        <botton class="submit_btn">提交</botton>
+      </div>
+    </div>
+  </div>
+
+  <!--选择转诊医生 begin-->
+  <div class="modal fade" id="selectDoctor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog doctor_modal_dialog" role="document">
+      <div class="modal-content">
+        <div class="doctor_modal_body">
+          <ul class="doctor_mode_left ">
+            <li class="input-group search">
+              <input type="text" class="form-control" placeholder="查找联系人"/>
+              <span class="glyphicon glyphicon-search"></span>
+            </li>
+            <li class="record_header">最近转诊记录</li>
+            <li class="doctor_sort">A<span class="sub_span">12</span></li>
+            <li class="doctor_sort">C<span class="sub_span">23</span></li>
+            <li class="doctor_sort">D<span class="sub_span">10</span></li>
+            <li class="doctor_sort">L<span class="sub_span">8</span></li>
+          </ul>
+          <div class="doctor_list">
+            <div class="doctor">
+              <div class="head_pic doctor_head_pic">
+                <img src="images/head_pic.jpg" alt=""/>
+              </div>
+              <div class="doctor_body">
+                <h4 class="doctor_name">Apple</h4>
+              </div>
+            </div>
+            <div class="doctor">
+              <div class="head_pic doctor_head_pic">
+                <img src="images/head_pic.jpg" alt=""/>
+              </div>
+              <div class="doctor_body">
+                <h4 class="doctor_name">Apple2</h4>
+              </div>
+            </div>
+            <div class="doctor">
+              <div class="head_pic doctor_head_pic">
+                <img src="images/head_pic.jpg" alt=""/>
+              </div>
+              <div class="doctor_body">
+                <h4 class="doctor_name">Apple3</h4>
+              </div>
+            </div>
+            <div class="doctor">
+              <div class="head_pic doctor_head_pic">
+                <img src="images/head_pic.jpg" alt=""/>
+              </div>
+              <div class="doctor_body">
+                <h4 class="doctor_name">Apple3</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer doctor_modal_footer">
+          <div class="modal_footer_main">
+            <button type="button" class="btn yes">确 定</button>
+            <button type="button" class="btn cancel" data-dismiss="modal">取 消</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--#选择转诊医生  end-->
+
+  <!--切换病人开始-->
+  <ul class="switch_patient_box hidden">
+    <li>
+      <div class="head_pic">
+        <img src="images/head_pic.jpg" alt=""/>
+      </div>
+      <div class="info">
+        <h3>陈小强<span class="sub_head">(父/陈大东)</span></h3>
+        <p>预约时间：<span>2015-06-12   12:00-12:30</span></p>
+        <p>预约类型：<span>面诊</span></p>
+        <p>问卷完成度：<span>9/20</span></p>
+      </div>
+    </li>
+    <li class="on">
+      <div class="head_pic">
+        <img src="images/head_pic.jpg" alt=""/>
+      </div>
+      <div class="info">
+        <h3>陈小强<span class="sub_head">(父/陈大东)</span></h3>
+        <p>预约时间：<span>2015-06-12   12:00-12:30</span></p>
+        <p>预约类型：<span>面诊</span></p>
+        <p>问卷完成度：<span>9/20</span></p>
+      </div>
+    </li>
+    <li>
+      <div class="head_pic">
+        <img src="images/head_pic.jpg" alt=""/>
+      </div>
+      <div class="info">
+        <h3>陈小强<span class="sub_head">(父/陈大东)</span></h3>
+        <p>预约时间：<span>2015-06-12   12:00-12:30</span></p>
+        <p>预约类型：<span>面诊</span></p>
+        <p>问卷完成度：<span>9/20</span></p>
+      </div>
+    </li>
+    <li>
+      <div class="head_pic">
+        <img src="images/head_pic.jpg" alt=""/>
+      </div>
+      <div class="info">
+        <h3>陈小强<span class="sub_head">(父/陈大东)</span></h3>
+        <p>预约时间：<span>2015-06-12   12:00-12:30</span></p>
+        <p>预约类型：<span>面诊</span></p>
+        <p>问卷完成度：<span>9/20</span></p>
+      </div>
+    </li>
+  </ul>
+  <!--切换病人结束-->
+
+  <!--添加模板开始-->
+  <div class="modal fade add_modal" id="add_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog add_modal_dialog" role="document">
+      <div class="modal-content">
+        <div class="add_modal_body">
+          <div class="add_modal_left">
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="active"><a href="#my_modal" aria-controls="my_modal" role="tab" data-toggle="tab">我的模板</a></li>
+              <li role="presentation" class=""><a href="#question_box" aria-controls="question_box" role="tab" data-toggle="tab">问题库</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <ul id="my_modal" role="tabpanel" class="tab-pane modal_box active">
+                <li class="active">
+                  <span class="checkbox_class checkbox_right on "><input type="checkbox" name="" class="checkbox"/></span>
+                  <div class="my_modal_box">
+                    <p class="question">分裂症</p>
+                    <p class="number">共11题</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="checkbox_class checkbox_right"><input type="checkbox" name="" class="checkbox"/></span>
+                  <div class="my_modal_box">
+                    <p class="question">分裂症</p>
+                    <p class="number">共11题</p>
+                  </div>
+                </li>
+              </ul>
+              <ul id="question_box"  role="tabpanel" class="tab-pane question_box  ">
+                <li class="input-group search">
+                  <input type="text" class="form-control" placeholder="查找资料库"/>
+                  <span class="glyphicon glyphicon-search"></span>
+                </li>
+                <li class="questions">自编库</li>
+                <li class="questions active">
+                  <span class="checkbox_class checkbox_right on "><input type="checkbox" name="" class="checkbox"/></span>
+                  <p>我觉得闷闷不乐，情绪低沉</p>
+                </li>
+                <li class="questions">
+                  <span class="checkbox_class checkbox_right "><input type="checkbox" name="" class="checkbox"/></span>
+                  <p>我觉得闷闷不乐，情绪低沉</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!--右侧问题列表开始-->
+          <div class="add_modal_right">
+            <ul class="q_list">
+              <li>
+                <h4>1.我觉得闷闷不乐，情绪低沉？</h4>
+                <p>A.是</p>
+                <p>B.否</p>
+                <p>C.其他</p>
+              </li>
+              <li>
+                <h4>1.我觉得闷闷不乐，情绪低沉？</h4>
+                <p>A.是</p>
+                <p>B.否</p>
+                <p>C.其他</p>
+              </li>
+            </ul>
+          </div>
+          <!--右侧问题列表结束-->
+
+        </div>
+        <div class="modal-footer doctor_modal_footer">
+          <div class="modal_footer_main">
+            <button type="button" class="btn yes">确 定</button>
+            <button type="button" class="btn cancel" data-dismiss="modal">取 消</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+<!-- build:js scripts/app_signto.js -->
+<script src="scripts/jquery.js"></script>
+<script src="scripts/bootstrap.min.js"></script>
+<script src="scripts/swiper.3.1.7.jquery.min.js"></script>
+<!-- endbuild -->
+
+<script>
+  var swiper = new Swiper('.swiper-container', {
+//    pagination: '.swiper-pagination',
+    slidesPerView: 4,
+    loop:true,
+    prevButton:'.swiper-button-prev',
+    nextButton:'.swiper-button-next',
+  });
+
+</script>
+</body>
+</html>
+

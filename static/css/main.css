@@ -1,0 +1,212 @@
+/*************************************************后台index框架样式************************/
+ul,li{
+    padding: 0;
+    margin: 0;}
+@font-face {
+    font-family: 'blxt';
+    src: url('//at.alicdn.com/t/font_1449163989_6995635.eot'); /* IE9*/
+    src: url('//at.alicdn.com/t/font_1449163989_6995635.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('//at.alicdn.com/t/font_1449163989_6995635.woff') format('woff'), /* chrome、firefox */
+    url('//at.alicdn.com/t/font_1449163989_6995635.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('//at.alicdn.com/t/font_1449163989_6995635.svg#blxt') format('svg'); /* iOS 4.1- */
+}
+
+a{cursor: pointer;}
+.f-icon{
+    font-family:'blxt';font-style: normal;display: inline-block;
+    font-size: 14px;}
+/* 全屏自适应布局  */
+/*—滚动条默认显示样式–*/
+::-webkit-scrollbar-thumb{
+    background-color:#aaa;
+    height:50px;
+    outline-offset:-2px;
+    outline:2px solid #fff;
+    -webkit-border-radius:4px;
+    border: 2px solid #fff;
+}
+
+/*—鼠标点击滚动条显示样式–*/
+::-webkit-scrollbar-thumb:hover{
+    background-color:#7184a6;
+    height:50px;
+    -webkit-border-radius:4px;
+}
+
+/*—滚动条大小–*/
+::-webkit-scrollbar{
+    width:8px;
+    /*height:8px;*/
+}
+
+/*—滚动框背景样式–*/
+::-webkit-scrollbar-track-piece{
+    background-color:#ddd;
+    -webkit-border-radius:0;
+}
+html,body{
+    background: #fff url(../image/bg.gif) 0 0 repeat;}
+html,body{width:100%;height:100%;overflow:hidden;margin:0;}
+html{_height:auto;_padding:84px 0 25px;}
+header{
+    height: 60px;
+    background-color: #314b7c;
+    overflow: hidden;
+    border: 12px solid #314b7c;
+    border-right:none;
+    border-left: none;
+}
+footer{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25px;background-color: #314b7c;
+    color: #fff;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 25px;}
+#mainBox{overflow-y: auto;
+    position: absolute;
+    left: 0;
+    top:84px;_height:100%;
+    bottom: 25px;
+    right: 0;}
+.index-top-sp1{
+    /*border-left: 1px solid #6a7da0;*/
+    font-size: 14px;height: 60px;
+    padding-top: 5px;
+    padding-right: 40px;cursor: pointer}
+.index-top-sp1 a{
+    text-decoration: none;
+    color: #fff;
+}
+.index-top-spset{
+    line-height: 50px;}
+.index-top-sp1:hover{
+    background-color: #284170;}
+.index-top-sp1 p{
+    padding: 0;
+    margin: 0;
+    line-height: 25px;}
+.index-top-sp1-icon{
+    background-color: #1f3765;
+    line-height: 60px;
+    right: 0;
+    top: 0;
+    color: #aaa;}
+.index-top-sp1-icon i{
+    font-size: 20px;}
+.index-top-menu{
+    display: inline-block;
+    line-height: 60px;
+    border-right: 1px solid #6a7da0;
+    color: #fff;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-decoration: none;}
+.index-top-menu:hover,.index-top-menu.on{
+    color: #ffba00;}
+
+.index-top-menu .f-icon{
+    font-size: 22px;
+    margin-right: 10px;}
+
+/*病理申请单*/
+.c-title{
+    background-color: #fff;
+    border-left: 5px solid #314b7c;
+    line-height: 50px;
+    padding-left: 10px;}
+.c-title h3{
+    margin: 0;
+    font-size: 16px;
+    color: #777;}
+.c-title-t1{
+    line-height: 45px;
+    height: 45px;
+    position: relative;
+    border-bottom: 1px solid #e1e1e1;
+}
+.c-title-t1-rbox{
+    right: 0;
+    position: absolute;
+    top: 0;}
+.c-title-span{
+    display: inline-block;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #444;}
+.c-title-span.on{
+    background-color: #eaeef4;
+    border: 1px solid #e1e1e1;
+    border-bottom: none;
+    line-height: 44px;}
+
+/*************************************************数据列表页样式************************/
+#search{
+    padding: 10px;
+    padding-left: 0;}
+#search input,#search select{width: auto;}
+.mkoa-box{background-color: #fff;}
+.list-title{ margin: 0;padding: 0;padding-left: 10px;float: left;}
+/* 简易数据表格-格边框 */
+.mkoa-table{table-layout:fixed;width:100%;line-height:1.5;}
+.mkoa-table th,.mkoa-table td{padding:5px;border:1px solid #ddd;}
+
+.mkoa-table th{font-weight:bold;  padding: 10px;
+    background-color:#eaeef4;}
+.mkoa-table tbody tr:nth-child(2n){background:#fafafa;}
+.mkoa-table tbody tr:hover{background:#f0f0f0;}
+.mkoa-table .cola{width:100px;}
+.mkoa-table .colb{width:200px;}
+/* 简易数据表格-行边框*/
+.mkoa-table-row th,.mkoa-table-row td{border-width:0 0 1px;}
+/* 简易数据表格-圆角*/
+.mkoa-table-rds{border-collapse:separate;border:1px solid #ddd;border-width:0 1px 1px 0;border-radius:5px;}
+.mkoa-table-rds th,.mkoa-table-rds td{border-width:1px 0 0 1px;}
+.mkoa-table-rds > :first-child > :first-child > :first-child{border-top-left-radius:5px;}
+.mkoa-table-rds > :first-child > :first-child > :last-child{border-top-right-radius:5px;}
+.mkoa-table-rds > :last-child > :last-child > :first-child{border-bottomkoa-left-radius:5px;}
+.mkoa-table-rds > :last-child > :last-child > :last-child{border-bottomkoa-right-radius:5px;}
+
+/*******************************编辑表单**********************************************/
+.mkoa-form{
+    width: 100%;
+    font-size: 14px;}
+.mkoa-form-title{
+    font-weight: bold;
+    display: block;
+    text-align: right;
+    padding-right: 8px;}
+.mkoa-form td{
+    padding: 5px;
+    border: 1px solid #eee;}
+.mkoa-form td input,.mkoa-form td select{
+    max-width: 300px;}
+/*自适应布局*/
+.f-mcom{top: 10px;bottom: 10px;}
+.f-mrcom{margin-right: 15px;overflow-y: auto;}
+.f-mlcom{margin-left: 15px;overflow-y: auto;}
+.f-l60{
+    right: 10px;
+    z-index: 0;}
+.f-r40{
+    left: 10px;
+    z-index: 1;}
+/*公共样式*/
+
+.f-bdn{
+    border: none;}
+
+.c-box{
+    background-color: #fff;}
+.f-h100{
+    height: 100%;}
+/*表格表单布局*/
+.mkoa-table-title{
+    background-color: #eaeef4;
+    width: 80px;
+    text-align: center;}

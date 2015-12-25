@@ -1,0 +1,114 @@
+
+ul li{list-style: none}
+.rpBlock-dft{
+  color:#666;
+  background: #eaeaea;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  cursor: pointer;
+}
+.rpBlock-dft.on{  color:#fff;  background: #5e6f8f;  }
+.rpHead{  background: #fff;  border-left: 7px solid #b1c0dc;  height: 56px;  }
+.lHead{  color: #5e6f8f;  font-size: 18px;  padding-left: 16px;  float: left;  line-height: 56px;  }
+.rHead{  float: right;  color: #939393;  }
+.rHead li{  border-left: 1px solid #ccc;  font-size: 14px;  vertical-align: middle;  padding: 0 10px;
+  display: inline-block;
+  cursor: pointer;  }
+.rHead li span{  display: inline-block;  line-height: 56px;  }
+.rpIcon{  font-size: 26px;  margin-right: 8px;  margin-top: 12px;  float: left;  }
+.rHead li:hover{  color: #314b7c;  }
+.rpMain{
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.lMian{
+  display: inline-block;
+  background: #fff;
+  width: 230px;
+  padding: 10px 12px;
+  color: #666;
+  font-size: 14px;
+}
+.ltopHead span{  display: inline-block;  width: 50%;  }
+.ltopBody{  padding: 10px;  }
+.swiperHead{  cursor: auto;  }
+.swiper-container{  margin-top: 12px;  }
+.swiper-slide{  width: 230px;  height: 163px;  }
+.swiper-prev,.swiper-next{
+  display: inline-block;
+  width: 62px;
+  text-align: center;
+  margin-right: 5px;
+  font-size: 24px;
+  line-height: 26px;
+  margin-top: 10px;
+}
+.swiper-prev:hover,.swiper-next:hover{  color:#fff;  background: #5e6f8f;  }
+.preview{
+  color: #fff;
+  display: inline-block;
+  width: 88px;
+  background: #5e6f8f;
+  float: right;
+  margin-top: 10px;
+}
+.rMain{
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: inline-block;
+  text-align: center;
+}
+.rpPaper{
+  width: 720px;
+  background: #fff;
+  color:#000;
+  margin: 0 auto;
+  margin-top: 12px;
+  padding: 30px;
+}
+.rpPaper h1{
+  margin: 0;
+  font-size: 18px;
+  margin-bottom: 5px;
+  font-weight: normal;
+  color: #0f0cb3;
+}
+.rpPaper .subHead {  color: #0f0cb3;  margin: 0;  line-height: 28px;  }
+.rpPaper h2{  font-size: 18px;  font-weight: normal;  margin: 14px 0;  }
+.bb{  border-bottom: 1px solid #000;  }
+.rpInfo{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: left;
+}
+.rpInfo p{
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin: 0;
+  line-height: 44px;
+  font-size: 12px;
+}
+.rpInfo p span{  font-size: 14px;  }
+.rpInfo p.flex3{
+  -webkit-box-flex:3;
+  -webkit-flex:3;
+  -ms-flex:3;
+  flex:3;
+}
+.rpInfo p.flex2{
+  -webkit-box-flex:2;
+  -webkit-flex:2;
+  -ms-flex:2;
+  flex:2;
+}
+.blzdInfo{  text-align: left;  min-height: 400px;  }

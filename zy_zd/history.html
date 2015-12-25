@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+  <title>历史记录</title>
+  <link rel="stylesheet" href="styles/swiper.3.1.7.min.css"/>
+  <!-- build:css styles/history.min.css -->
+  <link rel="stylesheet" href="styles/history.css"/>
+  <!-- endbuild -->
+</head>
+<body>
+<header>
+  <div class="main_head">
+    <img src="images/zy_logo.png" alt=""/>
+    <div class="nav pull-right">
+      <a href="#">预约</a>
+      <a href="#" class="on">就诊</a>
+      <a href="#">个人中心</a>
+    </div>
+  </div>
+</header>
+
+<div class="hty_container">
+  <div class="hty_left">
+    <div class="input-group search bb_solid">
+      <input type="text" class="form-control" placeholder="查找资料库"/>
+      <span class="glyphicon glyphicon-search"></span>
+    </div>
+    <div class="dropdown">
+      <div id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="hty_media bb_solid">
+        <div class="media-left">
+          <img src="images/head_pic.jpg" alt="...">
+        </div>
+        <div class="media-body">
+          <span class="glyphicon glyphicon-menu-down down_icon"></span>
+          <h4 class="media-heading">张小平 <span>（父/张大海）</span></h4>
+          共预约3次
+        </div>
+      </div>
+      <ul class="dropdown-menu hty_dropdown" aria-labelledby="dLabel">
+        <li>
+          <p>预约时间：2015-06-12   12:00-12:30</p>
+          <p>预约类型：网诊</p>
+        </li>
+        <li class="on">
+          <p>预约时间：2015-06-12   12:00-12:30</p>
+          <p>预约类型：网诊</p>
+        </li>
+        <li>
+          <p>预约时间：2015-06-12   12:00-12:30</p>
+          <p>预约类型：网诊</p>
+        </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <div id="dLabel2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="hty_media bb_solid">
+        <div class="media-left">
+            <img src="images/head_pic.jpg" alt="...">
+        </div>
+        <div class="media-body">
+          <span class="glyphicon glyphicon-menu-down down_icon"></span>
+          <h4 class="media-heading">张小平 <span>（父/张大海）</span></h4>
+          共预约3次
+        </div>
+      </div>
+      <ul class="dropdown-menu hty_dropdown " aria-labelledby="dLabel2">
+        <li>
+          <p>2</p>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="hty_mid">
+    <div class="middle_head_nav">
+      <!-- Nav tabs -->
+      <div class="swiper-container">
+        <span class="swiper-button-prev swiper-button"><i class="glyphicon glyphicon-menu-left"></i></span>
+        <ul class="nav nav-tabs swiper-wrapper" role="tablist">
+          <li role="presentation" class="active swiper-slide"><a href="#base_templete" aria-controls="base_templete" role="tab" data-toggle="tab">基础模板</a></li>
+          <li role="presentation" class="swiper-slide"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">抑郁模板</a></li>
+          <li role="presentation" class="swiper-slide"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">抑郁模板</a></li>
+          <li role="presentation" class="swiper-slide"><a href="#messages2" aria-controls="messages2" role="tab" data-toggle="tab">抑郁模板</a></li>
+        </ul>
+        <span class="swiper-button-next swiper-button" ><i class="glyphicon glyphicon-menu-right"></i></span>
+      </div>
+    </div>
+    <!-- Tab panes -->
+    <div class="tab-content jz_left_content">
+      <div role="tabpanel" class="tab-pane active" id="base_templete">
+        <ul class="questionnaire_list">
+          <li>
+            <p class="question">1.请问这是患者第一次找心理或精神科医生就诊吗？</p>
+            <p class="chose_answer"><span>A. 是</span></p>
+            <span class="reset_answer">重填</span>
+          </li>
+          <li>
+            <p class="question">2.请问这是患者第一次找心理或精神科医生就诊吗？</p>
+            <p class="chose_answer"><span>A. 是</span></p>
+          </li>
+          <li>
+            <p class="question">3.请问这是患者第一次找心理或精神科医生就诊吗？</p>
+            <p class="chose_answer"><span>A. 是</span></p>
+          </li>
+          <li>
+            <p class="question">4.请问这是患者第一次找心理或精神科医生就诊吗？</p>
+            <p class="chose_answer"><span>A. 是</span></p>
+          </li>
+        </ul>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="profile">2</div>
+      <div role="tabpanel" class="tab-pane" id="messages">3</div>
+      <div role="tabpanel" class="tab-pane" id="messages2">4</div>
+    </div>
+  </div>
+  <div class="hty_right">
+    <ul class="hty_r_content">
+      <li>
+        <p class="hty_r_title">症状</p>
+        <p>知觉：幻听</p>
+        <p>思维：散漫，迟缓</p>
+      </li>
+      <li>
+        <p class="hty_r_title">症状</p>
+        <p>知觉：幻听</p>
+        <p>思维：散漫，迟缓</p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+<!-- build:js scripts/app_signto.js -->
+<script src="scripts/jquery.js"></script>
+<script src="scripts/bootstrap.min.js"></script>
+<script src="scripts/swiper.3.1.7.jquery.min.js"></script>
+<!-- endbuild -->
+
+<script>
+  var swiper = new Swiper('.swiper-container', {
+//    pagination: '.swiper-pagination',
+    slidesPerView: 4,
+    loop:true,
+    prevButton:'.swiper-button-prev',
+    nextButton:'.swiper-button-next',
+  });
+
+</script>
+</body>
+</html>
+

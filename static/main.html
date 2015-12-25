@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>病理系统</title>
+    <link href="css/base.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="lib/IE/html5shiv.js"></script>
+    <script src="lib/IE/json3.min.js"></script>
+    <![endif]-->
+    <script src="lib/avalon.js"></script>
+    <script src="lib/app.js"></script>
+</head>
+<body ms-controller="app">
+<header class="f-cb">
+    <img class="f-fl" src="image/logo.png" alt=""/>
+    <span class="f-fl index-top-sp1 f-pl15 f-pr">
+        <a href="#!/?exams/exams/list">
+            <span class="index-top-spset">选择当前病人</span>
+            <!--<p>病理号：021240</p>-->
+            <!--<p> 姓   名：王利是</p>-->
+            <span class="index-top-sp1-icon f-pa"><i class="f-icon">&#xe601;</i></span>
+        </a>
+    </span>
+    <div class="f-fl f-ml10">
+        <a href="#!/?ucenter/admin/member/list" class="index-top-menu"> <i class="f-icon">&#xe606;</i>取材</a>
+        <a href="" class="index-top-menu"> <i class="f-icon">&#xe600;</i>包埋</a>
+        <a href="" class="index-top-menu"> <i class="f-icon">&#xe602;</i>制片</a>
+        <a href="" class="index-top-menu"> <i class="f-icon">&#xe605;</i>图像</a>
+        <a href="" class="index-top-menu"> <i class="f-icon">&#xe607;</i>报告</a>
+    </div>
+    <div class="f-fr">
+        <a href="" class="index-top-menu"> <i class="f-icon">&#xe603;</i>设置</a>
+        <a ms-click="lgout" class="index-top-menu f-bdn"> <i class="f-icon">&#xe604;</i>退出</a>
+    </div>
+</header>
+<div id="mainBox" ms-controller="router">
+    <div ms-include-src="curTpl" class="f-p10" ></div>
+</div>
+<footer ms-include-src="'footer.html'"></footer>
+<script>
+    require(["KoaFunctions","jquery"], function (F,$){
+
+        app.lgout=function(){F.lgout()};//定义退出方法
+//        F.checkLogin(function(){
+//            F.router(app.$host+'doctorSite/report/main.html?'+app.$v);//初始化路由
+//        });
+        F.router('doctorSite/report/main.html?'+app.$v);//初始化路由
+        //菜单部分
+        var list=$('.index-top-menu').add('.index-top-sp1');
+        list.click(function(){
+            list.removeClass('on');$(this).addClass('on');
+        });
+    });
+</script>
+</body>
+</html>

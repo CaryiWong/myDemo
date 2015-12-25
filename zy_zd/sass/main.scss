@@ -1,0 +1,581 @@
+@import "common";
+.warn{
+  color: $red;
+}
+.classify{
+  padding-bottom: 28px;
+  text-align: left;
+  .type_title{
+    color: $blue;
+    margin-top: 10px;
+  }
+  .checkboxs{
+    margin-top: 20px;
+    .selections{
+      display: inline-block;
+      width: 100px;
+    }
+  }
+
+}
+.text_input{
+  text-align: left;
+  margin-top: 20px;
+  .input_box{
+    border: 1px solid $llgrey;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    width: 520px;
+  }
+  .input_label{
+    margin-right: 10px;
+    line-height: 40px;
+  }
+}
+.description_box{
+  text-align: left;
+  .description{
+    text-align: left;
+    border: 1px solid $llgrey;
+  }
+}
+.select_box{
+  margin-bottom: 24px;
+  .select_label{
+    font-weight: bold;
+    margin-top: 5px;
+  }
+  .jz_select{
+    margin-top: 5px;
+    width: 348px;
+    height: 40px;
+    line-height: 40px;
+    color: $lgrey;
+    border: 1px solid $llgrey;
+    //visibility: hidden;
+    //&:focus{
+    //  border: none;
+    //  outline: none;
+    //}
+  }
+}
+.submit_btn{
+  display: block;
+  background: $blue;
+  margin: 0 auto;
+  width: 258px;
+  height: 46px;
+  line-height: 46px;
+  color: #fff;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  text-align: center;
+  &:hover {
+    opacity: .8;
+  }
+}
+.btn{
+  display: inline-block;
+  padding: 10px 34px;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  box-sizing: border-box;
+  cursor: pointer;
+  &:hover{
+    color: #fff;
+    opacity: .8;
+  }
+}
+.btn-normal{
+  border: 1px solid #fff;
+  margin-right: 14px;
+}
+.yes{
+  background: $blue;
+  color: #fff;
+  border: none;
+}
+.cancel{
+  background: #fff;
+  color: $blue;
+  border: 1px solid $blue;
+  &:hover{
+    color: $blue;
+  }
+}
+.checkbox_class{
+  display: block;
+  float: left;
+  background: $llgrey;
+  width: 20px;
+  height: 20px;
+  &.on{
+    background: $llgrey url('../images/chose.png') no-repeat center center;
+  }
+  .checkbox{
+    width: 20px;
+    height: 20px;
+    visibility: hidden;
+    margin: 0;
+  }
+}
+.checkbox_label{
+  line-height: 20px;
+  margin-left: 10px;
+}
+.checkdot_box {
+  display: inline-block;
+  vertical-align: top;
+  .checkdot_class {
+    display: block;
+    float: left;
+    background: $llgrey;
+    width: 25px;
+    height: 25px;
+    border-radius: 12.5px;
+    &.on {
+      background: $llgrey url('../images/dot.png') no-repeat center center;
+    }
+    .checkdot {
+      width: 25px;
+      height: 25px;
+      visibility: hidden;
+      margin: 0;
+    }
+  }
+  .checkdot_label{
+    line-height: 25px;
+    margin-left: 10px;
+  }
+}
+
+.head_pic{
+  display: inline-block;
+  width: 90px;
+  height: 90px;
+  border-radius: 45px;
+  border: 1px solid #fff;
+  overflow: hidden;
+  margin:10px 20px;
+  img{
+    width: 100%;
+  }
+}
+.zy_container{
+  margin: 0 auto;
+  margin-top: 18px;
+  width: 1200px;
+  text-align: left;
+  overflow: hidden;
+  position: relative;
+  .main_left{
+    display: table-cell;
+    background: #fff;
+    margin-bottom:-9999px;
+    padding-bottom:9999px;
+    .main_left_top{
+      color: #fff;
+      height: 210px;
+      width: 530px;
+      background: url('../images/zy_lt.jpg') no-repeat;
+      position: relative;
+      .info{
+        display: inline-block;
+        h3{
+          margin-top: 10px;
+        }
+        .sub_head{
+          font-size: 18px;
+          font-weight: normal;
+        }
+        p{
+          font-size: 16px;
+        }
+      }
+      .face_diagnosed{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+      }
+      .btn_group{
+        margin-top: 15px;
+        .switch_patient{
+          margin-left: 10px;
+          background: $dblue url('../images/change_icon.png') no-repeat 10px center;
+          padding: 10px 29px 10px 39px;
+        }
+      }
+    }
+
+  }
+  .main_right{
+    display: table-cell;
+    padding-left: 16px;
+    width: 654px;
+    .right_head{
+      border-bottom: 6px solid $blue;
+      width: 100%;
+      height: 36px;
+      ul{
+        border-bottom: none;
+      }
+      li {
+        a{
+          margin: 0;
+          padding: 0 10px;
+          line-height: 30px;
+          border: none;
+          border-bottom: 6px solid $blue;
+          color: $lgrey;
+          border-radius: 0;
+          font-size: 24px;
+          &:hover{
+            background: none;
+          }
+        }
+        &.active{
+          a{
+            background: none;
+            border-bottom: 6px solid $grey;
+            color: $grey;
+          }
+        }
+      }
+    }
+    .right_content{
+      text-align: center;
+      background: #fff;
+      margin-top: 14px;
+      padding: 14px;
+      .judge_content{
+        text-align: left;
+      }
+      .patient_detail{
+        .detail_head{
+          background: $blue;
+          color: #fff;
+          margin-left: -14px;
+          margin-right: -14px;
+        }
+        .change_medicine {
+          margin-top: 20px;
+          margin-bottom: 20px;
+          background: #fff;
+          color: $blue;
+          border: 1px solid $blue;
+        }
+      }
+      .fill_in_box{
+        margin-left: -14px ;
+        margin-right: -14px ;
+        text-align: left;
+        padding: 14px;
+        .input_box{
+          width: 344px;
+        }
+        .date_box{
+          background-image: url('../images/calendar.png');
+          background-repeat: no-repeat ;
+          background-position: 310px center ;
+        }
+        .description_box{
+          margin-top: 20px;
+        }
+        .choose_doctor{
+          width: 100%;
+          height: 124px;
+          text-align: center;
+          color: $blue;
+          border: 1px solid $lgrey;
+          line-height: 124px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+.reset_medicine{
+  .rm_top{
+    padding: 14px;
+    .text_input td{
+      padding-bottom: 14px;
+    }
+    .input_label{
+      text-align: right;
+    }
+    .input_box{
+     width: 365px;
+    }
+    .checkdot_wrap{
+      width: 365px;
+      .checkdot_box{
+        width: 32.3%;
+      }
+    }
+    .medicine_number{
+      text-align: center;
+      th{
+        background: $lllgrey;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 32px;
+      }
+      .mn_input_box{
+        border: 1px solid $llgrey;
+        width: 91px;
+        margin: 0;
+        height: 42px;
+        line-height: 42px;
+        text-align: center;
+      }
+    }
+    .add_medicine{
+      text-align: center;
+      background: #fff;
+      border: 1px solid $blue;
+      color: $blue;
+      padding: 0 40px;
+    }
+  }
+  .rm_title{
+    height: 28px;
+    line-height: 28px;
+    width: 100%;
+    color: #fff;
+    background: $blue;
+    text-align: center;
+  }
+  .rm_added{
+    padding: 14px 16px;
+    box-sizing: border-box;
+    width: 530px;
+    li{
+      border: 1px dashed $llgrey;
+      margin-bottom: 14px;
+      padding: 14px;
+      word-wrap: break-word;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+.doctor_modal_dialog{
+  width: 514px;
+  overflow: hidden;
+  .doctor_modal_body{
+    padding: 0;
+    .doctor_mode_left{
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+      li{
+        width: 190px;
+        border-bottom: 1px solid $llgrey;
+        padding: 0 14px;
+        line-height: 42px;
+        font-size: 20px;
+        .sub_span{
+          float: right;
+          font-size: 12px;
+        }
+        &:last-child{
+          border-bottom: none;
+        }
+        &.search{
+          padding: 10px 14px;
+          span{
+            top: 17px;
+          }
+        }
+        &.record_header{
+          background: $lllgrey;
+          font-size: 14px;
+        }
+        &.doctor_sort{}
+      }
+    }
+  }
+  .doctor_modal_footer{
+    text-align: center;
+    .modal_footer_main{
+      margin: 0 auto;
+    }
+    .btn{
+      padding: 8px 34px;
+    }
+  }
+  .doctor_list{
+    display: inline-block;
+    margin-left: -3px;
+    width: 320px;
+    vertical-align: top;
+    border-left: 1px solid $llgrey;
+    max-height: 400px;
+    overflow-y: scroll;
+    .doctor{
+      padding: 8px 14px;
+      &:hover{
+        background: $llgrey;
+        cursor: pointer;
+      }
+      .doctor_head_pic{
+        width: 60px;
+        height: 60px;
+        margin: 0;
+      }
+      .doctor_body{
+        display: inline-block;
+        height: 60px;
+        vertical-align: top;
+        .doctor_name{
+          line-height: 46px;
+          margin-left: 10px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+.switch_patient_box{
+  position: absolute;
+  background: rgb(0, 11, 21);
+  background: rgba(0,11,21,.8);
+  width: 366px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  li{
+    padding: 14px;
+    border-bottom: 1px dashed $llgrey;
+    cursor: pointer;
+    color: #fff;
+    &.on,&:hover{
+      color: $blue;
+    }
+    .head_pic{
+      margin: 0;
+      vertical-align: top;
+      width: 72px;
+      height: 72px;
+    }
+    .info{
+      display: inline-block;
+      font-size: 14px;
+      margin-left: 10px;
+      h3{
+        font-size: 20px;
+        margin-top: 0;
+        span{
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+/*增加模板*/
+.modal-content{
+  border-radius: 0;
+}
+.add_modal_dialog{
+  min-width: 764px;
+}
+.add_modal_body{
+  .add_modal_left{
+    display: inline-block;
+    vertical-align: top;
+    width: 364px;
+    .nav{
+      border-bottom: 1px solid $blue;
+      li{
+        a{
+          color: $grey;
+          height: 48px;
+          line-height: 48px;
+          width: 182px;
+          padding: 0;
+          text-align: center;
+          margin: 0;
+        }
+        &.active{
+          a{
+            background: $blue;
+            color: #fff;
+            border: none;
+            border-radius: 0;
+          }
+        }
+      }
+    }
+    .modal_box{
+      height: 478px;
+      overflow-y: scroll ;
+      li{
+        border-bottom: 1px solid $llgrey;
+        padding: 14px 14px 0;
+        position: relative;
+        .my_modal_box{
+          display: inline-block;
+          .number{
+            font-size: 10px;
+          }
+        }
+        .checkbox_right{
+          float: right;
+          margin-top: 12px;
+        }
+        &:hover,&.active{
+          background: $lllgrey;
+        }
+      }
+    }
+    .question_box{
+      height: 478px;
+      overflow-y: scroll ;
+      li{
+        padding: 14px;
+        border-bottom: 1px solid $llgrey;
+        p{
+          margin: 0;
+          line-height: 32px;
+          width: 290px;
+          white-space:nowrap;
+          text-overflow:ellipsis;
+          overflow: hidden;
+        }
+        .checkbox_right{
+          margin-top: 6px;
+          float: right;
+        }
+        &.questions:hover,&.questions.active{
+          background: $lllgrey;
+        }
+      }
+    }
+  }
+  .add_modal_right{
+    display: inline-block;
+    width: 396px;
+    height: 526px;
+    overflow-y: scroll ;
+    margin-left: -3px;
+    border-left: 1px solid $llgrey;
+    .q_list{
+      font-size: 14px;
+      padding: 14px;
+      li{
+        margin-bottom: 16px;
+        h4{
+          font-size: 16px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://D:/demo/bower_components/bootstrap/less/variables.less" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/.gitignore" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/.jshintrc" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Gruntfile.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/jsDemo/index.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/jsDemo/test.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/test/index.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/webpackDemo/basic.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/webpackDemo/css/app.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/webpackDemo/form.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/webpackDemo/image-background.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/webpackDemo/index.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/webpackDemo/js/main.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/webpackDemo/js/main2.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gulpDemo/src/scripts/buildTeam.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gulpDemo/src/scripts/buildTopic.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gulpDemo/src/scripts/jquery.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gulpDemo/src/styles/main.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gulpfile.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/laboratory/index.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/laboratory/sass/main.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/laboratory/styles/main.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/static/doctorSite/1.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/static/doctorSite/main.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/static/doctorSite/report/main.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/wanke/erCodeList.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zy_zd/history.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zy_zd/jiuzhen.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zy_zd/sass/_bootstrap_base.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zy_zd/sass/main.scss" charset="UTF-8" />
+  </component>
+</project>

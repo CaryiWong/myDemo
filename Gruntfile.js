@@ -21,7 +21,7 @@ module.exports = function (grunt) {
 
   // Configurable paths
   var config = {
-    app: 'wanke',
+    app: 'zy_zd' ,
     dist: 'dist'
   };
   //Dynamically create list of files in a folder to bundle for webpack
@@ -47,11 +47,11 @@ module.exports = function (grunt) {
       },
       sass: {
         files: ['<%= config.app %>/**/*.{scss,sass}'],
-        tasks: ['sass:server']
-      }
+        tasks: ['sass:server','newer:autoprefixer']
+      },
       //styles: {
-      //  files: ['<%= config.app %>/styles/**/*.css'],
-      //  tasks: ['newer:autoprefixer']
+      //  files: ['<%= config.app %>/**/*.css'],
+      //  tasks: ['autoprefixer']
       //}
     },
 
@@ -69,7 +69,7 @@ module.exports = function (grunt) {
             '<%= config.app %>/**/*.js'
           ],
           port: 9000,
-          hostname: '192.168.1.146',
+          hostname: '0.0.0.0',
           server: {
             baseDir: ['<%= config.app %>/'],
             routes: {
@@ -132,6 +132,7 @@ module.exports = function (grunt) {
             '<%= config.app %>/scripts/signto.js']
         },{
           'dist/scripts/app_activity.js': ['<%= config.app %>/scripts/jquery.js',
+            '<%= config.app %>/scripts/validation.js',
             '<%= config.app %>/scripts/share.js',
             '<%= config.app %>/scripts/activity.js']
         }]
@@ -148,9 +149,8 @@ module.exports = function (grunt) {
       },
       server: {
         files: {
-          //'<%= config.app %>/caryi/css/doctorList.css': '<%= config.app %>/caryi/sass/doctorList.scss',
-          //'<%= config.app %>/caryi/css/confApmt.css': '<%= config.app %>/caryi/sass/confApmt.scss'
-          '<%= config.app %>/styles/main.css': '<%= config.app %>/sass/main.scss'
+          '<%= config.app %>/styles/main.css': '<%= config.app %>/sass/main.scss',
+          '<%= config.app %>/styles/history.css': '<%= config.app %>/sass/history.scss'
 
         }
       }
@@ -164,7 +164,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '.tmp/styles/',
-          src: '**/*.css',
+          src: 'main.css',
           dest: 'dest/styles/'
         }]
       }
@@ -206,7 +206,16 @@ module.exports = function (grunt) {
           src: ['**'],
           dest: 'D:\\mywork\\server\\web\\activity'
         }]
-      }
+      },
+      activity:{
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: 'dist/',
+          src: ['**'],
+          dest: 'D:\\yiwork_0918\\yiwork_0918\\WebRoot\\activity'
+        }]
+       }
     },
     //webpack: {
     //  build: {
@@ -252,11 +261,11 @@ module.exports = function (grunt) {
     }
 
     grunt.task.run([
-      //'clean:server',
+      'clean:server',
       //'wiredep',
       //'concurrent:server',
-      //'sass:server',
-      //'autoprefixer',
+      'sass:server',
+      'autoprefixer',
       //'webpack:build',
       'browserSync:livereload',
       'watch'

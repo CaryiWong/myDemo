@@ -1,0 +1,73 @@
+.icons {
+  background-image: url("../images/icons.png");
+}
+.icons-aE {
+  background-position: -251px -224px;
+  width: 127px;
+  height: 32px;
+}
+.icons-aZ {
+  background-position: -123px -224px;
+  width: 128px;
+  height: 73px;
+}
+.icons-add {
+  background-position: -422px -304px;
+  width: 26px;
+  height: 26px;
+}
+.icons-addPage {
+  background-position: -422px -236px;
+  width: 68px;
+  height: 68px;
+}
+.icons-file {
+  background-position: -422px -0px;
+  width: 92px;
+  height: 128px;
+}
+.icons-iE {
+  background-position: -170px -180px;
+  width: 124px;
+  height: 38px;
+}
+.icons-iZ {
+  background-position: -170px -113px;
+  width: 122px;
+  height: 67px;
+}
+.icons-index_activity {
+  background-position: -0px -111px;
+  width: 131px;
+  height: 113px;
+}
+.icons-index_article {
+  background-position: -296px -112px;
+  width: 124px;
+  height: 112px;
+}
+.icons-index_course {
+  background-position: -296px -0px;
+  width: 126px;
+  height: 112px;
+}
+.icons-index_form {
+  background-position: -170px -0px;
+  width: 126px;
+  height: 113px;
+}
+.icons-index_interact {
+  background-position: -0px -224px;
+  width: 123px;
+  height: 112px;
+}
+.icons-index_review {
+  background-position: -0px -0px;
+  width: 170px;
+  height: 111px;
+}
+.icons-thumbImg {
+  background-position: -422px -128px;
+  width: 68px;
+  height: 108px;
+}

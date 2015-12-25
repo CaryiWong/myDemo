@@ -1,32 +1,85 @@
-#center{
-  margin:50px auto;
-  width:400px;
-}
-#loading{
-  width:397px;
-  height:49px;
-  background:url(../images/bak.png) no-repeat;
-}
-#loading div{
-  width:0px;
-  height:48px;
-  background:url(../images/pro.png) no-repeat;
-  color:#fff;
-  text-align:center;
-  font-family:Tahoma;
-  font-size:18px;
-  line-height:48px;
-}
-#message {
-  width: 200px;
-  height: 35px;
-  font-family: Tahoma;
-  font-size: 12px;
-  background-color: #d8e7f0;
-  border: 1px solid #187CBE;
-  display: none;
-  line-height: 35px;
-  text-align: center;
-  margin-bottom: 10px;
-  margin-left: 50px;
-}
+/*
+Error: Undefined variable: "$colorDisabled".
+        on line 111 of laboratory/sass/core/_mixin.scss, in `disabled'
+        from line 122 of laboratory/sass/core/_mixin.scss
+        from line 1 of laboratory/sass/main.scss
+
+Backtrace:
+laboratory/sass/core/_mixin.scss:111:in `disabled'
+laboratory/sass/core/_mixin.scss:122
+laboratory/sass/main.scss:1
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/script/tree/variable.rb:49:in `_perform'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/script/tree/node.rb:50:in `perform'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/script/tree/funcall.rb:170:in `perform_arg'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/script/tree/funcall.rb:124:in `block in _perform'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/script/tree/funcall.rb:124:in `each'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/script/tree/funcall.rb:124:in `each_with_index'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/script/tree/funcall.rb:124:in `each'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/script/tree/funcall.rb:124:in `map'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/script/tree/funcall.rb:124:in `_perform'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/script/tree/node.rb:50:in `perform'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:72:in `block in perform_arguments'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:65:in `zip'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:65:in `perform_arguments'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:359:in `block in visit_mixin'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:98:in `block in with_mixin'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:115:in `with_frame'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:98:in `with_mixin'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:347:in `visit_mixin'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `block in with_base'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:115:in `with_frame'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `with_base'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `visit'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:431:in `block (2 levels) in visit_rule'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:431:in `map'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:431:in `block in visit_rule'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:429:in `visit_rule'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `block in with_base'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:115:in `with_frame'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `with_base'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `visit'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:326:in `block (2 levels) in visit_import'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:326:in `map'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:326:in `block in visit_import'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:88:in `block in with_import'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:115:in `with_frame'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:88:in `with_import'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:323:in `visit_import'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `block in with_base'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:115:in `with_frame'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `with_base'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `visit'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:52:in `map'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:157:in `visit'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:8:in `visit'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/root_node.rb:36:in `css_tree'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/engine.rb:378:in `_render_with_sourcemap'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/engine.rb:295:in `render_with_sourcemap'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/exec/sass_scss.rb:410:in `run'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/exec/sass_scss.rb:63:in `process_result'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/exec/base.rb:52:in `parse'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/exec/base.rb:19:in `parse!'
+D:/Ruby21-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/bin/sass:13:in `<top (required)>'
+D:/Ruby21-x64/Ruby22-x64/bin/sass:23:in `load'
+D:/Ruby21-x64/Ruby22-x64/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined variable: \"$colorDisabled\".\A         on line 111 of laboratory/sass/core/_mixin.scss, in `disabled'\A         from line 122 of laboratory/sass/core/_mixin.scss\A         from line 1 of laboratory/sass/main.scss"; }

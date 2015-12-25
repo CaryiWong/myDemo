@@ -1,0 +1,68 @@
+/* line 1, stdin */
+body {
+  background: #999;
+}
+
+/* line 5, stdin */
+.ng-hide {
+  display: none !important;
+}
+
+/* line 9, stdin */
+.appDetail {
+  background: #f1f1f1;
+}
+
+/* line 12, stdin */
+.appDetail .container {
+  padding: 0 15px;
+}
+
+/* line 16, stdin */
+.appDetail .coverContainer {
+  width: 100%;
+  position: relative;
+}
+
+/* line 21, stdin */
+.appDetail .basic-cover {
+  height: auto;
+  width: 100%;
+}
+
+/* line 27, stdin */
+.signButton {
+  background: #000;
+  color: #fff;
+  height: 45px;
+  border: 3px solid #000;
+  border-radius: 3px;
+  margin: 10px 0 8px;
+  font-size: 18px;
+}
+
+/* line 36, stdin */
+.signButton.active {
+  background: #fff;
+  color: #000;
+}
+
+@media all and (min-width: 640px) {
+  /* line 43, stdin */
+  .signButton {
+    height: 80px;
+    font-size: 30px;
+  }
+}
+
+/* line 51, stdin */
+.collectButton {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+  width: 9.375%;
+  height: 18.75%;
+  background-size: cover;
+  cursor: pointer;
+}

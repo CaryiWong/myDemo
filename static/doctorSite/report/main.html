@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+<head>
+  <title>病理报告</title>
+  <style>
+    ul li{list-style: none}
+    .rpBlock-dft{
+      color:#666;
+      background: #eaeaea;
+      height: 32px;
+      line-height: 32px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .rpBlock-dft.on{  color:#fff;  background: #5e6f8f; }
+    .rpHead{ background: #fff;border-left: 7px solid #b1c0dc;height: 56px;}
+    .lHead{
+      color: #5e6f8f;
+      font-size: 18px;
+      padding-left: 16px;
+      float: left;
+      line-height: 56px;
+    }
+    .rHead{float: right;color: #939393;}
+    .rHead li{
+      border-left: 1px solid #ccc;
+      font-size: 14px;
+      vertical-align: middle;
+      padding: 0 10px;
+      display: inline-block;
+      cursor: pointer;
+    }
+    .rHead li span{display: inline-block;  line-height: 56px;  }
+    .rpIcon{  font-size: 26px;  margin-right: 8px;  margin-top: 12px;  float: left;  }
+    .rHead li:hover{  color: #314b7c;  }
+    .fix{*zoom:1;}.fix:after{display:block; content:"clear"; height:0; clear:both; visibility:hidden;}
+    .rpMain{  margin-top: 10px;  width: 100% ;  }
+    .lMian{
+      background: #fff;
+      width: 230px;
+      padding: 10px 12px;
+      color: #666;
+      font-size: 14px;
+      float: left;
+    }
+    .ltopHead span{  display: inline-block;  width: 50%;  }
+    .ltopBody{  padding: 10px;  }
+    .swiperHead{  cursor: auto;  }
+    .swiper-container{  margin-top: 12px;  width: 230px;  height: 163px;  }
+    .swiper-slide{  width: 230px;  height: 163px;  float: left;  overflow: hidden;  }
+    .swiper-slide img{  width: 100%;  }
+    .swiper-prev,.swiper-next{
+      display: inline-block;
+      width: 62px;
+      text-align: center;
+      margin-right: 5px;
+      font-size: 24px;
+      line-height: 26px;
+      margin-top: 10px;
+    }
+    .swiper-prev:hover,.swiper-next:hover{  color:#fff;  background: #5e6f8f;  }
+    .preview{
+      color: #fff;
+      display: inline-block;
+      width: 88px;
+      background: #5e6f8f;
+      float: right;
+      margin-top: 10px;
+    }
+    .rMain{  display: table-cell;  text-align: center;  width: 2000px;  }
+    .rpPaper{
+      width: 720px;
+      background: #fff;
+      color:#000;
+      margin: 0 auto;
+      margin-top: 12px;
+      padding: 30px;
+    }
+    .rpPaper h1{
+      margin: 0;
+      font-size: 18px;
+      margin-bottom: 5px;
+      font-weight: normal;
+      color: #0f0cb3;
+    }
+    .rpPaper .subHead {  color: #0f0cb3;  margin: 0;  line-height: 28px;  }
+    .rpPaper h2{  font-size: 18px;  font-weight: normal;  margin: 14px 0;  }
+    .bb{  border-bottom: 1px solid #000;  }
+    .rpInfo{  text-align: left;  display: table;  width: 100%;  }
+    .rpInfo p{
+      margin: 0;
+      line-height: 44px;
+      font-size: 12px;
+      display: table-cell;
+      width: 25%;
+    }
+    .rpInfo p span{  font-size: 14px;  }
+    .rpInfo p.flex3{  width: 75%;  }
+    .rpInfo p.flex2{  width: 50%;  }
+    .blzdInfo{  text-align: left;  min-height: 400px;  }
+  </style>
+</head>
+<body>
+ <div class="rpHead">
+   <div class="lHead">病理报告</div>
+   <ul class="rHead">
+     <li><i class="f-icon rpIcon">&#xe60b;</i><span>模板</span></li>
+     <li><i class="f-icon rpIcon">&#xe609;</i><span>打印</span></li>
+     <li><i class="f-icon rpIcon">&#xe60e;</i><span>保存</span></li>
+     <li><i class="f-icon rpIcon">&#xe60d;</i><span>提交</span></li>
+     <li><i class="f-icon rpIcon">&#xe60c;</i><span>完成</span></li>
+     <li><i class="f-icon rpIcon">&#xe608;</i><span>退回</span></li>
+     <li><i class="f-icon rpIcon">&#xe60a;</i><span>确认</span></li>
+   </ul>
+ </div>
+ <div class="rpMain fix">
+   <div class="lMian">
+      <div class="ltopHead"><span class="rpBlock-dft on">基础信息</span><span class="rpBlock-dft">其他</span></div>
+      <div class="ltopBody">
+       <p>阴性/阳性：<span>阳性</span></p>
+       <p>关键字：<span>肿瘤</span></p>
+       <p>出生缺陷：<span>无</span></p>
+       <p>随访标记：<span>无</span></p>
+       <p>检查医生：<span>张大一</span></p>
+       <p>会诊医生：<span>张国</span></p>
+        <p class="rpBlock-dft">设置基础信息</p>
+      </div>
+
+     <div class="ltopHead"><span class="rpBlock-dft swiperHead on ">病理图像</span></div>
+
+     <div class="swiper-container" style="margin-top: 12px">
+       <div class="swiper-wrapper">
+
+         <div class="swiper-slide"><img src="/image/pic.jpg" alt=""/></div>
+         <div class="swiper-slide"><img src="/image/pic.jpg" alt=""/></div>
+         <div class="swiper-slide"><img src="/image/pic.jpg" alt=""/></div>
+
+       </div>
+     </div>
+     <span class="rpBlock-dft swiper-prev"><</span>
+     <span class="rpBlock-dft swiper-next">></span>
+     <span class="rpBlock-dft preview">查看大图</span>
+
+   </div>
+   <div class="rMain">
+     <div class="rpPaper">
+       <h1>广东省妇幼保健院</h1>
+       <p class="subHead">广东省儿童医院</p>
+       <p class="subHead">广东省妇幼医院</p>
+       <h2>冰冻贴片病理检查报告单</h2>
+       <div class="rpInfo bb">
+         <p class="flex3">送检医院：<span>张三</span></p><p>病历号：<span>123456464</span></p>
+       </div>
+       <div class="rpInfo bb">
+         <p>姓名：<span>番禺院区</span></p><p>年龄：<span>23</span></p><p>性别：<span>女</span></p><p>联系电话：<span>12345678945</span></p>
+       </div>
+       <div class="rpInfo">
+         <p>住院号：<span>P111111111</span></p><p>科别：<span>乳腺科</span></p><p>床号：<span>18</span></p><p>申请医师：<span>王医生</span></p>
+       </div>
+       <div class="rpInfo">
+         <p class="flex2">检查部位：<span>默认</span></p><p>门诊号：<span>S22</span></p><p>送检日期：<span>2014-06-12</span></p>
+       </div>
+       <div class="rpInfo bb">
+         <p>临床诊断：<span></span></p>
+       </div>
+       <div class="blzdInfo bb">
+         <p style="font-size: 12px">病理诊断：</p>
+         <p>微创术后标本：<br/>右侧XXXXXXXXXXXXXXXXXXXX</p>
+       </div>
+       <div class="rpInfo bb" style="height: 50px">
+         <p>报告日期：<span>2015-12-22</span></p><p>报告医师：<span>张医生</span></p><p>审核医师：<span>张医生</span></p><p></p>
+       </div>
+       <div class="rpInfo">
+         <p style="font-size: 14px">病理科联系电话：<span>12345678（越秀园区）</span></p><p><span>12345678（番禺园区）</span></p>
+       </div>
+       <p style="font-size: 12px">此报告已通过广东省电子商务认证中心认证的电子签名，打印签名与手写签名或印章具有同等法律效力</p>
+     </div>
+   </div>
+ </div>
+
+
+
+ <script>
+   require(['swiper/js/idangerous.swiper.min','css!swiper/css/idangerous.swiper.css'],function(Swiper){
+     var mySwiper = new Swiper ('.swiper-container', {
+//       nextButton: '.swiper-next',
+//       prevButton: '.swiper-prev',
+       loop: true,
+//       autoplay: 1000,
+     });
+     $('#swiper-prev').click(function(){
+       mySwiper.swipePrev();
+     });
+     $('#swiper-next').click(function(){
+       mySwiper.swipeNext();
+     })
+
+   });
+
+ </script>
+</body>
+</html>

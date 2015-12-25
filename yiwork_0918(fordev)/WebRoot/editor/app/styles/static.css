@@ -1,0 +1,19 @@
+/* line 1, stdin */
+.list-area {
+  padding-top: 70px;
+}
+
+/* line 6, stdin */
+.list-nav .navbar-form {
+  width: 40%;
+}
+
+/* line 8, stdin */
+.list-nav .navbar-form .form-group {
+  width: 100%;
+}
+
+/* line 10, stdin */
+.list-nav .navbar-form .form-group .input-group {
+  width: 100%;
+}

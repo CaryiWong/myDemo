@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>病理登记工作站</title>
+    <link href="css/base.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="lib/IE/html5shiv.js"></script>
+    <script src="lib/IE/json3.min.js"></script>
+    <![endif]-->
+    <script src="lib/avalon.js"></script>
+    <script src="lib/app.js"></script>
+</head>
+<body ms-controller="app">
+<header class="f-cb">
+    <img class="f-fl" src="image/logo.png" alt=""/>
+    <div class="f-fl f-ml10">
+        <a href="#!/?regSite/register/main.html" class="index-top-menu"><i class="f-icon">&#xe611;</i>预约登记</a>
+        <a href="" class="index-top-menu"> <i class="f-icon">&#xe612;</i>病人登记</a>
+        <a href="" class="index-top-menu"> <i class="f-icon">&#xe610;</i>记录统计</a>
+    </div>
+    <div class="f-fr">
+        <a href="" class="index-top-menu"> <i class="f-icon">&#xe603;</i>设置</a>
+        <a ms-click="lgout" class="index-top-menu f-bdn"> <i class="f-icon">&#xe604;</i>退出</a>
+    </div>
+</header>
+<div id="mainBox" ms-controller="router">
+    <div ms-include-src="curTpl" data-include-replace="true"></div>
+</div>
+<footer ms-include-src="'footer.html'"></footer>
+<script>
+    require(["KoaFunctions","jquery"], function (F,$){
+        app.lgout=function(){F.lgout()};//定义退出方法
+        F.checkLogin(function(){
+            F.router(app.$host+'regSite/register/main.html?'+app.$v);//初始化路由
+        });
+        //菜单部分
+        var list=$('.index-top-menu');
+        list.click(function(){
+            list.removeClass('on');$(this).addClass('on');
+        });
+    });
+</script>
+</body>
+</html>
