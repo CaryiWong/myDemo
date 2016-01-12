@@ -75,7 +75,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
                     <div class="form-group">
                         <div class="col-xs-5 col-xs-offset-2">
-                            <a href="<%=basePath%>admin/activity/getactsignlist?pageSize=12&activityid=${activity.id}" class="btn btn-primary col-xs-12" >报名列表</a>
+                            <a href="<%=basePath%>v20/admin/littleactivity/gathering_signlist?page=0&size=25&activityid=${activity.id}" class="btn btn-primary col-xs-12" >报名列表</a>
                         </div>
                     </div>
 

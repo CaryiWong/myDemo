@@ -60,6 +60,8 @@ Date date = new Date();
                         <td>手动审核</td>
                         <td>编辑</td>
                         <th>简介</th>
+                        <th>类型</th>
+                        <th>所属小组</th>
                       <!--   <th>操作</th> -->
                     </tr>
                     </thead>
@@ -91,12 +93,22 @@ Date date = new Date();
 												<c:if test="${activity.ischeck eq 2 }">审核失败</c:if>
 											</td>
 											<td>
-												<c:if test="${activity.ischeck eq 1 }"><a class="btn-link btn-sm" href="javascript:void(0);" onclick="setonsale('${activity.id}',0,this);">取消审核</a></c:if>
+												<c:if test="${activity.ischeck eq 1 }">已审核</c:if >
 												<c:if test="${activity.ischeck eq 0 }"><a class="btn-link btn-sm" href="javascript:void(0);" onclick="setonsale('${activity.id}',1,this);">通过审核</a></c:if>
 											</td>
                       <td><a class="btn-link btn-sm" href="javascript:void(0);" onclick="delActivity('${activity.id}');">删除</a></td>
 											<td title="${activity.summary}">${fn:substring(activity.summary,0,10)}</td>
 											<!-- <td><a href="javacsript:void(0)">删除</a></td> -->
+										
+										<td>
+												<c:if test="${activity.isonline eq 0 }">线下</c:if>
+												<c:if test="${activity.isonline eq 1 }">线上</c:if>
+											</td>
+											<td>
+												${activity.groupinfo.groupname}
+											</td>
+										
+										
 										</tr>
 						   </c:forEach>
 					</c:if>

@@ -1,6 +1,6 @@
-@import "core/_mixin.scss";
+@import "core/variables.scss";
+@import "core/mixin.scss";
 html, body { margin:0; padding:0; height:100%; }
-
 // table 等分
 @mixin table-equal($children: li) {
   display: table;
@@ -21,4 +21,99 @@ html, body { margin:0; padding:0; height:100%; }
 
 .nav-links{
   @include table-equal;
+}
+
+$color-stake:
+(group:orange,id:normal,color:#FF6600),
+(group:orange,id:pale,color:#FF9966),
+(group:orange,id:dark,color:#FF3300),
+(group:blue,id:normal,color:#3399FF);
+
+@function color($group,$shadow:normal,$transparency:1){
+  @each $color in $color-stake{
+    $c-group : map-get($color,group);
+    $c-shadow : map-get($color,id);
+    @if ($group == $c-group) and ($shadow == $c-shadow){
+      @return rgba(map-get($color,color),$transparency)
+    }
+  }
+}
+
+p{
+  color: color(orange,normal,.8);
+  font-size: 32px;
+}
+blockquote{
+  background: color(blue);
+  color: color(orange,pale,0.9);
+  font-size: 32px;
+}
+
+$media-stack:
+(group: tablet, id: general, rule: "only screen and (min-device-width: 700px)"),
+(group: small, id: general, rule: "only screen and(min-device-width: 1100px)"),
+(group: small, id: inbetween, rule: "only screen and(min-device-width: 1100px) and (max-device-width: 1400px)"),
+(group: large, id: general, rule: "only screen and(min-device-width: 1400px)"),
+(group: print, id: general, rule: "only print");
+
+@mixin media($group, $id: general){
+  @each $media in $media-stack{
+    @if($group == map-get($media, group) and $id == map-get($media, id)){
+      $rule: map-get($media, rule);
+      @media #{$rule} {@content}
+    }
+  }
+}
+h1{
+  color: #333;
+  @include media(tablet){
+    font-size: 1rem;
+  };
+  @include media(small, inbetween){
+    font-size: 1.2rem;
+  };
+  @include media(small){
+    color: #000;
+  };
+}
+
+
+$font-stack:
+(group: brandon, id: light, font: ('Brandon Grot W01 Light', san-serif ), weight: 200, style: normal),
+(group: brandon, id: light-italic, font: ('Brandon Grot W01 Light', san-serif ), weight: 200, style: italic),
+(group: brandon, id: regular, font: ('Brandon Grot W01-Regular', san-serif), weight: 400, style: normal),
+(group: brandon, id: regular-italic, font: ('Brandon Grot W01-Regular', san-serif), weight: 400, style: italic),
+(group: brandon, id: bold, font: ('Brandon Grot W01 Black', san-serif), weight: 700, style: normal),
+(group: brandon, id: bold-italic, font: ('Brandon Grot W01-Regular', san-serif), weight: 400, style: italic),
+(group: clarendon, id: regular, font: ('Clarendon LT W01', serif), weight: 200, style: normal),
+(group: code, id: regular, font: (monospace), weight: 400, style: normal);
+
+// Breakpoint Mixin
+@mixin font($group, $id:regular){
+  @each $font in $font-stack{
+    @if($group == map-get($font, group) and $id == map-get($font, id)){
+      font-family: map-get($font, font);
+      font-weight: map-get($font, weight);
+      font-style: map-get($font, style);
+    }
+  }
+}
+
+h1{
+  @include font(brandon, light-italic);
+}
+p{
+  @include font(brandon);
+}
+p i{
+  @include font(brandon, regular-italic);
+}
+p b{
+  @include font(brandon, bold);
+}
+blockquote{
+  @include font(clarendon);
+}
+code{
+  @include font(code);
 }

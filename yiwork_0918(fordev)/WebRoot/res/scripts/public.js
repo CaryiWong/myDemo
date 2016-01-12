@@ -2,8 +2,11 @@ var $contentFrame = $('.content-frame');
 var $iframes = $('iframe').load(function () {
     $iframes.each(function () {
         var $this = $(this);
-        var height = this.contentDocument.body.clientHeight;
+        //var height = this.contentDocument.body.clientHeight;
+      setInterval(
+        function(){var height = $this.contents().find("body").height();
         $this.height(height + 100);
+        },200);
     });
 });
 

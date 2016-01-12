@@ -1,0 +1,138 @@
+@import "../../sass-dev/lib/media-queries";
+@import "../../sass-dev/modules/reset";
+@import '../../sass-dev/modules/device';
+$origin-width: 320;
+$font-base-size: 7;  //用于计算容器宽度的根size
+$f-base-size:14;  //字体大小根size
+html,body{
+  height: 100%;
+  font-size: #{$f-base-size}px;
+  background: #eee;
+  color: #666;
+}
+.hide{
+  display: none;
+}
+$c_orange:#ef583f;
+input{
+  color:#ccc;
+}
+.container{
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+.top{
+  flex: 1;
+  width: 100%;
+}
+.main{
+  .yiqi-logo{
+    @include width-vw(75);
+  }
+  .triangle{
+    display: block;
+    width: 0;
+    height: 0;
+    border: 8px solid #eee;
+    border-bottom: 8px solid #fff;
+    margin: 0 auto;
+  }
+  .box{
+    background: #fff;
+    margin: 0 auto;
+    @include width-vw(255);
+    padding: 12px;
+    border-radius: 2px;
+    text-align: left;
+    font-size: 12px;
+    input{
+      width: 100%;
+      padding: 12px;
+      background: #eee;
+      box-sizing: border-box;
+      border: none;
+      margin-bottom: 12px;
+      &:focus{
+        outline: none;
+      }
+    }
+  }
+  .head-text{
+    font-size: (12rem/$f-base-size);
+    margin-bottom: 12px;
+  }
+  .submit-btn{
+    width: 100%;
+    background: $c_orange;
+    color: #fff;
+    height: 38px;
+    line-height: 38px;
+    border: none;
+    border-radius: 2px;
+    font-size: (15rem/$f-base-size);
+    &:focus,&:active{
+      outline: none;
+    }
+    &.error-sure{
+      background: #333;
+      @include width-vw(120);
+      margin-top: 12px;
+    }
+  }
+  .success-box{
+    .status{
+      padding-bottom: 8px;
+      display: block;
+      border-bottom: 1px solid #ccc;
+      width: 100%;
+      color: #999;
+    }
+    .alert-info{
+      margin: 12px 0;
+      color: #999;
+    }
+    .info{
+      color: #666;
+      margin-bottom: 12px;
+      .dot{
+        color: #ccc;
+        margin: 0 5px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+.bottom{
+  flex: 2;
+  width: 100%;
+}
+.btn-group{
+  .submit-btn{
+    display: inline-block;
+    @include width-vw(120);
+  }
+  .sure{
+    float: right;
+  }
+  .cancel{
+    background: #eee;
+    color: #666;
+  }
+}
+.android-body{
+  .container{
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
+  }
+}
+.error-text{
+  color: $c_orange;
+  font-size: (18rem / $f-base-size);
+  margin: 0 auto;
+  margin-top: 12px;
+  @include width-vw(200);
+}
+

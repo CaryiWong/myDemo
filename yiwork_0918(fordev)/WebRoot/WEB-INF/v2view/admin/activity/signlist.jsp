@@ -71,7 +71,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     </tr>
                     </thead>
                     <tbody>
-                    
+
                     <c:if test="${page.totalPage le 0 }">
 									<tr align="center">
 										<td colspan="10"><span>无记录</span></td>
@@ -90,7 +90,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												<c:if test="${userinfo.sex eq 1 }">女</c:if>
 												<c:if test="${userinfo.sex eq 2 }">保密</c:if>
 											</td>
-											
+
 											<td>
 												<c:if test="${userinfo.root eq 2 }">是</c:if>
 												<c:if test="${userinfo.root eq 4 }">否</c:if>
@@ -108,10 +108,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 	 <ul class="pagination">
                      <%@ include file="/res/common/pages.jsp"%>
                     </ul>
-                
-      	</form>     
+                 </div>
+      	</form>
         </div>
-     
+
 
 
    <script type="text/javascript">

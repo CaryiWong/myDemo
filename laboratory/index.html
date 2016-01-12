@@ -5,29 +5,29 @@
   <meta content="yes" name="apple-mobile-web-app-capable">
   <meta content="yes" name="apple-touch-fullscreen">
   <meta content="telephone=no,email=no" name="format-detection">
-  <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
-  <link rel="apple-touch-icon" href="favicon.png">
-  <link rel="Shortcut Icon" href="favicon.png" type="image/x-icon">
+  <!--<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>-->
   <title>再来一波</title>
+  <link rel="stylesheet" href="styles/main.css"/>
 </head>
 <body>
 <div class="item-section" data-repeat="sections">
-  <div class="item-section_header">
-    <h2><img src="http://xxx.cdn.com/B1PNLZKXXXXXaTXXXXXXXXXXXX-750-481.jpg" alt=""></h2>
-  </div>
-  <ul>
-    <li data-repeat="items" class="flag" role="link" href="">
-      <a class="figure flag-item" href="">
-        <img src="https://placeimg.com/350/350/people/grayscale" alt="">
-      </a>
-      <div class="figcaption flag-item">
-        <div class="flag-title"><a href="#" title="">Carter's1年式灰色长袖连体衣包脚爬服全棉鲸鱼男婴儿童装115G093</a></div>
-        <div class="flag-price"><span>双11价</span><strong>¥299.06</strong><small>(满400减100)</small></div>
-        <div class="flag-type">1小时内热卖5885件</div>
-        <a class="flag-btn" href="#">马上抢！</a>
-      </div>
-    </li>
-  </ul>
+  <p>ppppppp</p>
+  <blockquote>blockquote</blockquote>
 </div>
+<script>
+//  var pattern = /Java/g;
+//  var text = "javaScript is more fun than java!";
+//  var result ;
+//  while ((result = pattern.exec(text)) != null){
+//    console.log ("Matched ' " + result[0] + "'" +
+//      " at position " + result.index + ";next search begins at " + pattern.lastIndex);
+//  }
+//  console.log(pattern.test(text));
+  navigator.geolocation.getCurrentPosition(function(pos){
+    var latitude = pos.coords.latitude;
+    var longitude = pos.coords.longitude;
+    console.log(latitude + longitude );
+  })
+</script>
 </body>
 </html>

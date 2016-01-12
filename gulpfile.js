@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 //加载gulp-load-plugins插件，并马上运行它
 var plugins = require('gulp-load-plugins')();
-var app = 'wanke';
+var app = 'laboratory';
 //使用connect启动一个Web服务器
 gulp.task('connect', function () {
   plugins.connect.server({

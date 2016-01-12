@@ -29,7 +29,7 @@ String vipuserid = loginU.getUserid();
 	var root="<%=basePath%>";
 	var adminloginId="<%=userid%>";
 	</script>
-    
+
     <meta charset="utf-8">
     <title>后台主页</title>
     <link rel="stylesheet" href="<%=basePath%>res/styles/bootstrap.css"/>
@@ -44,18 +44,18 @@ String vipuserid = loginU.getUserid();
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          
+
                 <ul class="nav navbar-nav navbar-right">
-                	
+
                     <li><a href="<%=webBasePath %>admin/user/logout">退出</a></li>
                 </ul>
             </div>
         </nav>
-        <div class="row row-flow">
+        <div class="row row-flow content-right">
             <div class="col-xs-2 nav-list">
                 <div class="nav-list">
                     <div class="panel-group" id="accordion">
-                    
+
                     <%
                     ServletContext sc=request.getServletContext();
                     ApplicationContext ac1 = WebApplicationContextUtils.getRequiredWebApplicationContext(sc);
@@ -63,10 +63,10 @@ String vipuserid = loginU.getUserid();
                     Integer roleid=loginU.getAdminrole().getRoleid();
                     System.out.println(roleid);
                     List<AdminPermission> permitList =perService.selectParentByRoleId(roleid+"");
-                    
-                    
+
+
                     %>
-                    
+
                     <%for(AdminPermission permit:permitList){ %>
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -80,7 +80,7 @@ String vipuserid = loginU.getUserid();
                           <div class="panel-body">
                               <ul class="nav nav-pills nav-stacked">
                               <%
-                              List<AdminPermission> psList = perService.selectPermitByRoleIdAndParent(roleid+"",permit.getParent()+permit.getPermitid().toString()+"#","0");                              
+                              List<AdminPermission> psList = perService.selectPermitByRoleIdAndParent(roleid+"",permit.getParent()+permit.getPermitid().toString()+"#","0");
 								for (AdminPermission ps : psList) {
                               %>
                               	 <%if(ps.getPermitname().equals("活动编辑器")){ %>
@@ -89,7 +89,7 @@ String vipuserid = loginU.getUserid();
                                 	<li><a href="javascript:void(0)" onclick="javscript:window.open('<%=ps.getUrl() %>')" target="_parent"><%=ps.getPermitname() %></a></li>
                                	 <%}else if(ps.getPermitname().equals("活动列表")){%>
                                	 	<li><a href="<%=basePath%><%=ps.getUrl() %>" target="iframe"><%=ps.getPermitname() %></a></li>
-                               	 	<li><a href="<%=basePath%>editor/app/Forms/groupList.html?userid=<%=userid%>&root=<%=basePath %>&vipuserid=<%=vipuserid %>"  data-parent="#accordion" >小组列表</a></li>
+                               	 	<li><a href="<%=basePath%>editor/app/Forms/groupList.jsp?userid=<%=userid%>&root=<%=basePath %>&vipuserid=<%=vipuserid %>"  data-parent="#accordion" >小组列表</a></li>
                                	 <%}else{ %>
                                	 <li><a href="<%=basePath%><%=ps.getUrl() %>" target="iframe"><%=ps.getPermitname() %></a></li>
                                <%} }%>
@@ -98,20 +98,19 @@ String vipuserid = loginU.getUserid();
                         </div>
                       </div>
                      <%} %>
-                      
-                    
-                       
+
+
+
             </div>
             </div>
             </div>
-           
             <%-- <iframe name="iframe"  class="col-xs-10 content-frame" src="<%=webBasePath%>admin/user/userlist?pageSize=12"> --%>
-            <iframe name="iframe"  class="col-xs-10 content-frame" src="">
-            </iframe>
+            <iframe name="iframe" id='mainIframe'  class="col-xs-10 content-frame" src=""></iframe>
         </div>
 
         <script type="text/javascript" src="<%=basePath%>res/scripts/jquery-1.9.1.min.js"></script>
         <script type="text/javascript" src="<%=basePath%>res/scripts/bootstrap.js"></script>
         <script type="text/javascript" src="<%=basePath%>res/scripts/public.js"></script>
+
 </body>
 </html>

@@ -22,10 +22,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	-->
 	<link rel="stylesheet" href="<%=basePath%>res/styles/bootstrap.css"/>
     <link rel="stylesheet" href="<%=basePath%>res/styles/public.css"/>
+    <script type="text/javascript">
+    function ischeckTopwindow(){
+    	if(window.parent===window){
+    		
+    	}else{
+    		window.parent.location.replace("<%=basePath%>v20/admin/user/index");
+    	}
+    }
+    </script>
+    
   </head>
   
-<body>
-   
+<body onload="ischeckTopwindow()">
      <div class="container">
         <div class="row">
             <div class="col-xs-4 col-xs-offset-4 admin">
@@ -44,7 +53,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     </div>
                     <div class="form-group admin-code-group">
                         <input type="text" class="form-control" name="code" value="" placeholder="验证码">
-                        <img src="<%=basePath%>kaptcha.jpg" id="codeID" title="点击重新获取" onclick="this.src=document.getElementById('codeID').src + '?t=' + new Date().getTime();"/>
+                        <img src="<%=basePath%>kaptcha" id="codeID" title="点击重新获取" onclick="this.src=document.getElementById('codeID').src + '?t=' + new Date().getTime();"/>
                     </div>
                     <div class="form-group">
                         <button type="submit" name="login" class="btn btn-primary btn-lg col-xs-8 col-xs-offset-2">登录</button>
@@ -53,9 +62,5 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </div>
         </div>
     </div>
-    
-    
-    
-    
   </body>
 </html>

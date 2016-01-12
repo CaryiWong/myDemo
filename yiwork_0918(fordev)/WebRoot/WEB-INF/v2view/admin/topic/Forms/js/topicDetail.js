@@ -20,7 +20,7 @@ $(function(){
       if (data.cord === 0) {
         var res = data.data,
             user = res.user;
-        $detail.append(
+        $detail.html(
           "<tr><td>话题名称</td><td>"+ res['topicname'] +"</td></tr>" +
           "<tr><td>话题封面图</td><td class='banners'></td></tr>" +
           "<tr><td>话题简介</td><td>"+ res['topicexplain'] +"</td></tr>"+
@@ -28,7 +28,7 @@ $(function(){
           "<tr><td>话题创建时间</td><td>"+ res['createtime']  +"</td></tr>"
         );
         for(var i = 0; i < res.bannerlist.length ; i++ ){
-          $('.banners').prepend("<img src="+ res.bannerlist[i] +"/>");
+          $('.banners').html("<img src="+ res.bannerlist[i] +"/>");
         }
 
       } else {

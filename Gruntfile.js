@@ -1,30 +1,27 @@
 // Generated on 2015-09-15 using
 // generator-webapp 1.0.1
 'use strict';
-
 var webpack = require('webpack');
-var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
-var devFlagPlugin = new webpack.DefinePlugin({
-  _DEV_:JSON.stringify(JSON.parse(process.env.DEBUG || 'false'))
-});
 var commonPlugins =  require("webpack/lib/optimize/CommonsChunkPlugin");
-
+var isFunction = require('lodash.isfunction');
 module.exports = function (grunt) {
-
+  require('load-grunt-tasks')(grunt,{
+    pattern: 'grunt-*',
+    config: 'package.json'
+  });
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
-
+  //var $ = require('expose?jQuery!../../scripts/components/jquery');
   // Automatically load required grunt tasks
-  require('jit-grunt')(grunt, {
-      useminPrepare: 'grunt-usemin'
-  });
+  //require('jit-grunt')(grunt, {
+  //    useminPrepare: 'grunt-usemin'
+  //});
 
   // Configurable paths
   var config = {
-    app: 'zy_zd' ,
-    dist: 'dist'
+    app: 'accredit',
+    dist: 'dest'
   };
-  //Dynamically create list of files in a folder to bundle for webpack
   // Define the configuration for all the tasks
   grunt.initConfig({
 
@@ -33,28 +30,32 @@ module.exports = function (grunt) {
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
-      //bower: {
-      //  files: ['bower.json'],
-      //  tasks: ['wiredep']
-      //},
-      //babel: {
-      //  files: ['<%= config.app %>/js/*.js','<%= config.app %>/**/*.html'],
-        //tasks: ['webpack:build']
-      //},
+      bower: {
+        files: ['bower.json'],
+        tasks: ['wiredep']
+      },
+      webpack: {
+        files: ['<%= config.app %>/scripts/js_ForDev/**/*.js'],
+        tasks: ['webpack']
+      },
       gruntfile: {
-        files: ['Gruntfile.js'],
-        //tasks: ['webpack:build']
+        files: ['Gruntfile.js']
       },
       sass: {
-        files: ['<%= config.app %>/**/*.{scss,sass}'],
-        tasks: ['sass:server','newer:autoprefixer']
-      },
-      //styles: {
-      //  files: ['<%= config.app %>/**/*.css'],
-      //  tasks: ['autoprefixer']
-      //}
+        files: ['<%= config.app %>/sass/*.{scss,sass}'],
+        tasks: ['clean:server','sass:server','autoprefixer']
+      }
     },
-
+    babel: {
+      options: {
+        sourceMap: true
+      },
+      dist: {
+        files: {
+          '/scripts/**/*.js':'<%= config.app %>/scripts/**/*.js',
+        }
+      }
+    },
     browserSync: {
       options: {
         notify: false,
@@ -64,12 +65,12 @@ module.exports = function (grunt) {
         options: {
           files: [
             '<%= config.app %>/**/*.html',
-            '<%= config.app %>/**/*.css',
-            '<%= config.app %>/**/*',
-            '<%= config.app %>/**/*.js'
+            '<%= config.app %>/styles/**/*.css',
+            '<%= config.app %>/images/**/*',
+            '<%= config.app %>/scripts/**/*.js'
           ],
-          port: 9000,
-          hostname: '0.0.0.0',
+          port: 8000,
+          hostname: '192.168.1.146',
           server: {
             baseDir: ['<%= config.app %>/'],
             routes: {
@@ -92,83 +93,131 @@ module.exports = function (grunt) {
         files: [{
           dot: true,
           src: [
-            '[.tmp,dest,dist]',
+            '.tmp',
             '<%= config.dist %>/*',
             '!<%= config.dist %>/.git*'
           ]
         }]
       },
-      server: '.tmp'
+      server: ['.tmp','dist','dest']
     },
 
+  //   Compiles Sass to CSS and generates necessary files if requested
+    sass: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= config.app %>/sass/',
+          src: ['accredit.{scss,sass}'],
+          dest: '.tmp/',
+          ext: '.css'
+        }]
+      },
+      server: {
+        files: [{
+          expand: true,
+          cwd: '<%= config.app %>/sass/',
+          src: ['*.{scss,sass}'],
+          dest: '.tmp/',
+          ext: '.css'
+        }]
+      }
+    },
+
+    autoprefixer: {
+      options: {
+        map: true,
+        browsers: ["last 3 version","Android 4"]
+      },
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '.tmp/',
+          src: 'accredit.css',
+          dest: 'dest/'
+        }]
+      },
+      server: {
+        files: [{
+          expand: true,
+          cwd: '.tmp/',
+          src: '**/*.css',
+          dest: '<%= config.app %>/styles/'
+        }]
+      }
+    },
+
+    // Automatically inject Bower components into the HTML file
+    wiredep: {
+      app: {
+        src: ['<%= config.app %>/pages/index.html'],
+        exclude: ['bootstrap.js'],
+        ignorePath: /^(\.\.\/)*\.\./
+      },
+      sass: {
+        src: ['<%= config.app %>/sass/*.{scss,sass}'],
+        ignorePath: /^(\.\.\/)+/
+      }
+    },
+
+    // Renames files for browser caching purposes
+    filerev: {
+      dist: {
+        src: [
+          '<%= config.dist %>/scripts/**/*.js',
+          '<%= config.dist %>/sass/**/*.css',
+          '<%= config.dist %>/images/**/*.*',
+          '<%= config.dist %>/scss/fonts/**/*.*',
+          '<%= config.dist %>/*.{ico,png}'
+        ]
+      }
+    },
+
+    // Reads HTML for usemin blocks to enable smart builds that automatically
+    // concat, minify and revision files. Creates configurations in memory so
+    // additional tasks can operate on them
     useminPrepare: {
       options: {
-        dest: 'dist/'   //最终需修改引用路径的html文件所在的目录,预先通过 copy:dist 把html复制到此目录下
+        dest: 'dist/'
+         //最终需修改引用路径的html文件所在的目录,预先通过 copy:dist 把html复制到此目录下
       },
-      html: '<%= config.app %>/**/*.html'  //原始html路径 文件引用部分使用 <!--build:{type} <path> --> <!--end build-->来创建block
+      html: '<%= config.app %>/**/*.html'
+       //原始html路径 文件引用部分使用 <!--build:{type} <path> --> <!--end build-->来创建block
     },
 
     // Performs rewrites based on rev and the useminPrepare configuration
     usemin: {
       options: {
         assetsDirs: [  //检测此目录下的被引用文件是否被修改
-          'dist/styles',
-          'dist/',
-          'dist/scripts'
+          'dist/pages',
+          'dist/images',
+          'dist/styles'
         ]
       },
       html:['dist/**/*.html']  // 需修改引用路径的html文件
+},
+
+    // The following *-min tasks produce minified files in the dist folder
+    imagemin: {
+      /* 压缩优化图片大小 */
+      dist: {
+        options: {
+          optimizationLevel: 3
+        },
+        files: [
+          {
+            expand: true,
+            cwd: '<%= config.app %>/images/',
+            src: '**/*', // 优化 img 目录下所有 png/jpg/jpeg/gif 图片
+            dest: 'dist/images/' // 优化后的图片保存位置，默认覆盖
+          }
+        ]
+      }
     },
 
-    uglify: {
-      "my_target": {
-        "files": [{
-          'dist/scripts/app_signup.js': ['<%= config.app %>/scripts/jquery.js',
-            '<%= config.app %>/scripts/validation.js',
-            '<%= config.app %>/scripts/signup.js']
-        },{
-          'dist/scripts/app_signto.js': ['<%= config.app %>/scripts/jquery.js',
-            '<%= config.app %>/scripts/validation.js',
-            '<%= config.app %>/scripts/signto.js']
-        },{
-          'dist/scripts/app_activity.js': ['<%= config.app %>/scripts/jquery.js',
-            '<%= config.app %>/scripts/validation.js',
-            '<%= config.app %>/scripts/share.js',
-            '<%= config.app %>/scripts/activity.js']
-        }]
-      }
-    },
-    sass: {
-      //options: {
-      //  sourceMap: true
-      //},
-      dist: {
-        files: {
-          '.tmp/styles/main.css': '<%= config.app %>/sass/main.scss'
-        }
-      },
-      server: {
-        files: {
-          '<%= config.app %>/styles/main.css': '<%= config.app %>/sass/main.scss',
-          '<%= config.app %>/styles/history.css': '<%= config.app %>/sass/history.scss'
-
-        }
-      }
-    },
-    autoprefixer: {
-      options: {
-        map: true,
-        browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1']
-      },
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '.tmp/styles/',
-          src: 'main.css',
-          dest: 'dest/styles/'
-        }]
-      }
-    },
+    // By default, your `index.html`'s <!-- Usemin block --> will take care
+    // of minification. These next options are pre-configured if you do not
+    // wish to use the Usemin blocks.
     cssmin: {
       /*压缩 CSS 文件为 .min.css */
       options: {
@@ -176,26 +225,49 @@ module.exports = function (grunt) {
       },
       minify: {
         expand: true,
-        cwd: 'dest/styles/',
+        cwd: 'dest/',
         src: '**/*.css',
         dest: 'dist/styles/',
         ext: '.min.css'
       }
     },
-    concurrent: {
-      dist: [
-        'uglify',
-        'cssmin'
-      ]
+
+    uglify: {
+      "my_target": {
+        "files": [
+          {
+            'dist/scripts/app_login.js': ['<%= config.app %>/scripts/app_login.js'],
+            'dist/scripts/app_accredit.js': ['<%= config.app %>/scripts/app_accredit.js'],
+            'dist/scripts/app_error.js': ['<%= config.app %>/scripts/app_error.js']
+        }]
+      }
     },
+    //concat: {
+    //  /* 合并 CSS 文件 */
+    //  css: {
+    //    src: '<%= config.app %>/styles/pages/server/**/*.css',
+    //    /* 根据目录下文件情况配置 */
+    //    dest: 'dest/css/all.css'
+    //  }
+    //},
+    // Copies remaining files to places other tasks can use
     copy: {
       dist: {
         files: [{
           expand: true,
           dot: true,
           cwd: '<%= config.app %>/',
-          src: '**/*.html',
+          src: ['**/*.html','scripts/js_ForDev/**/*.js'],
           dest: 'dist/'
+        }]
+      },
+      default: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: '<%= config.app %>/scripts/',
+          src: 'app_*.js',
+          dest: 'D:\\develope\\oauth2\\trunk\\server\\web\\oauth2\\scripts\\source'
         }]
       },
       server: {
@@ -204,54 +276,67 @@ module.exports = function (grunt) {
           dot: true,
           cwd: 'dist/',
           src: ['**'],
-          dest: 'D:\\mywork\\server\\web\\activity'
+          dest: 'D:\\develope\\oauth2\\trunk\\server\\web\\oauth2'
         }]
-      },
-      activity:{
-        files: [{
-          expand: true,
-          dot: true,
-          cwd: 'dist/',
-          src: ['**'],
-          dest: 'D:\\yiwork_0918\\yiwork_0918\\WebRoot\\activity'
-        }]
-       }
+      }
     },
-    //webpack: {
-    //  build: {
-    //    entry:{
-    //      bundle1:'D:\\demo2\\app\\webpackDemo\\js\\main.js'
-    //    },
-    //    output: {
-    //      path: "<%= config.app %>/webpackDemo",
-    //      filename: "[name].js"
-    //    },
-    //    module: {
-    //      loaders:[
-    //        //{ test: /\.js[x]?$/, exclude: /node_modules/, loader: 'babel-loader' },
-    //        {test: /\.css$/, loader: "style!css"},
-    //        {test: /\.(jpg|png)$/, loader: "url?limit=8192"},//inline base64 URLs for <=8k images, direct URLs for the rest
-    //        {test: /\.scss$/, loader: "style!css!sass"}   //对于scss文件，先用sass-loader,再用css-loader,再用style-loader，使用时 -loader可省略
-    //      ]
-    //    },
-    //    externals: {
-    //      // require('data') is external and available
-    //      //  on the global var data
-    //      'data': 'data2'
-    //    },
-    //    plugins:[
-    //      new webpack.ProvidePlugin({
-    //        $: "jquery",
-    //        jQuery: "jquery",
-    //        "window.jQuery": "jquery"
-    //      })
-    //    ]
-    //
-    //  }
-    //}
 
+    // Run some tasks in parallel to speed up build process
+    concurrent: {
+      server: [
+        'babel:dist',
+        'sass:server'
+      ],
+      preComplete: [
+        'webpack',
+        'sass:dist'
+      ],
+      dist: [
+        'uglify',
+        'imagemin',
+        'cssmin'
+      ]
+    },
+    webpack: {
+      build: {
+        entry:{
+          app_login:'D:\\demo2\\accredit\\scripts\\js_ForDev\\login.js',
+          app_accredit:'D:\\demo2\\accredit\\scripts\\js_ForDev\\accredit.js',
+          app_error:'D:\\demo2\\accredit\\scripts\\js_ForDev\\error.js',
+        },
+        output: {
+          path: "<%= config.app %>/scripts/",
+          filename: "[name].js"
+        },
+        module: {
+          loaders: [
+            {
+              test:/\.scss$/,
+              loader: 'style!css!autoprefixer?{browsers:["last 3 version","Android 4"]}!sass'
+            }
+             //{ test: /\.handlebars$/, loader: "handlebars-loader" }
+          ]
+        },
+        externals: {
+          // require('data') is external and available
+          //  on the global var data
+          //jquery: 'jQuery',
+          'isDev': 'false',
+        },
+        node: {
+          fs: "empty"
+        },
+        plugins:[
+          new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery"
+          }),
+           //new commonPlugins('common.js')
+        ]
+      }
+    }
   });
-  //grunt.registerTask('grunt-webpack',['webpack:build']);
 
 
   grunt.registerTask('serve', 'start the server and preview your app', function (target) {
@@ -262,11 +347,9 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
-      //'wiredep',
-      //'concurrent:server',
       'sass:server',
-      'autoprefixer',
-      //'webpack:build',
+      'autoprefixer:server',
+      'webpack',
       'browserSync:livereload',
       'watch'
     ]);
@@ -278,21 +361,24 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('build', [
-    'clean:dist',
-    //'wiredep',
-     'copy:dist',
+    'clean',  //清除临时文件夹
+    'copy:dist',   //复制html文件供usemin使用
     'useminPrepare',
-    'sass:dist',
-    'autoprefixer',
-    'concurrent:dist',
+    'concurrent:preComplete',  //并行的 webpack sass:dist
+    'autoprefixer:dist',
+    'concurrent:dist',  //并行的 cssmin uglify imagemin
     'usemin',
-    'copy:server'
+    'copy:server',  //把处理好的在 dist/ 下的文件复制到工作目录中
+    'copy:default'  //把原始的 scss js 文件复制到工作目录中
   ]);
+
+  grunt.registerTask('test', ['clean']);
 
   grunt.registerTask('default', [
     'newer:eslint',
     'build'
   ]);
 
+  grunt.loadNpmTasks('grunt-webpack');
 
 };

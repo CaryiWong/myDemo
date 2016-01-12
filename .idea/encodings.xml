@@ -5,6 +5,9 @@
     <file url="file://$PROJECT_DIR$/.gitignore" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/.jshintrc" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Gruntfile.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/accredit/scripts/js_ForDev/browser.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/accredit/scripts/js_ForDev/errorMsg.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/gntfileo2.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/jsDemo/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/jsDemo/test.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/test/index.html" charset="UTF-8" />
@@ -23,10 +26,15 @@
     <file url="file://$PROJECT_DIR$/laboratory/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/laboratory/sass/main.scss" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/laboratory/styles/main.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/package.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sass-dev/modules/_device.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/scripts_src/components/getArgs.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/static/doctorSite/1.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/static/doctorSite/main.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/static/doctorSite/report/main.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/wanke/erCodeList.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/yiwork_0918(fordev)/WebRoot/res/scripts/activity/signlist.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/yiwork_0918(fordev)/WebRoot/res/scripts/public.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/zy_zd/history.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/zy_zd/jiuzhen.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/zy_zd/sass/_bootstrap_base.scss" charset="UTF-8" />
